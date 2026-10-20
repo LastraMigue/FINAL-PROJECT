@@ -17,11 +17,19 @@
 
 - [1. Introducción al Sector y Propuesta de Valor](#1-introducción-al-sector-y-propuesta-de-valor)
 - [2. Empresas Analizadas y Organigramas de Referencia](#2-empresas-analizadas-y-organigramas-de-referencia)
-  - [2.1. Wizards of the Coast (Gran Empresa)](#21-wizards-of-the-coast-gran-empresa)
-  - [2.2. Roll20 (Mediana Empresa)](#22-roll20-mediana-empresa)
-  - [2.3. Latitude Inc. (Pequeña Empresa)](#23-latitude-inc-pequeña-empresa)
-  - [2.4. Comparativa y Aplicación al Proyecto](#24-comparativa-y-aplicación-al-proyecto)
+    - [2.1. Wizards of the Coast (Gran Empresa)](#21-wizards-of-the-coast-gran-empresa)
+    - [2.2. Roll20 (Mediana Empresa)](#22-roll20-mediana-empresa)
+    - [2.3. Latitude Inc. (Pequeña Empresa)](#23-latitude-inc-pequeña-empresa)
+    - [2.4. Comparativa y Aplicación al Proyecto](#24-comparativa-y-aplicación-al-proyecto)
 - [3. Organigrama de GameMaster AI](#3-organigrama-de-gamemaster-ai)
+- [4. Descripción de departamentos y funciones](#4.-Descripción-de-departamentos-y-funciones)
+    - [4.1. Wizards of the Coast](#41-wizards-of-the-coast)
+    - [4.2. Roll20](#42-roll20)
+    - [4.3. Latitude Inc.](#43-latitude-inc)
+    - [4.4. AI Game Master](#44-ai-game-master)
+    - [4.5. Comparación general](#45-comparación-general)
+    - [4.6. Conclusión](#46-conclusión)
+    - [4.7. Fuentes](#47-fuentes)
 
 ---
 
@@ -158,21 +166,7 @@ flowchart TD
 
 ## 4. Descripción de departamentos y funciones
 
-# Descripción de departamentos y funciones de las empresas
-
-## Índice
-
-1. [Wizards of the Coast](#1-wizards-of-the-coast)
-2. [Roll20](#2-roll20)
-3. [Latitude Inc.](#3-latitude-inc)
-4. [AI Game Master](#4-ai-game-master)
-5. [Comparación general](#5-comparación-general)
-6. [Conclusión](#6-conclusión)
-7. [Fuentes](#7-fuentes)
-
----
-
-## 1. Wizards of the Coast
+## 4.1. Wizards of the Coast
 
 ### Departamentos y funciones
 
@@ -193,7 +187,7 @@ flowchart TD
 
 ---
 
-## 2. Roll20
+## 4.2. Roll20
 
 ### Departamentos y funciones
 
@@ -215,7 +209,7 @@ flowchart TD
 
 ---
 
-## 3. Latitude Inc.
+## 4.3. Latitude Inc.
 
 ### Departamentos y funciones
 
@@ -237,7 +231,7 @@ flowchart TD
 
 ---
 
-## 4. AI Game Master
+## 4.4. AI Game Master
 
 ### Departamentos y funciones
 
@@ -258,7 +252,7 @@ flowchart TD
 
 ---
 
-## 5. Comparación general
+## 4.5. Comparación general
 
 | Empresa | Actividad principal | Departamentos más estratégicos |
 |---|---|---|
@@ -269,7 +263,7 @@ flowchart TD
 
 ---
 
-## 6. Conclusión
+## 4.6. Conclusión
 
 Aunque las cuatro empresas están relacionadas con los juegos y el entretenimiento, cada una necesita priorizar departamentos diferentes según su actividad.
 
@@ -282,7 +276,7 @@ En conclusión, todos los departamentos contribuyen al funcionamiento de una emp
 
 ---
 
-## 7. Fuentes
+## 4.7. Fuentes
 
 - **Wizards of the Coast:** [Web corporativa](https://company.wizards.com/es/who-we-are)
 - **Roll20:** [Web oficial](https://roll20.net/) | [Centro de ayuda](https://help.roll20.net/)
