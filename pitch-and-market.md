@@ -286,5 +286,127 @@ En conclusión, todos los departamentos contribuyen al funcionamiento de una emp
 
 > **Nota metodológica:** las fuentes describen las actividades y los productos de las empresas. La clasificación de departamentos es un análisis funcional elaborado para este trabajo y no implica que cada empresa publique un organigrama con todas estas áreas. Algunas funciones pueden estar agrupadas en un mismo equipo o externalizadas.
 
-## 5
+## 5. Necesidades y volumen de negocio.
+
+## 5. Necesidades y volumen de negocio
+
+### 5.1. Análisis del mercado
+
+GameMaster AI Studios S.L. se sitúa en el sector de los juegos de rol de mesa (TTRPG), las plataformas virtuales de juego (VTT) y las aplicaciones SaaS basadas en inteligencia artificial.
+
+El mercado presenta oportunidades para herramientas que faciliten la organización y dirección de partidas. Según Fortune Business Insights, el mercado mundial de juegos de rol de mesa se valoró en aproximadamente **2.310 millones de dólares en 2025** y se estima que podría alcanzar los **5.230 millones de dólares en 2034**, con una tasa de crecimiento anual compuesta del 9,61 %. Estas cifras corresponden al conjunto del mercado de juegos de rol, no exclusivamente al de aplicaciones de inteligencia artificial.
+
+Fuente: [Fortune Business Insights — Tabletop Role-Playing Game Market](https://www.fortunebusinessinsights.com/tabletop-role-playing-game-market-119102).
+
+GameMaster AI no pretende competir directamente con las grandes editoriales ni sustituir las plataformas de juego existentes. Su objetivo es ofrecer una herramienta complementaria que permita dirigir partidas con menos preparación manual y una mayor automatización de la narración.
+
+La propuesta de valor consiste en combinar narración por voz, consulta de manuales PDF mediante recuperación aumentada por generación (RAG), control de las respuestas mediante *guardrails* e integración con Tabletop Simulator mediante scripts Lua y webhooks.
+
+### 5.2. Necesidades de los clientes
+
+Los clientes potenciales tienen diferentes necesidades según su relación con los juegos de rol.
+
+| Tipo de cliente | Necesidades principales | Solución que ofrece GameMaster AI |
+|---|---|---|
+| Directores de juego experimentados | Reducir el tiempo de preparación, consultar reglas rápidamente y mantener la coherencia de las campañas. | Consulta de manuales PDF, recuperación de información relevante y asistencia narrativa por voz. |
+| Directores de juego principiantes | Recibir ayuda para interpretar reglas, preparar escenas y mantener el ritmo de la partida. | Narración asistida y acceso rápido a la información de los manuales cargados. |
+| Jugadores habituales | Disfrutar de partidas fluidas, inmersivas y con menos interrupciones para consultar reglas. | Narración por voz y asistencia contextual durante la sesión. |
+| Grupos de rol en línea | Coordinar partidas, mantener la continuidad narrativa y aprovechar las herramientas digitales existentes. | Aplicación web complementaria e integración con Tabletop Simulator. |
+| Comunidades y clubes de rol | Organizar sesiones frecuentes y facilitar la preparación de campañas para diferentes grupos. | Herramienta reutilizable para apoyar la dirección de múltiples partidas. |
+| Creadores de contenido y organizadores de eventos | Preparar experiencias narrativas, demostraciones y sesiones especiales. | Narración asistida y automatización de determinadas tareas durante las partidas. |
+
+La necesidad principal que busca cubrir el proyecto es la carga de trabajo que supone dirigir una partida. El director de juego debe conocer las reglas, preparar escenarios, interpretar las acciones de los jugadores y mantener la coherencia de la historia.
+
+GameMaster AI pretende reducir ese esfuerzo sin eliminar el papel creativo del director de juego. La inteligencia artificial funciona como una herramienta de apoyo y no como un sustituto obligatorio de la persona que dirige la sesión.
+
+### 5.3. Necesidades técnicas y funcionales
+
+Para responder a las necesidades detectadas, la aplicación debe ofrecer las siguientes funcionalidades:
+
+- **Narración por voz:** permitir que la aplicación escuche las acciones de los jugadores mediante el micrófono y genere respuestas narrativas.
+- **Consulta de manuales PDF:** procesar e indexar los documentos aportados por el usuario para recuperar reglas e información relevante.
+- **Control de las respuestas de la IA:** limitar las respuestas al contenido disponible y reducir las invenciones mediante técnicas RAG y *guardrails*.
+- **Continuidad de las campañas:** conservar el contexto necesario para que los acontecimientos, personajes y decisiones mantengan coherencia entre intervenciones.
+- **Integración con Tabletop Simulator:** facilitar la comunicación entre la aplicación web y el tablero virtual mediante scripts Lua y webhooks.
+- **Interfaz web responsive:** ofrecer una interfaz clara que pueda utilizarse desde el ordenador como pantalla de apoyo durante la partida.
+- **Gestión de usuarios y campañas:** permitir organizar las sesiones y administrar los recursos necesarios para cada aventura.
+- **Privacidad y seguridad:** proteger las cuentas, los documentos cargados y los datos procesados durante las sesiones.
+
+Estas funcionalidades constituyen la base de la propuesta comercial. Su implementación debe priorizar la estabilidad, la facilidad de uso y la fiabilidad de las respuestas, ya que son factores importantes para que los usuarios confíen en la herramienta.
+
+### 5.4. Tipos de clientes y modelo de ingresos
+
+El modelo de negocio propuesto es **SaaS (Software as a Service)**. Los usuarios acceden a la aplicación web y pueden pagar una suscripción para utilizar funciones avanzadas.
+
+El modelo de ingresos se puede dividir en tres líneas:
+
+1. **Suscripciones individuales:** dirigidas principalmente a directores de juego que utilizan la herramienta de forma habitual.
+2. **Planes para grupos y comunidades:** destinados a clubes o grupos que necesitan gestionar campañas y utilizar la herramienta de manera recurrente.
+3. **Servicios profesionales de configuración:** asistencia para preparar campañas, configurar integraciones o adaptar la herramienta a necesidades específicas.
+
+La suscripción recurrente sería la principal fuente de ingresos, mientras que los servicios profesionales aportarían ingresos adicionales sin depender exclusivamente del número de usuarios suscritos.
+
+
+### 5.6. Ejemplos concretos de proyectos y clientes
+
+Para ilustrar cómo podría generar ingresos GameMaster AI, se plantean los siguientes ejemplos:
+
+| Proyecto | Cliente | Servicio | Importe estimado |
+|---|---|---|---:|
+| Campaña de fantasía | Director de juego independiente | Plan Pro durante un año. | 119,88 €/año |
+| Grupo de rol habitual | Grupo de jugadores | Plan Grupo durante un año. | 239,88 €/año |
+| Preparación de campaña | Director de juego principiante | Configuración inicial de documentos y campaña. | 99 € |
+| Integración personalizada | Club de rol | Servicio de configuración avanzada. | Desde 299 € |
+| Comunidad de rol | Asociación o comunidad | Suscripciones y servicios de configuración, según sus necesidades. | Presupuesto personalizado |
+
+Estos ejemplos muestran que la empresa puede combinar ingresos recurrentes por suscripciones con ingresos puntuales por servicios profesionales.
+
+En el caso de las asociaciones y comunidades, se podrían ofrecer descuentos por contratación anual o por un número determinado de usuarios, siempre que los ingresos cubran los costes de uso y mantenimiento.
+
+### 5.7. Estimación del volumen de negocio
+
+El volumen de negocio se puede estimar mediante los ingresos obtenidos por las suscripciones y los servicios complementarios.
+
+Para realizar una primera previsión se establece una hipótesis simplificada: cada usuario de pago genera, de media, **8 € al mes**. Este importe representa una combinación hipotética de diferentes planes de suscripción, no un precio de mercado comprobado.
+
+#### Escenarios de ingresos por suscripciones
+
+| Escenario | Usuarios de pago | Ingresos mensuales | Ingresos anuales |
+|---|---:|---:|---:|
+| Inicial | 50 | 400 € | 4.800 € |
+| Intermedio | 250 | 2.000 € | 24.000 € |
+| Crecimiento | 1.000 | 8.000 € | 96.000 € |
+
+Los cálculos se realizan multiplicando el número de usuarios por el ingreso medio mensual y por doce meses. Se supone que todos los usuarios permanecen suscritos durante el año completo.
+
+```text
+Ingresos mensuales = Usuarios de pago × Ingreso medio mensual
+
+Ingresos anuales = Ingresos mensuales × 12
+```
+
+### 5.8. Costes y factores que afectan a la rentabilidad
+
+El volumen de negocio no determina por sí solo si la empresa será rentable. También es necesario controlar los costes asociados al desarrollo y funcionamiento de la plataforma.
+
+| Coste | Descripción | Impacto en el negocio |
+|---|---|---|
+| Desarrollo inicial | Programación del frontend en React, backend en Laravel, API y módulos de integración. | Supone una inversión inicial de tiempo y recursos. |
+| Servicios de inteligencia artificial | Procesamiento de solicitudes, generación de respuestas y gestión del contexto. | Puede aumentar a medida que crece el uso de la aplicación. |
+| Infraestructura y alojamiento | Servidores, almacenamiento, bases de datos y servicios auxiliares. | Es necesario para mantener la disponibilidad de la plataforma. |
+| Procesamiento de documentos | Extracción de texto, indexación y recuperación de información de los PDF. | Puede generar costes adicionales según el volumen de documentos. |
+| Marketing y captación | Promoción en comunidades de rol, redes sociales y otros canales. | Permite atraer clientes, pero reduce el margen si el coste de captación es elevado. |
+| Mantenimiento y seguridad | Corrección de errores, actualizaciones y protección de datos. | Ayuda a conservar la confianza de los usuarios y la calidad del servicio. |
+
+Uno de los principales retos económicos será conseguir que el ingreso medio por usuario sea superior al coste variable que genera su utilización, además de contribuir a cubrir los costes fijos.
+
+Para ello, será importante establecer límites de consumo, monitorizar el uso de los modelos de IA y medir la tasa de cancelación de las suscripciones.
+
+### Fuentes
+
+- [Fortune Business Insights — Tabletop Role-Playing Game Market](https://www.fortunebusinessinsights.com/tabletop-role-playing-game-market-119102): referencia para el tamaño y las perspectivas del mercado de juegos de rol de mesa.
+
+- [Tabletop Simulator — Steam](https://store.steampowered.com/app/286160/TabletopSimulator/): referencia sobre la plataforma con la que se plantea integrar GameMaster AI.
+
+
 
