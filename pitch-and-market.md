@@ -22,7 +22,7 @@
     - [2.3. Latitude Inc. (Pequeña Empresa)](#23-latitude-inc-pequeña-empresa)
     - [2.4. Comparativa y Aplicación al Proyecto](#24-comparativa-y-aplicación-al-proyecto)
 - [3. Organigrama de GameMaster AI](#3-organigrama-de-gamemaster-ai)
-- [4. Descripción de departamentos y funciones](#4.-Descripción-de-departamentos-y-funciones)
+- [4. Descripción de departamentos y funciones](#4-Descripción-de-departamentos-y-funciones)
     - [4.1. Wizards of the Coast](#41-wizards-of-the-coast)
     - [4.2. Roll20](#42-roll20)
     - [4.3. Latitude Inc.](#43-latitude-inc)
@@ -30,6 +30,7 @@
     - [4.5. Comparación general](#45-comparación-general)
     - [4.6. Conclusión](#46-conclusión)
     - [4.7. Fuentes](#47-fuentes)
+- [#5. Necesidades y volumen de negocio](#5-Necesidades-y-volumen-de-negocio)
 
 ---
 
@@ -284,4 +285,6 @@ En conclusión, todos los departamentos contribuyen al funcionamiento de una emp
 - **AI Game Master:** [Web oficial](https://www.aigamemaster.app/about)
 
 > **Nota metodológica:** las fuentes describen las actividades y los productos de las empresas. La clasificación de departamentos es un análisis funcional elaborado para este trabajo y no implica que cada empresa publique un organigrama con todas estas áreas. Algunas funciones pueden estar agrupadas en un mismo equipo o externalizadas.
+
+## 5
 
