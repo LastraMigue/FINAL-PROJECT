@@ -12,9 +12,9 @@ A continuación, se presentan los miembros fundadores del equipo y los roles pri
 | **Miguel Ángel Lastra Garcés** | Programador Principal (Lead Developer), Controlador de Versiones, Scrum Master y Release Manager |
 | **Abel Carbonero Mora** | Programador Íntegro (Core Developer) |
 | **Christian Said Jimenez Mahecha** | Programador Íntegro (Core Developer) |
-| **Rafa Riego Ruz** | Programador Íntegro (Core Developer) |
+| **Rafael Riego Ruz** | Programador Íntegro (Core Developer) |
 
 ## Documentación y Normativa
 
 - **[Contrato de Trabajo y Normativa Interna](./Contrato_Equipo.pdf)**: Documento oficial donde se detalla nuestro marco metodológico, los canales de comunicación, los roles y el compromiso con los Sprints y entregables.
-- **[Pitch Inicial y Análisis de Mercado](./pitch-and-market.md)**: Presentación de GameMaster AI, roles del equipo y análisis del sector TTRPG/VTT.
+- **[Pitch Inicial y Análisis de Mercado](./pitch-and-market.md)**: Exploración del sector TTRPG/VTT, propuesta de valor de GameMaster AI, análisis de empresas y organigramas de referencia, estructura funcional del equipo, modelo de negocio SaaS y justificación de viabilidad.
