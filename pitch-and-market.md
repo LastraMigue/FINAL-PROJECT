@@ -21,61 +21,64 @@
   - [2.2. Roll20 (Mediana Empresa)](#22-roll20-mediana-empresa)
   - [2.3. Latitude Inc. (Pequeña Empresa)](#23-latitude-inc-pequeña-empresa)
   - [2.4. Comparativa de Estructuras Organizativas](#24-comparativa-de-estructuras-organizativas)
-  - [2.5. Departamentos Clave, Funciones y Contribución al Negocio](#25-departamentos-clave-funciones-y-contribución-al-negocio)
-  - [2.6. Comparativa Estratégica con GameMaster AI](#26-comparativa-estratégica-con-gamemaster-ai)
+  - [2.5. Comparativa Estratégica con GameMaster AI](#25-comparativa-estratégica-con-gamemaster-ai)
 - [3. Organigrama de GameMaster AI](#3-organigrama-de-gamemaster-ai)
-- [4. Necesidades y Volumen de Negocio](#4-necesidades-y-volumen-de-negocio)
-  - [4.1. Análisis y Dimensión del Mercado](#41-análisis-y-dimensión-del-mercado)
-  - [4.2. Necesidades del Cliente y Solución](#42-necesidades-del-cliente-y-solución)
-  - [4.3. Modelo de Negocio e Ingresos](#43-modelo-de-negocio-e-ingresos)
-  - [4.4. Ejemplos Concretos de Proyectos, Clientes y Precios](#44-ejemplos-concretos-de-proyectos-clientes-y-precios)
-  - [4.5. Estructura de Costes y Rentabilidad](#45-estructura-de-costes-y-rentabilidad)
-- [5. Tendencias y Oportunidades](#5-tendencias-y-oportunidades)
-  - [5.1. Tendencias Clave del Sector](#51-tendencias-clave-del-sector)
-  - [5.2. Oportunidades Estratégicas para GameMaster AI](#52-oportunidades-estratégicas-para-gamemaster-ai)
-- [6. Conclusiones Iniciales y Justificación del Proyecto](#6-conclusiones-iniciales-y-justificación-del-proyecto)
-  - [6.1. Viabilidad de Producto y Mercado](#61-viabilidad-de-producto-y-mercado)
-  - [6.2. Ventajas Competitivas frente a los Referentes](#62-ventajas-competitivas-frente-a-los-referentes)
-  - [6.3. Capacidad de Ejecución del Equipo](#63-capacidad-de-ejecución-del-equipo)
-  - [6.4. Dictamen Final](#64-dictamen-final)
+- [4. Descripción de Departamentos y Funciones](#4-descripción-de-departamentos-y-funciones)
+  - [4.1. Caracterización de los Departamentos Principales y su Relevancia](#41-caracterización-de-los-departamentos-principales-y-su-relevancia)
+  - [4.2. Matriz Detallada de Funciones y Contribución al Negocio](#42-matriz-detallada-de-funciones-y-contribución-al-negocio)
+  - [4.3. Comparativa Departamental según el Modelo de Empresa](#43-comparativa-departamental-según-el-modelo-de-empresa)
+- [5. Necesidades y Volumen de Negocio](#5-necesidades-y-volumen-de-negocio)
+  - [5.1. Análisis y Dimensión del Mercado](#51-análisis-y-dimensión-del-mercado)
+  - [5.2. Necesidades del Cliente y Solución](#52-necesidades-del-cliente-y-solución)
+  - [5.3. Modelo de Negocio e Ingresos](#53-modelo-de-negocio-e-ingresos)
+  - [5.4. Ejemplos Concretos de Clientes y Precios](#54-ejemplos-concretos-de-clientes-y-precios)
+  - [5.5. Estructura de Costes y Rentabilidad](#55-estructura-de-costes-y-rentabilidad)
+- [6. Tendencias y Oportunidades](#6-tendencias-y-oportunidades)
+  - [6.1. Tendencias Clave del Sector](#61-tendencias-clave-del-sector)
+  - [6.2. Oportunidades para GameMaster AI](#62-oportunidades-para-gamemaster-ai)
+- [7. Conclusiones Iniciales y Justificación del Proyecto](#7-conclusiones-iniciales-y-justificación-del-proyecto)
+  - [7.1. Viabilidad de Producto y Mercado](#71-viabilidad-de-producto-y-mercado)
+  - [7.2. Ventajas Frente a Otras Opciones](#72-ventajas-frente-a-otras-opciones)
+  - [7.3. Capacidad del Equipo para Desarrollarlo](#73-capacidad-del-equipo-para-desarrollarlo)
+  - [7.4. Dictamen Final](#74-dictamen-final)
 - [Fuentes y Referencias](#fuentes-y-referencias)
 
 ---
 
 ## 1. Introducción al Sector y Propuesta de Valor
 
-El sector de los juegos de rol de mesa (*Tabletop Role-Playing Games* - TTRPG) y las plataformas de tableros virtuales (*Virtual Tabletops* - VTT) vive una transformación histórica impulsada por la digitalización y el auge de las tecnologías generativas.
+Los juegos de rol de mesa (TTRPG, *Tabletop Role-Playing Games*) y las plataformas de tableros virtuales (VTT, *Virtual Tabletops*) están viviendo un gran auge. Cada vez más aficionados juegan por internet a través del ordenador y buscan herramientas digitales que hagan sus partidas más ágiles e inmersivas.
 
-- **Mercado Global VTT (Tableros Virtuales) & Digital:** Valoración superior a **3.800 millones de dólares**.
-- **Mercado Específico TTRPG (Juegos de Rol de Mesa):** Movimiento estimado en más de **2.300 millones de dólares**, con un CAGR (tasa de crecimiento anual compuesto) superior al **9,6%** anual.
-- **Cuello de Botella Crítico:** La escasez de "Game Masters" (GM) o Directores de Juego (DM). Dirigir una campaña exige decenas de horas de lectura de extensos manuales, diseño de escenarios y cálculo de reglas.
+- **Mercado Global de Tableros Virtuales (VTT) y Ocio Digital:** Supera los **3.800 millones de dólares** a nivel mundial.
+- **Mercado Específico de Juegos de Rol de Mesa (TTRPG):** Se estima en más de **2.300 millones de dólares**, con un crecimiento anual previsto (CAGR, tasa de crecimiento anual compuesto) del **9,6%**.
+- **El problema principal del sector:** La falta de Directores de Juego (DM o GM, *Game Master*). Dirigir una campaña exige dedicar muchas horas previas a leer manuales extensos, preparar la trama y consultar reglas complejas, lo que hace que muchos grupos no jueguen por no tener a nadie dispuesto a dirigir.
 
 > [!NOTE]
-> **Misión y Propuesta de Valor:** GameMaster AI es una **SaaS (Software como Servicio) Companion App Web** concebida para actuar como un Narrador virtual por voz acotado por IA (Inteligencia Artificial). Ingiere reglamentos y módulos en PDF (formato de documento portátil), escucha las acciones de los jugadores por micrófono mediante reconocimiento de voz en tiempo real y responde narrando en directo, integrándose de forma transparente con el tablero virtual de **Tabletop Simulator** mediante sincronización automática con los eventos de la mesa de juego.
+> **Nuestra Propuesta como Proyecto:** GameMaster AI es una **aplicación web de apoyo (companion app web) tipo SaaS (Software como Servicio)** pensada para actuar como un Narrador virtual por voz asistido por IA (Inteligencia Artificial). La aplicación lee manuales en PDF (formato de documento portátil), escucha lo que dicen los jugadores por el micrófono en tiempo real y responde narrando la historia en directo, conectándose de forma automática con el tablero virtual de **Tabletop Simulator** para reaccionar a las tiradas de dados y a lo que ocurre en la mesa.
 
 ---
 
 ## 2. Empresas Analizadas y Organigramas de Referencia
 
-Las empresas se analizan por su relación estratégica con el producto: una compañía de referencia en propiedad intelectual y manuales de rol, una plataforma VTT (tableros virtuales) consolidada en el navegador y un referente de narrativa interactiva impulsada por IA (Inteligencia Artificial).
+Para orientar el desarrollo de nuestro proyecto y definir cómo estructurar nuestra startup ficticia, hemos analizado tres empresas reales de diferentes tamaños en el sector del ocio interactivo: una gran editorial clásica de manuales de rol, una mediana empresa tecnológica con plataforma web propia y una pequeña empresa pionera en narrativa interactiva con IA.
 
 > [!NOTE]
-> Los organigramas mostrados a continuación son **modelos funcionales elaborados para este proyecto** a modo de referencia orientativa y no corresponden a organigramas oficiales internos.
+> **Aclaración Metodológica:** Al ser un proyecto final de ciclo formativo con una empresa ficticia, los organigramas mostrados a continuación son **modelos funcionales elaborados por el equipo** a partir de datos públicos para entender cómo se organizan estas empresas y qué podemos aprender de cada una.
 
 ### 2.1. Wizards of the Coast (Gran Empresa)
 
-Wizards of the Coast es una filial de Hasbro y referente mundial en el desarrollo de juegos de rol, cartas coleccionables y videojuegos. Cuenta con franquicias insignia como *Dungeons & Dragons*, *Magic: The Gathering* y *Avalon Hill*.
+Wizards of the Coast es una filial de Hasbro y la editorial líder mundial en juegos de rol y cartas coleccionables, conocida por franquicias tan populares como *Dungeons & Dragons* y *Magic: The Gathering*.
 
-- **Tamaño de la Empresa:** Gran empresa multinacional (plantilla estimada de entre 501 y 1.000 empleados; matriz Hasbro con más de 5.000 empleados a nivel global).
-- **Servicios Principales:** Edición y comercialización de manuales de rol oficiales, cartas coleccionables, novelas, herramientas digitales oficiales (*D&D Beyond*) y licencias multimedia.
-- **Clientes y Público Objetivo:** Consumidor final aficionado al ocio de mesa (B2C), tiendas especializadas de cómics y juegos (B2B), y licenciatarios de videojuegos y cine.
+- **Tamaño de la Empresa:** Gran empresa multinacional (plantilla estimada de entre 501 y 1.000 empleados, respaldada por Hasbro con más de 5.000 empleados en todo el mundo).
+- **Servicios Principales:** Publicación y venta de manuales de rol físicos y digitales, cartas coleccionables, novelas, herramientas web oficiales (*D&D Beyond*) y licencias para cine y videojuegos.
+- **Clientes y Público:** Jugadores particulares (B2C), tiendas especializadas de juegos y cómics (B2B), y grandes productoras audiovisuales.
 
-#### Análisis como referencia
+#### Análisis como referencia para nuestro proyecto
 
-- **Fortalezas:** Marcas consolidadas, universos narrativos de amplio recorrido, manuales reglados exhaustivos y comunidades masivas de jugadores activos.
-- **Relación con GameMaster AI:** Referente en estructuración de campañas, ambientación y lore. La plataforma web permitirá que los usuarios suban sus manuales en PDF y consulten datos canónicos en tiempo real.
-- **Aprendizaje aplicable:** Priorizar la coherencia absoluta entre narrativa y reglas vigentes, permitiendo indexar y localizar información clave de forma inmediata.
-- **Diferencia de escala:** GameMaster AI no busca crear ni sustituir una editorial de contenidos, sino actuar como herramienta web complementaria para la dirección de partidas.
+- **Puntos Fuertes:** Marcas muy reconocidas, universos de fantasía con décadas de historia, manuales de reglas muy completos y millones de jugadores activos.
+- **Relación con GameMaster AI:** Nos sirve como modelo de cómo organizar una campaña, estructurar las reglas y crear ambientación. Nuestra plataforma web permitirá a los usuarios subir sus propios manuales en PDF para consultarlos al instante durante la partida.
+- **Qué aprendemos de ella:** La importancia de respetar las reglas oficiales al pie de la letra, permitiendo que la IA localice e interprete los datos del manual con total precisión.
+- **Diferencia de escala:** Como proyecto final, no pretendemos ser una editorial de contenidos ni crear libros de rol, sino una herramienta web práctica que ayude a jugarlos mejor.
 
 #### Organigrama funcional de referencia
 
@@ -94,18 +97,18 @@ flowchart TD
 
 ### 2.2. Roll20 (Mediana Empresa)
 
-Roll20 es la plataforma web de referencia para partidas de rol y juegos de mesa en remoto. Ofrece un espacio integral accesible desde el navegador con gestión de fichas de personaje, mapas, audio y dados digitales.
+Roll20 es la plataforma web más conocida para jugar a juegos de rol a distancia desde el navegador, ofreciendo tableros virtuales con dados digitales, mapas interactivos y fichas de personajes.
 
-- **Tamaño de la Empresa:** Mediana empresa tecnológica (plantilla estimada en el rango de 51 a 200 empleados).
-- **Servicios Principales:** Plataforma SaaS de tablero virtual (VTT) en navegador, tienda digital de módulos y campañas oficiales, sistema de suscripciones y herramientas de gestión de partidas a distancia.
-- **Clientes y Público Objetivo:** Directores de juego y jugadores de rol en remoto (B2C), clubes de juego en línea y editoriales asociadas que venden contenidos en su marketplace (B2B).
+- **Tamaño de la Empresa:** Mediana empresa tecnológica (con una plantilla estimada de 51 a 200 empleados).
+- **Servicios Principales:** Plataforma SaaS de tablero virtual (VTT) en el navegador, tienda digital de manuales y aventuras oficiales, y suscripciones de pago para funciones avanzadas.
+- **Clientes y Público:** Jugadores y directores de juego en remoto (B2C), asociaciones de rol y editoriales que venden sus libros en su tienda digital (B2B).
 
-#### Análisis como referencia
+#### Análisis como referencia para nuestro proyecto
 
-- **Fortalezas:** Accesibilidad universal vía navegador web, centralización de herramientas de gestión de mesa y facilidad de coordinación de partidas a distancia.
-- **Relación con GameMaster AI:** Constituye la referencia más directa de experiencia de usuario en navegador. GameMaster AI actúa como companion app web optimizada para pantalla de apoyo secundaria, aportando narración por voz y contexto sin interferir con la mesa de juego.
-- **Aprendizaje aplicable:** Diseñar una interfaz web ligera, temática y adaptativa que funcione de forma ágil como pantalla de apoyo durante la sesión de juego, facilitando una navegación rápida sin interrumpir el ritmo de la partida en el ordenador.
-- **Oportunidad de diferenciación:** Especializarse en la figura del Narrador o DM (Director de Juego) asistido por IA acotada mediante RAG (generación aumentada por recuperación), garantizando respuestas estrictamente fidedignas a los documentos aportados y enlazadas con los eventos de Tabletop Simulator.
+- **Puntos Fuertes:** Funciona directamente desde el navegador web sin instalar nada, facilita coordinar partidas con amigos a distancia y centraliza todas las herramientas de la mesa.
+- **Relación con GameMaster AI:** Es nuestro referente más claro de cómo debe ser una aplicación web de rol. GameMaster AI está pensada como una pantalla de apoyo secundaria que aporta narración por voz y ayuda rápida con las reglas sin estorbar la partida.
+- **Qué aprendemos de ella:** Diseñar una interfaz web limpia, rápida y fácil de consultar, para que el director de juego pueda ver los datos que necesita sin perder el ritmo de la sesión.
+- **En qué nos diferenciamos:** Roll20 se centra en el tablero (mapas y fichas), mientras que GameMaster AI se enfoca en resolver la falta de narrador mediante voz e IA acotada con RAG (generación aumentada por recuperación), respondiendo siempre según los manuales PDF aportados y enlazada con Tabletop Simulator.
 
 #### Organigrama funcional de referencia
 
@@ -122,21 +125,21 @@ flowchart TD
 
 ### 2.3. Latitude Inc. (Pequeña Empresa)
 
-Latitude representa una compañía ágil especializada en experiencias de narrativa interactiva impulsadas por modelos de lenguaje generativos, destacando por su producto web *AI Dungeon*. Permite a los usuarios sumergirse en aventuras narrativas donde las acciones del jugador modifican dinámicamente la historia.
+Latitude es una pequeña empresa tecnológica conocida por crear *AI Dungeon*, una plataforma web donde los jugadores participan en aventuras de texto donde la historia se va generando sobre la marcha con inteligencia artificial.
 
-- **Tamaño de la Empresa:** Pequeña empresa / Startup tecnológica (plantilla estimada reducida de entre 10 y 30 profesionales).
-- **Servicios Principales:** Aplicación web y móvil de generación procedimental de historias con IA, suscripciones premium para modelos avanzados de lenguaje y herramientas de creación narrativa comunitaria.
-- **Clientes y Público Objetivo:** Aficionados a la ficción interactiva, jugadores de rol en solitario y entusiastas de la inteligencia artificial generativa (B2C).
+- **Tamaño de la Empresa:** Pequeña empresa / Startup tecnológica (equipo reducido de entre 10 y 30 trabajadores).
+- **Servicios Principales:** Aplicación web y móvil de historias interactivas con IA, suscripciones para acceder a modelos de lenguaje más potentes y herramientas de creación comunitaria.
+- **Clientes y Público:** Aficionados a la ficción interactiva, jugadores de rol en solitario y entusiastas de la inteligencia artificial (B2C).
 
 > [!NOTE]
-> **Aclaración sobre AI Game Master:** *AI Game Master - Dungeon RPG* es una app móvil comercial independiente desarrollada por Digital Dynasty Entertainment en tiendas de aplicaciones. Se toma únicamente como referencia externa de interacción por voz en el mercado. En contraposición, **GameMaster AI es una plataforma SaaS (Software como Servicio) 100% Web** concebida para utilizarse desde el navegador en PC como pantalla de apoyo durante partidas virtuales en Tabletop Simulator.
+> **Aclaración sobre AI Game Master:** *AI Game Master - Dungeon RPG* es una app móvil comercial desarrollada por Digital Dynasty Entertainment. La tomamos solo como referencia externa de cómo se usa la voz en el mercado móvil. Por el contrario, **GameMaster AI es una aplicación SaaS (Software como Servicio) 100% Web** pensada para usarse en el ordenador como pantalla de apoyo durante partidas en Tabletop Simulator.
 
-#### Análisis como referencia
+#### Análisis como referencia para nuestro proyecto
 
-- **Fortalezas:** Generación de historias dinámicas no lineales, adaptabilidad a la creatividad de los jugadores y experiencia conversacional fluida.
-- **Relación con GameMaster AI:** Permite estudiar dinámicas conversacionales ágiles con IA. GameMaster AI se diferencia al centrarse en partidas regladas, persistencia del estado de la campaña y sincronización con el tablero de Tabletop Simulator.
-- **Aprendizaje aplicable:** Mantener continuidad narrativa coherente entre intervenciones sucesivas respetando los límites del escenario.
-- **Riesgo que se debe controlar:** La alucinación de contenido. GameMaster AI implementa filtros de seguridad (*Guardrails*) e instrucciones de acotación estrictas que limitan a la IA a responder exclusivamente según los manuales PDF indexados, impidiendo desviaciones a temas ajenos a la partida.
+- **Puntos Fuertes:** Genera historias improvisadas sobre la marcha, se adapta muy bien a las ideas de los jugadores y ofrece una conversación fluida.
+- **Relación con GameMaster AI:** Nos sirve para estudiar cómo interactúan los usuarios con una IA que narra historias. GameMaster AI da un paso más allá al centrarse en partidas de rol con reglas fijas y sincronización con el tablero de Tabletop Simulator.
+- **Qué aprendemos de ella:** La importancia de mantener la coherencia narrativa entre una intervención y otra sin salirse de la ambientación.
+- **Riesgo que debemos controlar:** Evitar que la IA se invente cosas ("alucinaciones"). Para solucionarlo, en GameMaster AI usamos filtros de control (*Guardrails*) e instrucciones estrictas para que la IA responda únicamente con la información de los manuales PDF que suba el usuario.
 
 #### Organigrama funcional de referencia
 
@@ -154,40 +157,31 @@ flowchart TD
 
 ### 2.4. Comparativa de Estructuras Organizativas
 
-El análisis de las empresas de referencia permite identificar tres modelos de estructura empresarial marcadamente diferenciados en el sector:
+Comparar estas tres empresas nos permite entender tres formas muy distintas de trabajar en el sector:
 
-1. **Gran Corporación Editorial Matricial (Wizards of the Coast / Hasbro):** Presenta una estructura jerárquica compleja con departamentos transversales corporativos (legal, fabricación física, finanzas multinacionales y licencias globales). Sus unidades operan de forma segmentada por franquicias comerciales, con ciclos de lanzamiento anuales y procesos de decisión burocráticos.
-2. **Mediana Empresa Tecnológica Funcional (Roll20):** Adopta una estructura departamental centrada en el producto digital y el servicio en la nube. Las áreas de ingeniería, diseño de producto y catálogo de licencias interactúan estrechamente, priorizando la estabilidad del software web y la fidelización comunitaria sobre la creación de contenido editorial físico.
-3. **Startup Ágil y Horizontal (Latitude Inc. y GameMaster AI):** Opera con una jerarquía plana y flexible, donde los equipos técnicos combinan diseño de producto, ingeniería de software e investigación de inteligencia artificial. Esta estructura maximiza la velocidad de iteración, permitiendo implementar mejoras y actualizaciones en ciclos de semanas en lugar de años.
+1. **Gran Corporación (Wizards of the Coast / Hasbro):** Funciona con una estructura jerárquica compleja, con departamentos separados para asuntos legales, imprenta física, videojuegos y licencias. Sus decisiones son lentas y los nuevos lanzamientos se planifican de año en año.
+2. **Mediana Empresa Tecnológica (Roll20):** Tiene una organización centrada en el software web y la nube. Sus equipos de programación, diseño y atención al cliente trabajan muy cerca, priorizando que la web no falle y que los usuarios estén satisfechos.
+3. **Startup Ágil (Latitude Inc. y nuestro proyecto GameMaster AI):** Opera con un equipo pequeño y horizontal, donde todos los miembros colaboran en el diseño, la programación y las pruebas. Esto permite probar cambios, corregir errores y actualizar el producto en cuestión de semanas.
 
-### 2.5. Departamentos Clave, Funciones y Contribución al Negocio
+### 2.5. Comparativa Estratégica con GameMaster AI
 
-| Área Departamental | Funciones Principales | Relevancia y Contribución al Negocio |
-| :--- | :--- | :--- |
-| **Diseño de Producto, Juego y Narrativa** | Creación de reglas, mecánicas de rol, lore de campaña y guías de interacción narrativa. | **Es el núcleo de la propuesta de valor:** genera el atractivo del juego, fideliza a los usuarios y fundamenta la diferenciación frente a la competencia. |
-| **Tecnología, Plataforma e IA** | Desarrollo de la aplicación web, infraestructura de servidores, persistencia de datos y modelos de IA. | **Sustenta la operatividad del servicio:** garantiza la disponibilidad en línea, la escalabilidad técnica y el funcionamiento fluido de la narración en tiempo real. |
-| **Comunidad, Marketing y Soporte** | Difusión en comunidades de rol, soporte a usuarios, gestión de comentarios y eventos en línea. | **Impulsa el crecimiento y la retención:** capta nuevos directores de juego, resuelve incidencias y reduce la tasa de cancelación (*churn*) de suscripciones. |
-| **Operaciones, Finanzas y Monetización** | Gestión de pasarelas de pago, administración de suscripciones y control de costes de infraestructura. | **Asegura la rentabilidad empresarial:** supervisa que el ingreso medio por usuario supere los costes de computación, garantizando un margen operativo saludable. |
-
-### 2.6. Comparativa Estratégica con GameMaster AI
-
-| Referencia | Formato / Enfoque | Aportación principal | Qué aprende y cómo se diferencia GameMaster AI |
+| Referencia | Formato / Enfoque | Lo mejor de su modelo | Qué aprendemos y cómo nos diferenciamos en GameMaster AI |
 | :--- | :--- | :--- | :--- |
-| **Wizards of the Coast** | Gran editorial internacional | Reglas oficiales, ambientación y lore de campañas | GameMaster AI incorpora indexación semántica mediante RAG (generación aumentada por recuperación) de manuales PDF para mantener fidelidad reglamentaria estricta |
-| **Roll20** | Plataforma SaaS (Software como Servicio) Web de VTT | Herramientas web para organizar partidas en navegador | GameMaster AI adopta una arquitectura web moderna, ágil y pensada como pantalla de apoyo secundaria durante la partida |
-| **Latitude (*AI Dungeon*)** | Plataforma de narrativa con IA | Historias dinámicas y generación de texto interactivo | GameMaster AI aplica filtros (*Guardrails*) estrictos para evitar alucinaciones y ceñirse al escenario cargado |
-| ***AI Game Master* (Externa)** | App móvil comercial nativa | Interacción por voz y ambientación sonora en tiendas móviles | Referencia de voz; GameMaster AI se diferencia como solución **SaaS Web** sincronizada automáticamente con los eventos del tablero de **Tabletop Simulator** |
+| **Wizards of the Coast** | Gran editorial internacional | Reglas sólidas, ambientación y mundos de rol detallados | Usamos búsqueda semántica RAG (generación aumentada por recuperación) para que la IA respete al pie de la letra cualquier manual PDF que suba el usuario |
+| **Roll20** | Plataforma SaaS (Software como Servicio) Web de VTT | Herramientas web cómodas para jugar desde el navegador | Diseñamos una aplicación web ágil y ligera, pensada como pantalla de apoyo durante la sesión de juego |
+| **Latitude (*AI Dungeon*)** | Plataforma de narrativa con IA | Respuestas dinámicas y capacidad de improvisación | Añadimos filtros (*Guardrails*) para que la IA no invente datos y se ciña exclusivamente a la aventura cargada |
+| ***AI Game Master* (Externa)** | App móvil comercial nativa | Uso de voz y ambientación sonora en teléfonos móviles | Referencia de voz; GameMaster AI es una solución **SaaS Web** para ordenador sincronizada automáticamente con **Tabletop Simulator** |
 
 > [!NOTE]
-> **Conclusión Estratégica:** GameMaster AI integra las fortalezas de cada referencia: adopta el rigor reglamentario de las grandes editoriales de rol, la accesibilidad de una solución web moderna en la nube tipo SaaS (Software como Servicio), la inmersión por voz y la interacción de modelos de lenguaje LLM (modelos de lenguaje grande) acotados. Su gran elemento diferenciador radica en la ingesta de manuales de la propia mesa y la comunicación bidireccional en tiempo real con Tabletop Simulator.
+> **Conclusión del Análisis:** GameMaster AI reúne lo mejor de cada una: la precisión reglamentaria de las grandes editoriales, la comodidad de una web en la nube, la fluidez de hablar por micrófono y la inteligencia de los modelos de lenguaje LLM (modelos de lenguaje grande). Nuestra gran ventaja diferencial es permitir que cada grupo cargue sus propios manuales y conectar la narración en directo con Tabletop Simulator.
 
 ---
 
 ## 3. Organigrama de GameMaster AI
 
-El organigrama funcional de **GameMaster AI Studios** se estructura a partir de las áreas funcionales de la empresa y los módulos clave de la plataforma web, siguiendo el mismo modelo organizativo de las compañías de referencia. 
+El organigrama funcional de **GameMaster AI Studios** muestra cómo organizamos el desarrollo de nuestra startup ficticia a partir de las áreas clave de la aplicación web. 
 
-Esta estructura distribuye las funciones del producto de forma colaborativa entre los integrantes del **EQUIPO MAC**, asignando a cada miembro la responsabilidad técnica de un área clave para asegurar un desarrollo coordinado y equilibrado:
+Al ser un equipo de cuatro alumnos en un proyecto final formativo (**EQUIPO MAC**), trabajamos de forma colaborativa y horizontal, donde cada miembro asume la responsabilidad técnica de un área para asegurar que el desarrollo avance de forma coordinada:
 
 ```mermaid
 flowchart TD
@@ -204,108 +198,152 @@ flowchart TD
 
 ---
 
-## 4. Necesidades y Volumen de Negocio
+## 4. Descripción de Departamentos y Funciones
 
-### 4.1. Análisis y Dimensión del Mercado
+Para organizar el desarrollo de nuestra startup ficticia (**GameMaster AI Studios S.L.**), distribuimos el trabajo en cuatro áreas o departamentos principales. Aunque somos un equipo de cuatro alumnos en un proyecto de ciclo formativo, simular esta estructura empresarial nos permite entender cómo se gestiona un producto digital real, qué responsabilidades asume cada área y cómo contribuyen conjuntamente a que la plataforma sea útil para los jugadores y viable como negocio.
 
-El proyecto se posiciona en la intersección entre los juegos de rol de mesa (TTRPG, *Tabletop Role-Playing Games*), las plataformas de tableros virtuales (VTT, *Virtual Tabletops*) y las aplicaciones SaaS (Software como Servicio) impulsadas por inteligencia artificial.
+### 4.1. Caracterización de los Departamentos Principales y su Relevancia
 
-- **Valoración Actual del Mercado TTRPG:** Estimado en **2.310 millones de dólares en 2025** a nivel mundial.
-- **Proyección de Crecimiento:** Se proyecta alcanzar **5.230 millones de dólares en 2034**, con un CAGR (tasa de crecimiento anual compuesto) del **9,61%** anual.
-- **Posicionamiento Estratégico:** GameMaster AI no compite con las grandes editoriales ni busca sustituir los tableros virtuales; actúa como una **companion app web complementaria** que reduce drásticamente las horas de preparación y asiste en la narración en directo.
+Las cuatro áreas de la empresa se reparten las tareas creativas, técnicas, de atención al usuario y de gestión económica:
 
-### 4.2. Necesidades del Cliente y Solución
+1. **Departamento de Producto, Juego y Narrativa:**
+   - **Qué hace (Caracterización):** Se encarga de diseñar la experiencia de juego y cómo interactúa el usuario con la aplicación. Define el tono y personalidad del Narrador virtual, organiza las aventuras y fichas de ejemplo, comprueba que las reglas de rol se apliquen bien y cuida que la pantalla de apoyo web sea cómoda y fácil de usar durante una partida en directo.
+   - **Por qué es importante (Relevancia):** Es el corazón de lo que ofrecemos. Si las historias fueran aburridas o el asistente se inventara reglas que contradicen el manual, los directores de juego no usarían la herramienta.
 
-La principal barrera del sector es la **sobrecarga del Director de Juego (DM o GM)**, quien debe memorizar cientos de páginas de reglas, coordinar la trama e interpretar personajes simultáneamente.
+2. **Departamento de Tecnología, Plataforma e Inteligencia Artificial:**
+   - **Qué hace (Caracterización):** Es el motor técnico del proyecto. Desarrolla y mantiene la aplicación web interactiva SaaS (Software como Servicio), gestiona los servidores en la nube, programa la lectura de manuales en PDF (formato de documento portátil) mediante RAG (generación aumentada por recuperación), conecta el micrófono para escuchar a los jugadores por voz y sincroniza las tiradas y eventos con Tabletop Simulator.
+   - **Por qué es importante (Relevancia):** Hace posible que el producto funcione en la práctica. Si la web se cae a mitad de una partida o tarda demasiado en responder por voz, la inmersión del juego se rompe por completo.
 
-| Segmento de Usuario | Necesidad Principal | Solución de GameMaster AI |
+3. **Departamento de Comunidad, Marketing y Soporte:**
+   - **Qué hace (Caracterización):** Mantiene el contacto directo con los jugadores y directores de juego. Da a conocer la aplicación en foros, servidores de rol y redes sociales, ayuda a los usuarios cuando tienen dudas o problemas para configurar sus partidas, y recoge sus sugerencias para seguir mejorando la herramienta.
+   - **Por qué es importante (Relevancia):** Ayuda a que el proyecto crezca de forma natural mediante el boca a boca entre aficionados, reduciendo el gasto necesario en publicidad y consiguiendo que los usuarios se queden contentos a largo plazo.
+
+4. **Departamento de Operaciones, Finanzas y Monetización:**
+   - **Qué hace (Caracterización):** Administra la parte práctica y económica de la startup ficticia. Configura el cobro seguro con tarjeta, gestiona las cuentas de los usuarios (tanto del plan gratuito como del de pago), controla los costes de los servidores y de las consultas a los modelos de lenguaje LLM (modelos de lenguaje grande), y analiza si los ingresos cubren los gastos.
+   - **Por qué es importante (Relevancia):** Asegura que el proyecto sea económicamente sostenible. Vigila que lo que cuesta cada consulta de IA por partida sea mucho menor que lo que paga el usuario por su suscripción, garantizando que la plataforma no genere pérdidas.
+
+### 4.2. Matriz Detallada de Funciones y Contribución al Negocio
+
+En la siguiente tabla se resumen las tareas clave de cada área y la forma concreta en la que ayudan a generar ingresos y mantener la empresa en marcha:
+
+| Departamento | Funciones Principales | Cómo Ayuda al Negocio y a Generar Ingresos |
 | :--- | :--- | :--- |
-| **DMs (Directores de Juego) Experimentados** | Reducir el tiempo de preparación y agilizar consultas de reglas complejas. | Búsqueda semántica inmediata sobre manuales PDF mediante RAG (generación aumentada por recuperación) y narración asistida. |
-| **DMs Principiantes** | Falta de soltura para improvisar narraciones y resolver dudas de juego en directo. | Soporte narrativo por voz en tiempo real con apego estricto a las reglas del manual. |
-| **Jugadores de Rol** | Evitar parones prolongados que rompen la inmersión de la partida. | Diálogo continuo por voz con captura por micrófono sin abandonar la partida. |
-| **Grupos VTT (Tableros Virtuales) en Remoto** | Conectar los eventos del tablero con la historia de forma automatizada. | Sincronización transparente con Tabletop Simulator mediante eventos automatizados del tablero. |
-| **Clubes y Tiendas** | Dinamizar múltiples mesas simultáneas y facilitar partidas introductorias. | Herramienta reutilizable y configurable para cualquier sistema de campaña. |
+| **Producto, Juego y Narrativa** | • Diseñar cómo habla e improvisa el Narrador virtual.<br/>• Preparar plantillas de aventuras, mapas y fichas de rol.<br/>• Comprobar que las respuestas respeten las reglas oficiales.<br/>• Probar partidas reales para mejorar la jugabilidad. | **Convence y fideliza al usuario:** Crea una experiencia divertida y bien adaptada al rol que anima a los usuarios de la versión gratuita a pasar a la suscripción de pago (Pro). |
+| **Tecnología, Plataforma e IA** | • Programar y mantener la aplicación web y los servidores.<br/>• Configurar el reconocimiento de voz para hablar por micrófono.<br/>• Desarrollar el sistema RAG (generación aumentada por recuperación) para leer manuales PDF.<br/>• Conectar la web con los eventos de Tabletop Simulator.<br/>• Asegurar respuestas rápidas y proteger los datos de usuario. | **Garantiza un servicio estable y barato de mantener:** Hace que la web esté disponible 24/7 y optimiza las llamadas a la IA para que cada partida cueste pocos céntimos en servidores. |
+| **Comunidad, Marketing y Soporte** | • Compartir avances y demostraciones en canales de rol.<br/>• Ayudar a los usuarios con dudas técnicas o de configuración.<br/>• Organizar partidas abiertas de prueba con la comunidad.<br/>• Recopilar ideas de los jugadores para nuevas funciones. | **Consigue nuevos usuarios sin gastar en anuncios:** El boca a boca entre jugadores atrae nuevos directores de juego y una buena atención evita que cancelen su suscripción. |
+| **Operaciones, Finanzas y Monetización** | • Configurar la pasarela de pagos y cobro de suscripciones.<br/>• Establecer los precios (plan individual a 8 €/mes y clubes).<br/>• Controlar que el gasto de IA no supere el 30% de la cuota.<br/>• Contactar con tiendas o clubes interesados en licencias de grupo. | **Asegura la rentabilidad del proyecto:** Mantiene los costes variables controlados para lograr un margen amplio que permita pagar los servidores y seguir mejorando el producto. |
 
-### 4.3. Modelo de Negocio e Ingresos
+### 4.3. Comparativa Departamental según el Modelo de Empresa
 
-GameMaster AI opera bajo un modelo **SaaS (Software como Servicio) Freemium** con pasarela de pago segura:
+La forma de organizar estos departamentos cambia mucho según el tamaño de cada empresa:
 
-1. **Plan Gratuito (Free Tier):** Acceso a IA base, límite de consultas por sesión y carga de manuales PDF de tamaño estándar.
-2. **Suscripción Pro / Individual:** Orientada a directores habituales con un ingreso medio proyectado de **8 €/mes**, desbloqueando modelos de IA generativa avanzados (LLM - modelos de lenguaje grande), respuestas más elaboradas, mayor memoria contextual y carga de manuales de gran tamaño.
-3. **Planes para Grupos y Clubes:** Cuotas anuales o mensuales reducidas por volumen para asociaciones y tiendas especializadas.
-4. **Servicios de Configuración:** Preparación personalizada de campañas complejas o integración de módulos a medida.
+- **Gran Empresa (Wizards of the Coast / Hasbro):** Cuenta con cientos de empleados y departamentos muy separados y especializados (un departamento solo para contratos legales de licencias, otro para fabricación e imprenta física, etc.). Tomar decisiones o lanzar un producto nuevo requiere muchos meses de trámites internos.
+- **Mediana Empresa (Roll20):** Es una compañía enfocada a su plataforma web. Sus equipos principales se centran en programar el software en la nube, dar soporte continuo a los usuarios y negociar acuerdos con editoriales para vender libros de rol digitales en su tienda.
+- **Startup Ficticia / Proyecto Ágil (GameMaster AI Studios):** Al tratarse de un proyecto final de ciclo formativo, trabajamos con una estructura plana y cercana. En lugar de departamentos aislados, los integrantes del equipo colaboramos directamente en el día a día repartiéndonos las tareas técnicas y de gestión, lo que nos permite probar ideas, corregir fallos y añadir mejoras en cuestión de días.
 
-### 4.4. Ejemplos Concretos de Proyectos, Clientes y Precios
+---
 
-Para fundamentar la estimación del volumen de negocio, se proyectan cuatro escenarios comerciales representativos con precios definidos:
+## 5. Necesidades y Volumen de Negocio
 
-| Tipo de Cliente / Proyecto | Necesidad Específica | Solución y Modalidad de Pago | Facturación Estimada |
+### 5.1. Análisis y Dimensión del Mercado
+
+Nuestro proyecto se sitúa en la unión de tres ámbitos del ocio digital actual: los juegos de rol de mesa (TTRPG, *Tabletop Role-Playing Games*), los tableros virtuales (VTT, *Virtual Tabletops*) como Tabletop Simulator y las aplicaciones web SaaS (Software como Servicio) asistidas por inteligencia artificial.
+
+- **Mercado Global de Juegos de Rol de Mesa (TTRPG):** Se estima en unos **2.310 millones de dólares en 2025** y se calcula que alcanzará los **5.230 millones de dólares en 2034**, con un crecimiento sostenido (CAGR, tasa de crecimiento anual compuesto) del **9,61%** al año.
+- **Enfoque de Nuestro Proyecto:** No pretendemos competir con las grandes editoriales ni crear un tablero virtual desde cero. GameMaster AI actúa como una **herramienta web complementaria** que ayuda al director de juego a preparar sus sesiones en mucho menos tiempo y asiste narrando durante la partida.
+
+### 5.2. Necesidades del Cliente y Solución
+
+La principal dificultad que tienen los grupos de rol es la **sobrecarga de trabajo del Director de Juego (DM o GM)**, que debe leerse cientos de páginas de reglas, inventar historias y manejar múltiples personajes a la vez.
+
+| Tipo de Usuario | Qué Necesita | Cómo le Ayuda GameMaster AI |
+| :--- | :--- | :--- |
+| **Directores de Juego Habituales** | Ahorrar horas de preparación y resolver dudas de reglas al instante. | Búsqueda rápida sobre sus propios manuales en PDF mediante RAG (generación aumentada por recuperación) y apoyo narrativo. |
+| **Directores Principiantes** | Perder el miedo a dirigir y saber improvisar cuando los jugadores hacen algo inesperado. | Sugerencias narrativas por voz en tiempo real siguiendo siempre las reglas oficiales. |
+| **Jugadores de la Mesa** | Evitar parones largos mientras el director busca una regla en un libro. | Diálogo fluido por micrófono sin tener que soltar los dados ni salir de la partida. |
+| **Grupos que Juegan por Internet** | Que la historia reaccione sola a lo que pasa en el tablero virtual. | Conexión directa con Tabletop Simulator para reaccionar a tiradas de dados y eventos del juego. |
+| **Clubes y Tiendas de Ocio** | Organizar partidas de iniciación para nuevos jugadores de forma sencilla. | Una aplicación fácil de configurar y reutilizable para cualquier tipo de aventura o reglamento. |
+
+### 5.3. Modelo de Negocio e Ingresos
+
+Para que la plataforma sea viable económicamente, planteamos un modelo **SaaS (Software como Servicio) Freemium** con suscripciones sencillas:
+
+1. **Plan Gratuito:** Permite probar la aplicación con un modelo de IA estándar, un límite razonable de consultas por sesión y la carga de manuales en PDF de tamaño habitual.
+2. **Suscripción Pro (Individual):** Pensada para directores de juego habituales con una cuota accesible de **8 €/mes**, que da acceso a modelos de lenguaje LLM (modelos de lenguaje grande) más avanzados, mayor memoria de conversación, respuestas más detalladas y subida de manuales pesados.
+3. **Planes para Clubes y Asociaciones:** Cuotas mensuales con descuento para grupos que juegan varias partidas a la semana en distintas mesas.
+4. **Servicios de Ayuda y Configuración:** Preparación personalizada de campañas o digitalización de aventuras de autor bajo encargo.
+
+### 5.4. Ejemplos Concretos de Clientes y Precios
+
+Para ver de forma práctica cómo generaría ingresos la plataforma, planteamos cuatro ejemplos realistas de uso:
+
+| Perfil de Cliente / Escenario | Situación Concreta | Modalidad de Pago Elegida | Ingresos Estimados |
 | :--- | :--- | :--- | :--- |
-| **Grupo de Rol Semanal** (Mesa habitual de amigos) | Narración inmersiva continuada y consulta rápida de reglas sin interrumpir la partida. | Suscripción Individual Pro (8 €/mes) contratada por el Director de Juego. | **96 €/año** por grupo activo |
-| **Club o Asociación de Rol** (Comunidad con 5 mesas activas) | Dinamizar múltiples partidas simultáneas y rotar manuales de diferentes ambientaciones. | Plan Comunitario / Grupal con soporte multisesión (35 €/mes). | **420 €/año** por asociación |
-| **Tienda Especializada de Juegos** (Espacio de demostración y venta) | Atraer nuevos clientes con partidas introductorias guiadas por narración asistida. | Licencia Comercial para partidas en tienda (50 €/mes o 250 €/evento patrocinado). | **600 €/año** (o pago puntual por evento) |
-| **Cliente Empresarial / Creador** (Campaña temática personalizada) | Digitalización, configuración RAG e indexación a medida de un módulo de autor. | Servicio profesional de configuración de campaña bajo presupuesto cerrado. | **150 € – 300 €** (pago único por proyecto) |
+| **Grupo de Amigos Semanal** (Mesa habitual de fin de semana) | Quieren jugar con narración por voz y consultar dudas sin detener la partida. | Suscripción Individual Pro (8 €/mes) pagada por el director o compartida entre el grupo. | **96 €/año** por mesa activa |
+| **Club o Asociación de Rol** (Comunidad con varias mesas) | Necesitan dinamizar partidas simultáneas y rotar manuales de distintas temáticas. | Plan Comunitario para hasta 5 partidas a la vez (35 €/mes). | **420 €/año** por asociación |
+| **Tienda Especializada de Juegos** (Espacio de venta y demostración) | Atraer nuevos clientes con partidas rápidas de iniciación guiadas por voz. | Licencia Comercial para partidas en tienda (50 €/mes o 250 € por evento temático). | **600 €/año** (o pago por evento) |
+| **Creador Independiente de Rol** (Autor de una campaña propia) | Quiere adaptar su aventura en PDF para que la IA la narre con precisión. | Servicio de indexación y configuración a medida bajo presupuesto cerrado. | **150 € – 300 €** (pago único por aventura) |
 
-### 4.5. Estructura de Costes y Rentabilidad
+### 5.5. Estructura de Costes y Rentabilidad
 
-Para garantizar la sostenibilidad económica, se monitorean los costes operativos directos frente al LTV (valor de vida del cliente):
+Para asegurarnos de que la plataforma no pierde dinero, calculamos si los ingresos por suscripciones cubren de sobra los gastos reales de servidores y de consumo de IA:
 
-| Área de Coste | Concepto | Estrategia de Control y Rentabilidad |
+| Tipo de Gasto | En Qué Consiste | Cómo lo Mantenemos Bajo Control |
 | :--- | :--- | :--- |
-| **Consumo de Servicios de IA** | Tokens de procesamiento de modelos LLM (modelos de lenguaje grande) y síntesis/transcripción de voz. | Filtros (*Guardrails*) estrictos, caché semántica y límites de consumo por plan. |
-| **Infraestructura Cloud** | Servidores en la nube, base de datos relacional y almacenamiento seguro de manuales. | Arquitectura web escalable bajo demanda en la nube. |
-| **Indexación y Búsqueda Semántica** | Procesamiento semántico mediante RAG (generación aumentada por recuperación) de manuales de campañas en PDF. | Indexación optimizada por documento con persistencia eficiente. |
-| **Adquisición (CAC - Coste de Captación de Clientes)** | Promoción en comunidades especializadas de rol y VTT (tableros virtuales). | Crecimiento orgánico apoyado en la integración con Tabletop Simulator y el plan gratuito. |
+| **Llamadas a Modelos de IA** | El coste por cada frase generada y por el audio procesado por voz. | Usamos caché para preguntas repetidas y filtros estrictos que evitan respuestas innecesariamente largas. |
+| **Servidores Web en la Nube** | Alojamiento de la aplicación web, base de datos y almacenamiento de manuales. | Infraestructura flexible en la nube que solo gasta más cuando hay muchos usuarios conectados. |
+| **Indexación de Manuales (RAG)** | El procesado inicial de los PDF para convertirlos en datos legibles por la IA. | Procesamos cada documento una sola vez al subirlo, guardando los datos listos para futuras partidas. |
+| **Captación de Usuarios (CAC)** | Dar a conocer la plataforma entre aficionados al rol. | Crecimiento orgánico mediante el boca a boca, comunidades de rol y la versión gratuita. |
 
 > [!NOTE]
-> **Criterio de Viabilidad:** La rentabilidad se alcanza asegurando que el coste variable medio de consumo de computación de IA por usuario de pago se mantenga por debajo del **25-30% de la cuota mensual (8 €)**, destinando el margen restante a costes fijos e inversión en producto.
+> **Cálculo de Viabilidad:** El proyecto es rentable porque el coste medio de las consultas de IA por usuario activo ronda los **2 € al mes**, mientras que la suscripción Pro aporta **8 €/mes**. El margen restante (unos 6 € por suscriptor) permite cubrir holgadamente los servidores y mantener la plataforma con beneficios.
 
 ---
 
-## 5. Tendencias y Oportunidades
+## 6. Tendencias y Oportunidades
 
-### 5.1. Tendencias Clave del Sector
+### 6.1. Tendencias Clave del Sector
 
-1. **Digitalización Definitiva del Rol y Auge VTT (Tableros Virtuales):** Plataformas como Tabletop Simulator, Roll20 y Foundry VTT han dejado de ser alternativas puntuales para consolidarse como el estándar del juego a distancia.
-2. **Adopción de IA Generativa en Ocio Interactivo:** Los usuarios demandan mundos reactivos y conversacionales que respondan a la creatividad individual sin encorsetarse en árboles de diálogo rígidos.
-3. **Prioridad a la Voz y Experiencias Manos Libres:** Durante una sesión en ordenador, los jugadores prefieren interactuar hablando por micrófono en lugar de escribir comandos en un teclado.
-4. **Democratización del Acceso:** El auge de la cultura popular (series, podcasts de rol) atrae a millones de novatos que requieren herramientas intuitivas que eliminen la barrera de entrada de manuales de 300+ páginas.
+1. **Jugar al Rol a Través del Ordenador:** Plataformas como Tabletop Simulator y Roll20 se han convertido en la forma habitual de jugar para millones de personas que no pueden reunirse en persona.
+2. **Ganas de Narrativas más Libres con IA:** Los jugadores buscan que sus decisiones importen y que las historias se adapten sobre la marcha a lo que decidan hacer.
+3. **Comodidad de Hablar por Micrófono:** Al jugar frente a la pantalla, es mucho más natural y rápido hablar por voz que tener que teclear comandos en un chat.
+4. **Facilitar la Entrada a Nuevos Jugadores:** La afición por el rol sigue creciendo, pero los manuales de 300 páginas asustan a los principiantes. Las herramientas que resumen y explican reglas facilitan que más gente se anime a jugar.
 
-### 5.2. Oportunidades Estratégicas para GameMaster AI
+### 6.2. Oportunidades para GameMaster AI
 
-- **Pioneros en Asistencia por Voz Multimodal:** No existe en el mercado actual ninguna companion app web que unifique voz en tiempo real, RAG (generación aumentada por recuperación) estricto sobre manuales PDF y conexión directa con el tablero virtual de Tabletop Simulator.
-- **Apalancamiento en un Ecosistema Ya Consolidado:** Al sincronizarse directamente con los eventos de Tabletop Simulator, el proyecto no necesita desarrollar un costoso motor gráfico 3D propio, beneficiándose del extenso catálogo de mods existente.
-- **Alta Retención de Grupos de Juego:** Las campañas de rol se juegan con frecuencia semanal o quincenal durante meses o años, lo que genera un *churn rate* (tasa de cancelación) muy reducido y una alta fidelización del cliente.
-- **Escalabilidad para Futuras Actualizaciones:** La arquitectura desacoplada y el sistema RAG sientan las bases técnicas para que la plataforma pueda evolucionar en versiones posteriores, permitiendo incorporar progresivamente soporte para nuevos juegos, manuales y sistemas de rol según la acogida del proyecto.
+- **Pioneros en Ayuda por Voz en Tiempo Real:** No existe actualmente una aplicación web que combine voz en directo, lectura estricta de manuales PDF y conexión automática con Tabletop Simulator.
+- **Aprovechar un Programa que ya Funciona:** Al conectarnos con Tabletop Simulator, no tenemos que programar un motor gráfico 3D complejo, sino centrarnos en lo que mejor sabemos hacer: la aplicación web y la inteligencia artificial.
+- **Grupos que Juegan Durante Mucho Tiempo:** Las campañas de rol suelen durar meses o años, lo que hace que los usuarios que prueban la aplicación sigan suscritos mucho tiempo si la herramienta les resulta útil.
+- **Posibilidad de Crecer con Nuevos Juegos:** La forma en que diseñamos la lectura de manuales permite que en el futuro la plataforma pueda utilizarse con cualquier juego de rol con solo subir su manual correspondiente.
 
 > [!NOTE]
-> **Conclusión:** La conjunción entre un mercado en expansión (CAGR del 9,61%) y la falta de soluciones de narración por voz acotadas convierte a GameMaster AI en una oportunidad única para liderar el segmento de asistencia inteligente para juegos de rol virtuales.
+> **Conclusión:** La combinación de un mercado de rol en crecimiento y la falta de asistentes de voz fiables hace que GameMaster AI sea un proyecto formativo con una propuesta útil, clara y con posibilidades reales de destacar.
 
 ---
 
-## 6. Conclusiones Iniciales y Justificación del Proyecto
+## 7. Conclusiones Iniciales y Justificación del Proyecto
 
-### 6.1. Viabilidad de Producto y Mercado
+### 7.1. Viabilidad de Producto y Mercado
 
-- **Viabilidad Funcional y de Adopción:** GameMaster AI aborda el principal cuello de botella del sector: la sobrecarga de preparación del Director de Juego (DM). Al operar como una aplicación web complementaria para pantalla de apoyo, no pretende sustituir a los tableros virtuales existentes ni obligar a los grupos a cambiar de plataforma, sino enriquecer la sesión con narración inmersiva y resolución inmediata de reglas.
-- **Viabilidad Económica:** El modelo SaaS (Software como Servicio) Freemium con cuota Pro accesible (~8 €/mes) permite una monetización escalable con un margen bruto estimado superior al **70%**. La optimización del consumo de IA mediante documentos indexados y límites por sesión asegura costes de servicio predecibles y contenidos.
+- **Resuelve un Problema Real:** GameMaster AI ataca directamente la falta de directores de juego, facilitando la tarea tanto a los novatos como a los veteranos. Al funcionar como una pantalla de apoyo web, se suma a las partidas sin obligar a los jugadores a cambiar de plataforma.
+- **Viable Económicamente:** Con una cuota Pro accesible (8 €/mes) y un coste de servidores e IA contenido (unos 2 € por usuario), la plataforma es autosuficiente y genera un margen positivo desde sus primeros usuarios.
 
-### 6.2. Ventajas Competitivas frente a los Referentes
+### 7.2. Ventajas Frente a Otras Opciones
 
-- **Frente a Grandes Editoriales (Wizards of the Coast):** Las grandes corporaciones priorizan ecosistemas cerrados vinculados a sus propias licencias. GameMaster AI aporta **neutralidad de sistema y agilidad**, permitiendo cargar cualquier manual en PDF y adaptarse al reglamento preferido por cada mesa.
-- **Frente a Plataformas VTT (Tableros Virtuales) Consolidadas (Roll20):** Los tableros virtuales tradicionales resuelven la digitalización de fichas y dados, pero no reducen el esfuerzo narrativo ni ofrecen interacción conversacional por voz. GameMaster AI actúa como un **asistente activo en directo**, ahorrando horas de preparación a los directores de juego.
-- **Frente a Startups de Narrativa con IA (Latitude Inc.):** Los generadores de historias abiertos tienden a inventar datos o ignorar las normas del juego. GameMaster AI se diferencia por su **acotación estricta al manual de campaña**, garantizando fidelidad reglamentaria sin alucinaciones.
+- **Frente a Grandes Editoriales (Wizards of the Coast):** Ellas se centran únicamente en vender sus propios libros y sistemas cerrados. GameMaster AI es **abierta y neutral**: cada mesa puede cargar el manual del juego que prefiera jugar.
+- **Frente a Tableros Virtuales (Roll20):** Roll20 resuelve el tablero y los dados, pero no ayuda a narrar ni escucha por voz. GameMaster AI actúa como un **apoyo activo** que quita trabajo al director durante la sesión.
+- **Frente a Juegos de IA Abiertos (Latitude / AI Dungeon):** Los juegos de texto libre se inventan datos con frecuencia. GameMaster AI se distingue por **ceñirse estrictamente al manual PDF subido**, respetando las reglas oficiales sin alucinaciones.
 
-### 6.3. Capacidad de Ejecución del Equipo
+### 7.3. Capacidad del Equipo para Desarrollarlo
 
-El equipo fundacional (**EQUIPO MAC**) reúne las competencias necesarias para cubrir el ciclo íntegro del producto:
-- **Gestión Ágil y Calidad:** Coordinación bajo metodología Scrumban para asegurar entregas continuas, control del backlog y revisiones rigurosas de desarrollo.
-- **Especialización Funcional:** Distribución equilibrada entre experiencia web de usuario, lógica de negocio y gestión de campañas, y procesamiento avanzado de inteligencia artificial y voz.
+Como alumnos de 2º de DAW (**EQUIPO MAC**), disponemos de los conocimientos técnicos y organizativos necesarios para llevar a cabo el proyecto:
+- **Organización Ágil (Scrumban):** Nos permite coordinar las entregas, repartir las tareas con claridad y revisar el trabajo en equipo de forma continua.
+- **Reparto Equilibrado de Tareas:** Cubrimos todas las necesidades del producto: diseño de la interfaz web, desarrollo de servidores y base de datos, conexión del reconocimiento de voz y sincronización con Tabletop Simulator.
 
-### 6.4. Dictamen Final
+### 7.4. Dictamen Final
 
 > [!NOTE]
-> **Conclusión Estratégica:** GameMaster AI cuenta con una oportunidad clara y fundamentada en el mercado. Su fortaleza competitiva no consiste en rivalizar con los presupuestos millonarios de las editoriales ni en rehacer un motor gráfico virtual, sino en **liderar el nicho desatendido del asistente narrativo por voz con fidelidad reglamentaria estricta**. Respaldado por un mercado en constante expansión (+9,6% anual), una propuesta diferenciadora y costes operativos contenidos, el proyecto se consolida como una iniciativa **viable, sostenible y con alto potencial de crecimiento**.
+> **Conclusión Final:** GameMaster AI es un proyecto **viable, realista y con una oportunidad de mercado clara**. No pretendemos competir con presupuestos millonarios ni construir un videojuego desde cero, sino ofrecer una **herramienta web práctica, asequible e innovadora** que resuelva un problema cotidiano de los aficionados al rol. Respaldado por el crecimiento del sector y unos costes técnicos bien controlados, el proyecto tiene una base sólida tanto en lo formativo como en su planteamiento de producto digital.
 
 ---
 
