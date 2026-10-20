@@ -1,42 +1,62 @@
 # GameMaster AI — Pitch Inicial & Análisis de Mercado
 
-## 1. Portada y Presentación
+---
 
-- **Nombre de la Startup Ficticia:** GameMaster AI Studios S.L.
-- **Producto Digital:** GameMaster AI (Companion App web para la narración por voz mediante IA acotada para juegos de mesa de rol en Tabletop Simulator).
-- **Integrantes del Equipo:**
-  - **Abel Carbonero Mora**
-  - **Miguel Ángel Lastra Garcés**
-  - **Christian Said Jimenez Mahecha**
-  - **Rafa**
-- **Curso Académico:** 2026/2027 — Proyecto Intermodular (2º DAW, ILERNA).
+## Portada y Presentación
+
+| Parámetro | Detalle |
+| :--- | :--- |
+| **Startup Ficticia** | **GameMaster AI Studios S.L.** |
+| **Producto Digital** | **GameMaster AI** — SaaS Companion App Web para narración inteligente por voz con IA acotada para juegos de mesa de rol, integrable con Tabletop Simulator |
+| **Equipo de Desarrollo** | **Abel Carbonero Mora**<br/>**Miguel Ángel Lastra Garcés**<br/>**Christian Said Jimenez Mahecha**<br/>**Rafa** |
+| **Ciclo Formativo** | 2º DAW (Desarrollo de Aplicaciones Web) — ILERNA (2026/2027)<br/>*Módulos: DWS, DWC, DIW, DA, IPE II, IP, PI* |
 
 ---
 
-## 2. Introducción al Sector
+## Índice
+
+- [1. Introducción al Sector y Propuesta de Valor](#1-introducción-al-sector-y-propuesta-de-valor)
+- [2. Empresas Analizadas y Organigramas de Referencia](#2-empresas-analizadas-y-organigramas-de-referencia)
+  - [2.1. Wizards of the Coast (Gran Empresa)](#21-wizards-of-the-coast-gran-empresa)
+  - [2.2. Roll20 (Mediana Empresa)](#22-roll20-mediana-empresa)
+  - [2.3. Latitude Inc. (Pequeña Empresa)](#23-latitude-inc-pequeña-empresa)
+  - [2.4. Comparativa y Aplicación al Proyecto](#24-comparativa-y-aplicación-al-proyecto)
+- [3. Organigrama de GameMaster AI](#3-organigrama-de-gamemaster-ai)
+
+---
+
+## 1. Introducción al Sector y Propuesta de Valor
 
 El sector de los juegos de mesa de rol (*Tabletop Role-Playing Games* - TTRPG) y las plataformas virtuales (*Virtual Tabletops* - VTT) vive una transformación histórica impulsada por la digitalización y el auge de las tecnologías generativas.
 
-A escala global, el mercado de las plataformas digitales de juegos de mesa alcanza una valoración de más de 3.800 millones de dólares, mientras que el mercado específico de TTRPG mueve más de 2.300 millones de dólares, con un ritmo de crecimiento (CAGR) superior al 9,6% anual.
+- **Mercado Global VTT & Digital:** Valoración superior a **3.800 millones de dólares**.
+- **Mercado Específico TTRPG:** Movimiento estimado en más de **2.300 millones de dólares**, con un ritmo de crecimiento (**CAGR**) superior al **9,6%** anual.
+- **Cuello de Botella Crítico:** La escasez de "Game Masters" o Directores de Juego. Dirigir una campaña exige decenas de horas de lectura de extensos manuales, diseño de escenarios y cálculo de reglas.
 
-Sin embargo, el sector enfrenta una barrera crítica de adopción: la escasez de "Game Masters" o Narradores. Crear y dirigir una campaña requiere decenas de horas de lectura de manuales de cientos de páginas, diseño de mapas y actuación. GameMaster AI nace para eliminar este cuello de botella, actuando como un Narrador virtual por voz acotado a las reglas oficiales que se integra de manera transparente con tableros virtuales como Tabletop Simulator.
+> [!NOTE]
+> **Misión y Propuesta de Valor:** GameMaster AI es una **SaaS Companion App Web** concebida para actuar como un Narrador virtual por voz acotado por IA. Ingiere reglamentos y módulos en PDF, escucha las acciones de los jugadores por micrófono (Web Speech API) y responde narrando en tiempo real, integrándose de forma transparente con el tablero virtual de **Tabletop Simulator** mediante scripts en Lua y Webhooks automáticos.
 
-## 3. Empresas analizadas y organigramas de referencia
+---
 
-Las empresas se estudian por su relación con el producto: una compañía de referencia en juegos de rol y propiedad intelectual, una plataforma VTT y una empresa de narrativa interactiva con IA. Los organigramas siguientes son **modelos funcionales elaborados para este proyecto**; no son organigramas oficiales ni afirman reproducir puestos internos concretos.
+## 2. Empresas Analizadas y Organigramas de Referencia
 
-### 3.1. Wizards of the Coast — empresa grande
+Las empresas se analizan por su relación estratégica con el producto: una compañía de referencia en propiedad intelectual y manuales de rol, una plataforma VTT consolidada en el navegador y un referente de narrativa interactiva impulsada por IA.
 
-Wizards of the Coast es una filial de Hasbro y desarrolla juegos de rol, juegos de cartas coleccionables y videojuegos. Entre sus marcas más reconocidas están *Dungeons & Dragons*, *Magic: The Gathering* y Avalon Hill. Su perfil público en LinkedIn indica un tamaño de 501–1.000 empleados; se usa como referencia orientativa, ya que las plantillas y los rangos publicados pueden cambiar.
+> [!NOTE]
+> Los organigramas mostrados a continuación son **modelos funcionales elaborados para este proyecto** a modo de referencia orientativa y no corresponden a organigramas oficiales internos.
 
-**Análisis como referencia**
+### 2.1. Wizards of the Coast (Gran Empresa)
 
-- **Fortalezas:** marcas consolidadas, universos narrativos reconocibles, reglas y contenidos extensos, y comunidades de jugadores que mantienen el interés por sus juegos.
-- **Relación con GameMaster AI:** es una referencia para organizar campañas, ambientación y materiales de juego. La plataforma podría permitir que cada grupo cargue sus propios documentos y consulte ese contenido durante la partida.
-- **Aprendizaje aplicable:** dar prioridad a la coherencia entre narrativa y reglas, y facilitar que el director de juego encuentre rápidamente información relevante.
-- **Diferencia de escala:** GameMaster AI no pretende crear ni sustituir una editorial de juegos; se plantea como herramienta complementaria para dirigir partidas.
+Wizards of the Coast es una filial de Hasbro y referente mundial en el desarrollo de juegos de rol, cartas coleccionables y videojuegos. Cuenta con franquicias insignia como *Dungeons & Dragons*, *Magic: The Gathering* y *Avalon Hill*, con una plantilla de referencia estimada en LinkedIn de entre 501 y 1.000 empleados.
 
-**Organigrama funcional de referencia**
+#### Análisis como referencia
+
+- **Fortalezas:** Marcas consolidadas, universos narrativos de amplio recorrido, manuales reglados exhaustivos y comunidades masivas de jugadores activos.
+- **Relación con GameMaster AI:** Referente en estructuración de campañas, ambientación y lore. La plataforma web permitirá que los usuarios suban sus manuales en PDF y consulten datos canónicos en tiempo real.
+- **Aprendizaje aplicable:** Priorizar la coherencia absoluta entre narrativa y reglas vigentes, permitiendo indexar y localizar información clave de forma inmediata.
+- **Diferencia de escala:** GameMaster AI no busca crear ni sustituir una editorial de contenidos, sino actuar como herramienta web complementaria para la dirección de partidas.
+
+#### Organigrama funcional de referencia
 
 ```mermaid
 flowchart TD
@@ -51,18 +71,18 @@ flowchart TD
     C --> MC[Marketing y comunidad]
 ```
 
-### 3.2. Roll20 — empresa mediana
+### 2.2. Roll20 (Mediana Empresa)
 
-Roll20 es una plataforma web para jugar partidas de rol y otros juegos de mesa en línea. Su producto ofrece herramientas para organizar campañas, gestionar personajes y recursos, y utilizar dados integrados. Su perfil público en LinkedIn indica un tamaño de 51–200 empleados. La clasificación como empresa mediana se mantiene como referencia para el trabajo y no como una afirmación sobre su categoría legal.
+Roll20 es la plataforma web de referencia para partidas de rol y juegos de mesa en remoto. Ofrece un espacio integral accesible desde el navegador con gestión de fichas de personaje, mapas, audio y dados digitales. Su plantilla estimada en LinkedIn se sitúa en el rango de 51 a 200 empleados.
 
-**Análisis como referencia**
+#### Análisis como referencia
 
-- **Fortalezas:** acceso desde el navegador, herramientas reunidas en un mismo espacio y funciones pensadas para coordinar una partida a distancia.
-- **Relación con GameMaster AI:** es la referencia más directa para la experiencia de uso durante una sesión. GameMaster AI puede complementar un VTT con narración, escucha por voz, contexto y consulta de documentos, en lugar de intentar reemplazar el tablero.
-- **Aprendizaje aplicable:** priorizar una interfaz legible mientras se juega, una navegación rápida entre campañas y sesiones, y una integración que no interrumpa el flujo de la partida.
-- **Oportunidad de diferenciación:** enfocar el producto en el papel de Dungeon Master asistido por IA y en mantener la respuesta vinculada a las fuentes de la campaña.
+- **Fortalezas:** Accesibilidad universal vía navegador web, centralización de herramientas de gestión de mesa y facilidad de coordinación de partidas a distancia.
+- **Relación con GameMaster AI:** Constituye la referencia más directa de experiencia de usuario en navegador. GameMaster AI actúa como companion app web optimizada para pantalla secundaria, aportando narración por voz y contexto sin interferir con la mesa de juego.
+- **Aprendizaje aplicable:** Diseñar una interfaz web ligera, temática y responsive (React) que facilite una navegación rápida y no interrumpa el ritmo de la partida en el ordenador.
+- **Oportunidad de diferenciación:** Especializarse en la figura del Narrador asistido por IA acotada (RAG), garantizando respuestas estrictamente fidedignas a los documentos aportados y enlazadas con los eventos de Tabletop Simulator.
 
-**Organigrama funcional de referencia**
+#### Organigrama funcional de referencia
 
 ```mermaid
 flowchart TD
@@ -75,20 +95,21 @@ flowchart TD
     CT --> CA[Campañas, fichas y recursos]
 ```
 
-### 3.3. Latitude Inc. — empresa pequeña, referencia de narrativa con IA
+### 2.3. Latitude Inc. (Pequeña Empresa)
 
-Latitude se toma como referencia de una empresa de menor escala centrada en experiencias de narrativa interactiva con IA, especialmente por *AI Dungeon*. La web de *AI Dungeon* presenta una experiencia de aventura narrativa generada por IA, en la que las decisiones del jugador influyen en la historia. No se ha encontrado una cifra pública fiable de plantilla para confirmar el tamaño; por ello, «pequeña» se conserva como la clasificación asignada en este proyecto, no como un dato verificado.
+Latitude representa una compañía ágil especializada en experiencias de narrativa interactiva impulsadas por modelos de lenguaje generativos, destacando por su producto web *AI Dungeon*. Permite a los usuarios sumergirse en aventuras narrativas donde las acciones del jugador modifican dinámicamente la historia.
 
-**Aclaración sobre AI Game Master:** no se ha podido confirmar que la aplicación *AI Game Master - Dungeon RPG* pertenezca a Latitude. La ficha de la App Store consultada identifica a **Digital Dynasty Entertainment** como desarrollador. Por tanto, en este análisis se trata a Latitude como referencia de narrativa interactiva con IA y a *AI Game Master* como una referencia de producto independiente, salvo que el equipo tenga otra fuente que acredite la relación.
+> [!NOTE]
+> **Aclaración sobre AI Game Master:** *AI Game Master - Dungeon RPG* es una app móvil comercial independiente desarrollada por Digital Dynasty Entertainment en tiendas de aplicaciones. Se toma únicamente como referencia externa de interacción por voz en el mercado. En contraposición, **GameMaster AI es una plataforma SaaS 100% Web (React + Laravel)** concebida para utilizarse desde el navegador en PC como pantalla de apoyo durante partidas virtuales en Tabletop Simulator.
 
-**Análisis como referencia**
+#### Análisis como referencia
 
-- **Fortalezas:** uso de IA para generar historias abiertas, adaptación de la narración a las acciones del jugador y una experiencia centrada en la creatividad y la interacción.
-- **Relación con GameMaster AI:** sirve para estudiar cómo hacer que una conversación con IA se sienta dinámica. El proyecto se diferencia al enfocarse en partidas de mesa, documentos de reglas y aventuras aportados por los usuarios, contexto persistente y una posible integración con Tabletop Simulator.
-- **Aprendizaje aplicable:** responder a las acciones del jugador manteniendo continuidad narrativa, sin perder de vista límites, fuentes y contexto.
-- **Riesgo que se debe controlar:** una historia generativa puede inventar detalles. GameMaster AI debe distinguir entre narración creativa y reglas/documentos verificables, y reconocer cuando no encuentra información suficiente.
+- **Fortalezas:** Generación de historias dinámicas no lineales, adaptabilidad a la creatividad de los jugadores y experiencia conversacional fluida.
+- **Relación con GameMaster AI:** Permite estudiar dinámicas conversacionales ágiles con IA. GameMaster AI se diferencia al centrarse en partidas regladas, persistencia relacional del estado de la campaña y sincronización con el tablero de Tabletop Simulator.
+- **Aprendizaje aplicable:** Mantener continuidad narrativa coherente entre intervenciones sucesivas respetando los límites del escenario.
+- **Riesgo que se debe controlar:** La alucinación de contenido. GameMaster AI implementa *Guardrails* y un *System Prompt* estricto que acotan la IA a responder exclusivamente según los manuales PDF indexados, impidiendo desviaciones a temas ajenos a la partida.
 
-**Organigrama funcional de referencia**
+#### Organigrama funcional de referencia
 
 ```mermaid
 flowchart TD
@@ -102,42 +123,38 @@ flowchart TD
     ND --> HI[Historias y herramientas de creación]
 ```
 
-### 3.4. Comparativa y aplicación al proyecto
+### 2.4. Comparativa y Aplicación al Proyecto
 
-| Referencia | Aportación principal | Qué puede aprender GameMaster AI |
-| --- | --- | --- |
-| Wizards of the Coast | Juegos, reglas, mundos y marcas de rol | Organizar el contenido de campaña y respetar la coherencia del universo y sus reglas |
-| Roll20 | Herramientas web para organizar partidas | Diseñar una interfaz rápida, útil durante la sesión y complementaria al tablero |
-| Latitude / *AI Dungeon* | Narrativa interactiva apoyada por IA | Mantener una historia dinámica con contexto, límites y control sobre las respuestas |
-| *AI Game Master - Dungeon RPG* | Referencia de producto con narrador de IA | Observar funciones de narración, juego de rol y voz; su ficha consultada atribuye la app a Digital Dynasty Entertainment |
+| Referencia | Formato / Enfoque | Aportación principal | Qué aprende y cómo se diferencia GameMaster AI |
+| :--- | :--- | :--- | :--- |
+| **Wizards of the Coast** | Gran editorial internacional | Reglas oficiales, ambientación y lore de campañas | GameMaster AI incorpora indexación semántica (RAG) de manuales PDF para mantener fidelidad reglamentaria estricta |
+| **Roll20** | Plataforma SaaS Web (VTT) | Herramientas web para organizar partidas en navegador | GameMaster AI adopta una arquitectura web desacoplada (React + Laravel) ágil y pensada como pantalla secundaria |
+| **Latitude (*AI Dungeon*)** | Plataforma de narrativa con IA | Historias dinámicas y generación de texto interactivo | GameMaster AI aplica *Guardrails* estrictos para evitar alucinaciones y ceñirse al escenario cargado |
+| ***AI Game Master* (Externa)** | App móvil comercial nativa | Interacción por voz y ambientación sonora en tiendas móviles | Referencia de voz; GameMaster AI se diferencia como solución **SaaS Web** integrada con **Tabletop Simulator** vía Lua y Webhooks |
 
-La propuesta de GameMaster AI combina estas referencias sin replicar una sola: toma la organización y consistencia del contenido de juegos de rol, la usabilidad de un VTT y la interacción narrativa de una IA. Su elemento diferenciador será fundamentar las respuestas en los documentos de cada campaña y conectarlas con los eventos de la partida.
+> [!NOTE]
+> **Conclusión Estratégica:** GameMaster AI integra las fortalezas de cada referencia: adopta el rigor reglamentario de las grandes editoriales de rol, la accesibilidad de una solución web moderna tipo SaaS (React/Laravel), la inmersión por voz y la interacción de modelos LLM acotados. Su gran elemento diferenciador radica en la ingesta de PDFs de la propia mesa y la comunicación bidireccional en tiempo real con Tabletop Simulator.
 
-### Organigrama de nuestro proyecto
+---
 
-El equipo se organiza por áreas para que cada integrante tenga responsabilidades principales diferenciadas. La distribución es una propuesta de trabajo para GameMaster AI y puede ajustarse según las necesidades de cada sprint.
+## 3. Organigrama de GameMaster AI
+
+El organigrama funcional de **GameMaster AI Studios** se estructura a partir de las áreas funcionales de la empresa y los módulos clave de la plataforma web, siguiendo el mismo modelo organizativo de las compañías de referencia. 
+
+Esta estructura distribuye las funciones del producto bajo la coordinación de **Miguel Ángel Lastra Garcés** (Lead Developer, Revisor de Código, Scrum Master y Release Manager) junto al equipo de programadores íntegros (*Core Developers*) asignados a cada dominio técnico:
 
 ```mermaid
 flowchart TD
-    GM[Proyecto GameMaster AI]
-    GM --> AB[Abel Carbonero Mora<br/>Lead Developer y revisor de código]
-    GM --> MI[Miguel Ángel Lastra Garcés<br/>Scrum Master y Release Manager]
-    GM --> CH[Christian Said Jimenez Mahecha<br/>Core Developer]
-    GM --> RA[Rafa<br/>Core Developer]
+    GM[Dirección de GameMaster AI Studios] --> FE[Frontend & Experiencia Web]
+    GM --> BE[Backend & Persistencia]
+    GM --> IA[Motor de IA & RAG]
+    GM --> IT[Integración VTT & Negocio]
 
-    AB --> AB1[Arquitectura técnica y coordinación del desarrollo]
-    AB --> AB2[Frontend React y revisión de calidad del código]
-
-    MI --> MI1[Organización del backlog y seguimiento de sprints]
-    MI --> MI2[Control de versiones, integración y publicación de entregas]
-
-    CH --> CH1[Backend Laravel y API REST]
-    CH --> CH2[Autenticación, usuarios, campañas y base de datos]
-
-    RA --> RA1[Integración de IA, chat y memoria contextual]
-    RA --> RA2[Procesamiento de PDF y sistema RAG]
-    RA --> RA3[Funciones de voz e integración con Tabletop Simulator]
-```
+    FE --> FE1[Companion App React y voz Web Speech API]
+    BE --> BE1[API RESTful Laravel y gestión de campañas]
+    IA --> IA1[Procesamiento de PDFs y LLM con Guardrails]
+    IT --> IT1[Conexión Tabletop Simulator y pagos Stripe]
+    ```
 
 ## 5. Descripción de departamentos y funciones
 
@@ -276,3 +293,9 @@ En conclusión, todos los departamentos contribuyen al funcionamiento de una emp
 
 
 ## 6. Necesidades y volumen de negocio.
+=======
+    FE --> FE1[Companion App React y voz Web Speech API]
+    BE --> BE1[API RESTful Laravel y gestión de campañas]
+    IA --> IA1[Procesamiento de PDFs y LLM con Guardrails]
+    IT --> IT1[Conexión Tabletop Simulator y pagos Stripe]
+```
