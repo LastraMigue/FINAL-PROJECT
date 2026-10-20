@@ -286,8 +286,6 @@ En conclusión, todos los departamentos contribuyen al funcionamiento de una emp
 
 > **Nota metodológica:** las fuentes describen las actividades y los productos de las empresas. La clasificación de departamentos es un análisis funcional elaborado para este trabajo y no implica que cada empresa publique un organigrama con todas estas áreas. Algunas funciones pueden estar agrupadas en un mismo equipo o externalizadas.
 
-## 5. Necesidades y volumen de negocio.
-
 ## 5. Necesidades y volumen de negocio
 
 ### 5.1. Análisis del mercado
@@ -346,46 +344,29 @@ El modelo de ingresos se puede dividir en tres líneas:
 
 La suscripción recurrente sería la principal fuente de ingresos, mientras que los servicios profesionales aportarían ingresos adicionales sin depender exclusivamente del número de usuarios suscritos.
 
-
-### 5.6. Ejemplos concretos de proyectos y clientes
+### 5.5. Ejemplos concretos de proyectos y clientes
 
 Para ilustrar cómo podría generar ingresos GameMaster AI, se plantean los siguientes ejemplos:
 
-| Proyecto | Cliente | Servicio | Importe estimado |
-|---|---|---|---:|
-| Campaña de fantasía | Director de juego independiente | Plan Pro durante un año. | 119,88 €/año |
-| Grupo de rol habitual | Grupo de jugadores | Plan Grupo durante un año. | 239,88 €/año |
-| Preparación de campaña | Director de juego principiante | Configuración inicial de documentos y campaña. | 99 € |
-| Integración personalizada | Club de rol | Servicio de configuración avanzada. | Desde 299 € |
-| Comunidad de rol | Asociación o comunidad | Suscripciones y servicios de configuración, según sus necesidades. | Presupuesto personalizado |
+| Proyecto / Cliente | Necesidad | Solución propuesta |
+|---|---|---|
+| Grupo de amigos que juega semanalmente | Mejorar la inmersión y reducir las interrupciones del director de juego | Narración por voz con IA y asistencia durante las partidas |
+| Tienda especializada en juegos de mesa | Ofrecer un servicio adicional a su comunidad de jugadores | Acceso a la plataforma SaaS para sus clientes |
+| Club de rol o asociación | Facilitar partidas con grupos numerosos y campañas recurrentes | Herramientas de narración inteligente y gestión de contenido |
+| Empresa organizadora de eventos de rol | Crear experiencias más inmersivas para los participantes | Integración de narración por voz con IA en sus eventos |
+| Cliente empresarial | Desarrollar una solución adaptada a sus necesidades | Presupuesto personalizado |
 
 Estos ejemplos muestran que la empresa puede combinar ingresos recurrentes por suscripciones con ingresos puntuales por servicios profesionales.
 
 En el caso de las asociaciones y comunidades, se podrían ofrecer descuentos por contratación anual o por un número determinado de usuarios, siempre que los ingresos cubran los costes de uso y mantenimiento.
 
-### 5.7. Estimación del volumen de negocio
+### 5.6. Estimación del volumen de negocio
 
 El volumen de negocio se puede estimar mediante los ingresos obtenidos por las suscripciones y los servicios complementarios.
 
 Para realizar una primera previsión se establece una hipótesis simplificada: cada usuario de pago genera, de media, **8 € al mes**. Este importe representa una combinación hipotética de diferentes planes de suscripción, no un precio de mercado comprobado.
 
-#### Escenarios de ingresos por suscripciones
-
-| Escenario | Usuarios de pago | Ingresos mensuales | Ingresos anuales |
-|---|---:|---:|---:|
-| Inicial | 50 | 400 € | 4.800 € |
-| Intermedio | 250 | 2.000 € | 24.000 € |
-| Crecimiento | 1.000 | 8.000 € | 96.000 € |
-
-Los cálculos se realizan multiplicando el número de usuarios por el ingreso medio mensual y por doce meses. Se supone que todos los usuarios permanecen suscritos durante el año completo.
-
-```text
-Ingresos mensuales = Usuarios de pago × Ingreso medio mensual
-
-Ingresos anuales = Ingresos mensuales × 12
-```
-
-### 5.8. Costes y factores que afectan a la rentabilidad
+### 5.7. Costes y factores que afectan a la rentabilidad
 
 El volumen de negocio no determina por sí solo si la empresa será rentable. También es necesario controlar los costes asociados al desarrollo y funcionamiento de la plataforma.
 
@@ -405,8 +386,4 @@ Para ello, será importante establecer límites de consumo, monitorizar el uso d
 ### Fuentes
 
 - [Fortune Business Insights — Tabletop Role-Playing Game Market](https://www.fortunebusinessinsights.com/tabletop-role-playing-game-market-119102): referencia para el tamaño y las perspectivas del mercado de juegos de rol de mesa.
-
 - [Tabletop Simulator — Steam](https://store.steampowered.com/app/286160/TabletopSimulator/): referencia sobre la plataforma con la que se plantea integrar GameMaster AI.
-
-
-
