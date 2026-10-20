@@ -17,20 +17,19 @@
 
 - [1. Introducción al Sector y Propuesta de Valor](#1-introducción-al-sector-y-propuesta-de-valor)
 - [2. Empresas Analizadas y Organigramas de Referencia](#2-empresas-analizadas-y-organigramas-de-referencia)
-    - [2.1. Wizards of the Coast (Gran Empresa)](#21-wizards-of-the-coast-gran-empresa)
-    - [2.2. Roll20 (Mediana Empresa)](#22-roll20-mediana-empresa)
-    - [2.3. Latitude Inc. (Pequeña Empresa)](#23-latitude-inc-pequeña-empresa)
-    - [2.4. Comparativa y Aplicación al Proyecto](#24-comparativa-y-aplicación-al-proyecto)
+  - [2.1. Wizards of the Coast (Gran Empresa)](#21-wizards-of-the-coast-gran-empresa)
+  - [2.2. Roll20 (Mediana Empresa)](#22-roll20-mediana-empresa)
+  - [2.3. Latitude Inc. (Pequeña Empresa)](#23-latitude-inc-pequeña-empresa)
+  - [2.4. Comparativa y Aplicación al Proyecto](#24-comparativa-y-aplicación-al-proyecto)
 - [3. Organigrama de GameMaster AI](#3-organigrama-de-gamemaster-ai)
-- [4. Descripción de departamentos y funciones](#4-Descripción-de-departamentos-y-funciones)
-    - [4.1. Wizards of the Coast](#41-wizards-of-the-coast)
-    - [4.2. Roll20](#42-roll20)
-    - [4.3. Latitude Inc.](#43-latitude-inc)
-    - [4.4. AI Game Master](#44-ai-game-master)
-    - [4.5. Comparación general](#45-comparación-general)
-    - [4.6. Conclusión](#46-conclusión)
-    - [4.7. Fuentes](#47-fuentes)
-- [#5. Necesidades y volumen de negocio](#5-Necesidades-y-volumen-de-negocio)
+- [4. Necesidades y Volumen de Negocio](#4-necesidades-y-volumen-de-negocio)
+  - [4.1. Análisis y Dimensión del Mercado](#41-análisis-y-dimensión-del-mercado)
+  - [4.2. Necesidades del Cliente y Solución](#42-necesidades-del-cliente-y-solución)
+  - [4.3. Modelo de Negocio e Ingresos](#43-modelo-de-negocio-e-ingresos)
+  - [4.4. Estructura de Costes y Rentabilidad](#44-estructura-de-costes-y-rentabilidad)
+- [5. Tendencias y Oportunidades](#5-tendencias-y-oportunidades)
+  - [5.1. Tendencias Clave del Sector](#51-tendencias-clave-del-sector)
+  - [5.2. Oportunidades Estratégicas para GameMaster AI](#52-oportunidades-estratégicas-para-gamemaster-ai)
 
 ---
 
@@ -165,225 +164,77 @@ flowchart TD
     IT --> IT1[Conexión Tabletop Simulator y pagos Stripe]
 ```
 
-## 4. Descripción de departamentos y funciones
+---
 
-## 4.1. Wizards of the Coast
+## 4. Necesidades y Volumen de Negocio
 
-### Departamentos y funciones
+### 4.1. Análisis y Dimensión del Mercado
 
-| Departamento | Funciones principales | Relevancia para la empresa |
-|---|---|---|
-| Diseño y desarrollo de juegos | Crea reglas, mecánicas, personajes, escenarios y expansiones. Realiza pruebas para equilibrar el juego. | Es el núcleo creativo del negocio y permite desarrollar productos atractivos. |
-| Arte y diseño gráfico | Diseña ilustraciones, personajes, cartas, manuales, cajas y otros elementos visuales. | Da identidad visual a los juegos y aumenta su atractivo. |
-| Producción y publicación | Coordina la fabricación de cartas, libros y otros productos, así como su preparación para el lanzamiento. | Garantiza que los productos estén disponibles con la calidad prevista. |
-| Marketing y comunicación | Organiza campañas publicitarias, promociona novedades y comunica lanzamientos. | Genera interés, impulsa las ventas y fortalece las marcas. |
-| Ventas y distribución | Gestiona la comercialización mediante tiendas, distribuidores y otros canales. | Permite que los productos lleguen a los consumidores y genera ingresos. |
-| Comunidad y eventos | Organiza actividades, torneos y programas de juego, y colabora con comunidades de jugadores. | Fideliza a los clientes y mantiene activa la comunidad. |
-| Tecnología y desarrollo digital | Mantiene plataformas digitales, herramientas en línea y productos tecnológicos relacionados con los juegos. | Amplía las formas de jugar y permite llegar a nuevos públicos. |
-| Finanzas y administración | Controla presupuestos, ingresos, costes e inversiones. | Ayuda a mantener la rentabilidad y planificar futuros lanzamientos. |
-| Recursos humanos | Gestiona la contratación, formación y desarrollo profesional de los trabajadores. | Permite contar con los profesionales necesarios. |
-| Legal y propiedad intelectual | Gestiona licencias, marcas registradas, derechos de autor y contratos. | Protege las creaciones y sus derechos comerciales. |
+El proyecto se posiciona en la intersección entre los juegos de rol de mesa (**TTRPG**), las plataformas virtuales (**VTT**) y las aplicaciones SaaS impulsadas por inteligencia artificial.
 
-**Contribución al negocio:** los departamentos creativos desarrollan los juegos; producción y distribución los llevan al mercado; y marketing, ventas y comunidad mantienen el interés de los consumidores.
+- **Valoración Actual del Mercado TTRPG:** Estimado en **2.310 millones de dólares en 2025** a nivel mundial.
+- **Proyección de Crecimiento:** Se proyecta alcanzar **5.230 millones de dólares en 2034**, con una tasa compuesta anual (**CAGR**) del **9,61%** *(Fuente: Fortune Business Insights)*.
+- **Posicionamiento Estratégico:** GameMaster AI no compite con las grandes editoriales ni busca sustituir los tableros virtuales; actúa como una **companion app web complementaria** que reduce drásticamente las horas de preparación y asiste en la narración en directo.
+
+### 4.2. Necesidades del Cliente y Solución
+
+La principal barrera del sector es la **sobrecarga del Director de Juego (DM)**, quien debe memorizar cientos de páginas de reglas, coordinar la trama e interpretar personajes simultáneamente.
+
+| Segmento de Usuario | Necesidad Principal | Solución de GameMaster AI |
+| :--- | :--- | :--- |
+| **DMs Experimentados** | Reducir el tiempo de preparación y agilizar consultas de reglas complejas. | Búsqueda semántica inmediata sobre manuales PDF (RAG) y narración asistida. |
+| **DMs Principiantes** | Falta de soltura para improvisar narraciones y resolver dudas de juego en directo. | Soporte narrativo por voz en tiempo real con apego estricto a las reglas del manual. |
+| **Jugadores de Rol** | Evitar parones prolongados que rompen la inmersión de la partida. | Diálogo continuo por voz mediante Web Speech API sin abandonar la partida. |
+| **Grupos VTT en Remoto** | Conectar los eventos del tablero con la historia de forma automatizada. | Sincronización transparente con Tabletop Simulator vía Lua y Webhooks automáticos. |
+| **Clubes y Tiendas** | Dinamizar múltiples mesas simultáneas y facilitar partidas introductorias. | Herramienta reutilizable y configurable para cualquier sistema de campaña. |
+
+### 4.3. Modelo de Negocio e Ingresos
+
+GameMaster AI opera bajo un modelo **SaaS Freemium** con pasarela de pago segura:
+
+1. **Plan Gratuito (Free Tier):** Acceso a IA base, límite de prompts por sesión y carga de manuales PDF de tamaño estándar.
+2. **Suscripción Pro / Individual:** Orientada a directores habituales con un ingreso medio proyectado de **8 €/mes**, desbloqueando modelos LLM avanzados, respuestas más elaboradas, mayor memoria contextual y carga de PDFs de gran tamaño.
+3. **Planes para Grupos y Clubes:** Cuotas anuales o mensuales reducidas por volumen para asociaciones y tiendas especializadas.
+4. **Servicios de Configuración:** Preparación personalizada de campañas complejas o integración de módulos a medida.
+
+### 4.4. Estructura de Costes y Rentabilidad
+
+Para garantizar la sostenibilidad económica, se monitorean los costes operativos directos frente al valor de vida del cliente (**LTV**):
+
+| Área de Coste | Concepto | Estrategia de Control y Rentabilidad |
+| :--- | :--- | :--- |
+| **Consumo de APIs de IA** | Tokens de inferencia LLM y síntesis/transcripción de voz. | *Guardrails* estrictos, caché semántica y límites de consumo por plan. |
+| **Infraestructura Cloud** | Servidores backend en Laravel, base de datos relacional y storage. | Arquitectura desacoplada y escalado elástico bajo demanda. |
+| **Indexación y RAG** | Fragmentación (*chunking*) y procesamiento de PDFs de campañas. | Extracción y vectorización única por documento con persistencia eficiente. |
+| **Adquisición (CAC)** | Promoción en comunidades especializadas de rol y VTT. | Crecimiento orgánico apoyado en el mod de Tabletop Simulator y el plan gratuito. |
+
+> [!NOTE]
+> **Criterio de Viabilidad:** La rentabilidad se alcanza asegurando que el coste variable medio de consumo de tokens por usuario de pago se mantenga por debajo del **25-30% de la cuota mensual (8 €)**, destinando el margen restante a costes fijos e inversión en producto.
 
 ---
 
-## 4.2. Roll20
+## 5. Tendencias y Oportunidades
 
-### Departamentos y funciones
+### 5.1. Tendencias Clave del Sector
 
-| Departamento | Funciones principales | Relevancia para la empresa |
-|---|---|---|
-| Desarrollo de software | Programa y mantiene la plataforma, implementa nuevas funciones y corrige errores. | Garantiza el funcionamiento del servicio. |
-| Diseño UX/UI | Diseña la interfaz y organiza las herramientas para que sean intuitivas. | Mejora la experiencia de jugadores y directores de juego. |
-| Infraestructura y operaciones técnicas | Supervisa los servidores, el rendimiento, la disponibilidad y la escalabilidad. | Permite que las partidas en línea funcionen de forma estable. |
-| Gestión de producto | Define prioridades, analiza las necesidades de los usuarios y planifica mejoras. | Ayuda a desarrollar funciones útiles y competitivas. |
-| Contenidos y catálogo | Organiza mapas, fichas, recursos digitales y materiales oficiales o de colaboradores. | Aumenta las posibilidades de juego. |
-| Marketing y comunicación | Promociona la plataforma, comunica novedades y atrae nuevos usuarios. | Incrementa la visibilidad y favorece el crecimiento. |
-| Ventas y alianzas comerciales | Gestiona acuerdos con editoriales, licencias y contenidos de pago. | Amplía el catálogo y genera ingresos. |
-| Atención al cliente | Resuelve dudas y problemas técnicos relacionados con cuentas, suscripciones y funciones. | Mejora la satisfacción y fidelización. |
-| Comunidad y moderación | Gestiona espacios comunitarios y fomenta un entorno adecuado. | Mantiene una comunidad activa. |
-| Administración, finanzas y recursos humanos | Controla ingresos, gastos, suscripciones y organización del personal. | Favorece la sostenibilidad económica. |
-| Seguridad y protección de datos | Protege las cuentas, los datos de usuarios y los sistemas de la plataforma. | Reduce riesgos y refuerza la confianza. |
+1. **Digitalización Definitiva del Rol y Auge VTT:** Plataformas como Tabletop Simulator, Roll20 y Foundry VTT han dejado de ser alternativas puntuales para consolidarse como el estándar del juego a distancia.
+2. **Adopción de IA Generativa en Ocio Interactivo:** Los usuarios demandan mundos reactivos y conversacionales que respondan a la creatividad individual sin encorsetarse en árboles de diálogo rígidos.
+3. **Prioridad a la Voz y Experiencias Manos Libres:** Durante una sesión en ordenador, los jugadores prefieren interactuar hablando por micrófono en lugar de escribir comandos en un teclado.
+4. **Democratización del Acceso:** El auge de la cultura popular (series, podcasts de rol) atrae a millones de novatos que requieren herramientas intuitivas que eliminen la barrera de entrada de manuales de 300+ páginas.
 
-**Contribución al negocio:** el desarrollo y las operaciones técnicas mantienen la plataforma disponible, mientras que producto, contenidos, marketing y atención al cliente mejoran la experiencia y favorecen la fidelización.
+### 5.2. Oportunidades Estratégicas para GameMaster AI
 
----
+- **Pioneros en Asistencia por Voz Multimodal:** No existe en el mercado actual ninguna companion app web que unifique voz en tiempo real, RAG estricto sobre manuales PDF y conexión directa con el tablero virtual de Tabletop Simulator.
+- **Apalancamiento en un Ecosistema Ya Consolidado:** Al comunicarse con Tabletop Simulator vía scripts Lua y Webhooks, el proyecto no necesita desarrollar un costoso motor gráfico 3D propio, beneficiándose del extenso catálogo de mods existente.
+- **Alta Retención de Grupos de Juego:** Las campañas de rol se juegan con frecuencia semanal o quincenal durante meses o años, lo que genera un *churn rate* muy reducido y una alta fidelización del cliente.
+- **Escalabilidad para Futuras Actualizaciones:** La arquitectura desacoplada y el sistema RAG sientan las bases técnicas para que la plataforma pueda evolucionar en versiones posteriores, permitiendo incorporar progresivamente soporte para nuevos juegos, manuales y sistemas de rol según la acogida del proyecto.
 
-## 4.3. Latitude Inc.
-
-### Departamentos y funciones
-
-| Departamento | Funciones principales | Relevancia para la empresa |
-|---|---|---|
-| Diseño de juegos y narrativa | Define mundos, personajes, misiones, reglas y experiencias narrativas. | Hace que los juegos sean interesantes y ofrezcan libertad de elección. |
-| Investigación y desarrollo de IA | Investiga y mejora los sistemas de inteligencia artificial que generan historias y respuestas. | Diferencia sus productos de los juegos tradicionales. |
-| Ingeniería de software | Desarrolla aplicaciones, interfaces, sistemas de cuentas y herramientas para los jugadores. | Convierte la tecnología en un producto funcional. |
-| Infraestructura y sistemas | Gestiona servicios en la nube, capacidad de procesamiento, rendimiento y costes técnicos. | Mantiene la estabilidad y controla los costes de la IA. |
-| Diseño de producto y experiencia de usuario | Analiza cómo juegan los usuarios y mejora las funciones y la facilidad de uso. | Favorece la satisfacción y la continuidad de uso. |
-| Arte y generación multimedia | Desarrolla o integra imágenes y otros recursos visuales generados mediante IA. | Enriquece la experiencia y hace los mundos más inmersivos. |
-| Control de calidad y evaluación de IA | Prueba los juegos, detecta errores y evalúa la coherencia de las historias. | Mejora la calidad y reduce fallos. |
-| Comunidad y atención al usuario | Recoge opiniones, responde a incidencias y mantiene la comunicación con los jugadores. | Permite conocer las necesidades de los usuarios. |
-| Marketing y crecimiento | Promociona los juegos, desarrolla campañas y busca nuevos públicos. | Aumenta la visibilidad y el número de jugadores. |
-| Finanzas y monetización | Gestiona presupuestos, suscripciones, compras y costes de infraestructura. | Ayuda a mantener la rentabilidad. |
-| Legal, privacidad y seguridad | Gestiona condiciones de uso, propiedad intelectual, protección de datos y riesgos relacionados con la IA. | Favorece el cumplimiento legal y un uso responsable. |
-
-**Contribución al negocio:** la investigación de IA, la ingeniería y el diseño narrativo crean experiencias interactivas. La infraestructura y las finanzas permiten mantenerlas a un coste sostenible.
+> [!NOTE]
+> **Conclusión:** La conjunción entre un mercado en expansión (CAGR 9,61%) y la falta de soluciones de narración por voz acotadas convierte a GameMaster AI en una oportunidad única para liderar el segmento de asistencia inteligente para juegos de rol virtuales.
 
 ---
-
-## 4.4. AI Game Master
-
-### Departamentos y funciones
-
-| Departamento | Funciones principales | Relevancia para la empresa |
-|---|---|---|
-| Diseño de videojuegos y narrativa | Diseña aventuras, personajes, mundos, misiones, combates y reglas. | Define la identidad del juego y la calidad de las aventuras. |
-| Desarrollo de inteligencia artificial | Integra modelos de IA para generar narraciones, diálogos y acontecimientos adaptados a las decisiones del jugador. | Es el núcleo tecnológico de las historias dinámicas. |
-| Desarrollo de aplicaciones | Programa y mantiene la aplicación móvil, sus funciones y la conexión con los servicios de IA. | Permite acceder al juego y utilizar sus funciones. |
-| Arte y contenido multimedia | Crea o integra imágenes, escenarios y recursos visuales generados mediante IA. | Mejora la presentación visual y la inmersión. |
-| Control de calidad y pruebas | Comprueba el funcionamiento, detecta errores y evalúa la calidad de las respuestas de la IA. | Evita problemas técnicos y mejora la experiencia. |
-| Diseño UX/UI | Organiza los menús, las pantallas, la creación de personajes y las opciones de interacción. | Facilita el uso de la aplicación. |
-| Marketing y comunicación | Promociona el juego en tiendas de aplicaciones, redes sociales y comunidades. | Ayuda a conseguir nuevos jugadores. |
-| Comunidad y soporte técnico | Responde a consultas, recoge sugerencias y comunica problemas al equipo de desarrollo. | Permite identificar necesidades y mejorar el producto. |
-| Gestión económica y monetización | Administra compras integradas, posibles planes de pago, presupuestos y costes de IA. | Ayuda a financiar el desarrollo y mantener el juego. |
-| Administración, legal y privacidad | Gestiona condiciones de uso, pagos, propiedad intelectual y protección de datos. | Favorece el cumplimiento legal y la confianza de los usuarios. |
-
-**Contribución al negocio:** el diseño narrativo y la IA generan las aventuras, mientras que el desarrollo y las pruebas garantizan el funcionamiento. Marketing, soporte y monetización ayudan a mantener y ampliar el producto.
-
----
-
-## 4.5. Comparación general
-
-| Empresa | Actividad principal | Departamentos más estratégicos |
-|---|---|---|
-| Wizards of the Coast | Creación y comercialización de juegos de cartas, rol y productos digitales. | Diseño de juegos, arte, producción, marketing y distribución. |
-| Roll20 | Plataforma en línea para jugar partidas de rol y juegos de mesa. | Desarrollo de software, infraestructura, diseño UX/UI y gestión de producto. |
-| Latitude Inc. | Desarrollo de experiencias narrativas interactivas mediante IA. | Investigación de IA, ingeniería, diseño narrativo e infraestructura. |
-| AI Game Master | Videojuego de rol con aventuras generadas mediante IA. | Desarrollo de aplicaciones, inteligencia artificial, narrativa y control de calidad. |
-
----
-
-## 4.6. Conclusión
-
-Aunque las cuatro empresas están relacionadas con los juegos y el entretenimiento, cada una necesita priorizar departamentos diferentes según su actividad.
-
-- **Wizards of the Coast** depende especialmente de la creatividad, el diseño de juegos, la producción y la distribución.
-- **Roll20** necesita una plataforma tecnológica estable, fácil de utilizar y capaz de conectar a jugadores de diferentes lugares.
-- **Latitude Inc.** destaca por la investigación en inteligencia artificial y el desarrollo de sistemas narrativos interactivos.
-- **AI Game Master** combina programación, inteligencia artificial y diseño narrativo para ofrecer aventuras personalizadas.
-
-En conclusión, todos los departamentos contribuyen al funcionamiento de una empresa. Los departamentos de desarrollo de producto y tecnología son especialmente importantes en las plataformas digitales y los videojuegos basados en IA, mientras que marketing, finanzas, soporte y administración permiten transformar los productos en negocios sostenibles.
-
----
-
-## 4.7. Fuentes
-
-- **Wizards of the Coast:** [Web corporativa](https://company.wizards.com/es/who-we-are)
-- **Roll20:** [Web oficial](https://roll20.net/) | [Centro de ayuda](https://help.roll20.net/)
-- **Latitude Inc.:** [Información corporativa](https://latitude.io/press)
-- **AI Game Master:** [Web oficial](https://www.aigamemaster.app/about)
-
-> **Nota metodológica:** las fuentes describen las actividades y los productos de las empresas. La clasificación de departamentos es un análisis funcional elaborado para este trabajo y no implica que cada empresa publique un organigrama con todas estas áreas. Algunas funciones pueden estar agrupadas en un mismo equipo o externalizadas.
-
-## 5. Necesidades y volumen de negocio
-
-### 5.1. Análisis del mercado
-
-GameMaster AI Studios S.L. se sitúa en el sector de los juegos de rol de mesa (TTRPG), las plataformas virtuales de juego (VTT) y las aplicaciones SaaS basadas en inteligencia artificial.
-
-El mercado presenta oportunidades para herramientas que faciliten la organización y dirección de partidas. Según Fortune Business Insights, el mercado mundial de juegos de rol de mesa se valoró en aproximadamente **2.310 millones de dólares en 2025** y se estima que podría alcanzar los **5.230 millones de dólares en 2034**, con una tasa de crecimiento anual compuesta del 9,61 %. Estas cifras corresponden al conjunto del mercado de juegos de rol, no exclusivamente al de aplicaciones de inteligencia artificial.
-
-Fuente: [Fortune Business Insights — Tabletop Role-Playing Game Market](https://www.fortunebusinessinsights.com/tabletop-role-playing-game-market-119102).
-
-GameMaster AI no pretende competir directamente con las grandes editoriales ni sustituir las plataformas de juego existentes. Su objetivo es ofrecer una herramienta complementaria que permita dirigir partidas con menos preparación manual y una mayor automatización de la narración.
-
-La propuesta de valor consiste en combinar narración por voz, consulta de manuales PDF mediante recuperación aumentada por generación (RAG), control de las respuestas mediante *guardrails* e integración con Tabletop Simulator mediante scripts Lua y webhooks.
-
-### 5.2. Necesidades de los clientes
-
-Los clientes potenciales tienen diferentes necesidades según su relación con los juegos de rol.
-
-| Tipo de cliente | Necesidades principales | Solución que ofrece GameMaster AI |
-|---|---|---|
-| Directores de juego experimentados | Reducir el tiempo de preparación, consultar reglas rápidamente y mantener la coherencia de las campañas. | Consulta de manuales PDF, recuperación de información relevante y asistencia narrativa por voz. |
-| Directores de juego principiantes | Recibir ayuda para interpretar reglas, preparar escenas y mantener el ritmo de la partida. | Narración asistida y acceso rápido a la información de los manuales cargados. |
-| Jugadores habituales | Disfrutar de partidas fluidas, inmersivas y con menos interrupciones para consultar reglas. | Narración por voz y asistencia contextual durante la sesión. |
-| Grupos de rol en línea | Coordinar partidas, mantener la continuidad narrativa y aprovechar las herramientas digitales existentes. | Aplicación web complementaria e integración con Tabletop Simulator. |
-| Comunidades y clubes de rol | Organizar sesiones frecuentes y facilitar la preparación de campañas para diferentes grupos. | Herramienta reutilizable para apoyar la dirección de múltiples partidas. |
-| Creadores de contenido y organizadores de eventos | Preparar experiencias narrativas, demostraciones y sesiones especiales. | Narración asistida y automatización de determinadas tareas durante las partidas. |
-
-La necesidad principal que busca cubrir el proyecto es la carga de trabajo que supone dirigir una partida. El director de juego debe conocer las reglas, preparar escenarios, interpretar las acciones de los jugadores y mantener la coherencia de la historia.
-
-GameMaster AI pretende reducir ese esfuerzo sin eliminar el papel creativo del director de juego. La inteligencia artificial funciona como una herramienta de apoyo y no como un sustituto obligatorio de la persona que dirige la sesión.
-
-### 5.3. Necesidades técnicas y funcionales
-
-Para responder a las necesidades detectadas, la aplicación debe ofrecer las siguientes funcionalidades:
-
-- **Narración por voz:** permitir que la aplicación escuche las acciones de los jugadores mediante el micrófono y genere respuestas narrativas.
-- **Consulta de manuales PDF:** procesar e indexar los documentos aportados por el usuario para recuperar reglas e información relevante.
-- **Control de las respuestas de la IA:** limitar las respuestas al contenido disponible y reducir las invenciones mediante técnicas RAG y *guardrails*.
-- **Continuidad de las campañas:** conservar el contexto necesario para que los acontecimientos, personajes y decisiones mantengan coherencia entre intervenciones.
-- **Integración con Tabletop Simulator:** facilitar la comunicación entre la aplicación web y el tablero virtual mediante scripts Lua y webhooks.
-- **Interfaz web responsive:** ofrecer una interfaz clara que pueda utilizarse desde el ordenador como pantalla de apoyo durante la partida.
-- **Gestión de usuarios y campañas:** permitir organizar las sesiones y administrar los recursos necesarios para cada aventura.
-- **Privacidad y seguridad:** proteger las cuentas, los documentos cargados y los datos procesados durante las sesiones.
-
-Estas funcionalidades constituyen la base de la propuesta comercial. Su implementación debe priorizar la estabilidad, la facilidad de uso y la fiabilidad de las respuestas, ya que son factores importantes para que los usuarios confíen en la herramienta.
-
-### 5.4. Tipos de clientes y modelo de ingresos
-
-El modelo de negocio propuesto es **SaaS (Software as a Service)**. Los usuarios acceden a la aplicación web y pueden pagar una suscripción para utilizar funciones avanzadas.
-
-El modelo de ingresos se puede dividir en tres líneas:
-
-1. **Suscripciones individuales:** dirigidas principalmente a directores de juego que utilizan la herramienta de forma habitual.
-2. **Planes para grupos y comunidades:** destinados a clubes o grupos que necesitan gestionar campañas y utilizar la herramienta de manera recurrente.
-3. **Servicios profesionales de configuración:** asistencia para preparar campañas, configurar integraciones o adaptar la herramienta a necesidades específicas.
-
-La suscripción recurrente sería la principal fuente de ingresos, mientras que los servicios profesionales aportarían ingresos adicionales sin depender exclusivamente del número de usuarios suscritos.
-
-### 5.5. Ejemplos concretos de proyectos y clientes
-
-Para ilustrar cómo podría generar ingresos GameMaster AI, se plantean los siguientes ejemplos:
-
-| Proyecto / Cliente | Necesidad | Solución propuesta |
-|---|---|---|
-| Grupo de amigos que juega semanalmente | Mejorar la inmersión y reducir las interrupciones del director de juego | Narración por voz con IA y asistencia durante las partidas |
-| Tienda especializada en juegos de mesa | Ofrecer un servicio adicional a su comunidad de jugadores | Acceso a la plataforma SaaS para sus clientes |
-| Club de rol o asociación | Facilitar partidas con grupos numerosos y campañas recurrentes | Herramientas de narración inteligente y gestión de contenido |
-| Empresa organizadora de eventos de rol | Crear experiencias más inmersivas para los participantes | Integración de narración por voz con IA en sus eventos |
-| Cliente empresarial | Desarrollar una solución adaptada a sus necesidades | Presupuesto personalizado |
-
-Estos ejemplos muestran que la empresa puede combinar ingresos recurrentes por suscripciones con ingresos puntuales por servicios profesionales.
-
-En el caso de las asociaciones y comunidades, se podrían ofrecer descuentos por contratación anual o por un número determinado de usuarios, siempre que los ingresos cubran los costes de uso y mantenimiento.
-
-### 5.6. Estimación del volumen de negocio
-
-El volumen de negocio se puede estimar mediante los ingresos obtenidos por las suscripciones y los servicios complementarios.
-
-Para realizar una primera previsión se establece una hipótesis simplificada: cada usuario de pago genera, de media, **8 € al mes**. Este importe representa una combinación hipotética de diferentes planes de suscripción, no un precio de mercado comprobado.
-
-### 5.7. Costes y factores que afectan a la rentabilidad
-
-El volumen de negocio no determina por sí solo si la empresa será rentable. También es necesario controlar los costes asociados al desarrollo y funcionamiento de la plataforma.
-
-| Coste | Descripción | Impacto en el negocio |
-|---|---|---|
-| Desarrollo inicial | Programación del frontend en React, backend en Laravel, API y módulos de integración. | Supone una inversión inicial de tiempo y recursos. |
-| Servicios de inteligencia artificial | Procesamiento de solicitudes, generación de respuestas y gestión del contexto. | Puede aumentar a medida que crece el uso de la aplicación. |
-| Infraestructura y alojamiento | Servidores, almacenamiento, bases de datos y servicios auxiliares. | Es necesario para mantener la disponibilidad de la plataforma. |
-| Procesamiento de documentos | Extracción de texto, indexación y recuperación de información de los PDF. | Puede generar costes adicionales según el volumen de documentos. |
-| Marketing y captación | Promoción en comunidades de rol, redes sociales y otros canales. | Permite atraer clientes, pero reduce el margen si el coste de captación es elevado. |
-| Mantenimiento y seguridad | Corrección de errores, actualizaciones y protección de datos. | Ayuda a conservar la confianza de los usuarios y la calidad del servicio. |
-
-Uno de los principales retos económicos será conseguir que el ingreso medio por usuario sea superior al coste variable que genera su utilización, además de contribuir a cubrir los costes fijos.
-
-Para ello, será importante establecer límites de consumo, monitorizar el uso de los modelos de IA y medir la tasa de cancelación de las suscripciones.
 
 ### Fuentes
 
-- [Fortune Business Insights — Tabletop Role-Playing Game Market](https://www.fortunebusinessinsights.com/tabletop-role-playing-game-market-119102): referencia para el tamaño y las perspectivas del mercado de juegos de rol de mesa.
-- [Tabletop Simulator — Steam](https://store.steampowered.com/app/286160/TabletopSimulator/): referencia sobre la plataforma con la que se plantea integrar GameMaster AI.
+- [Fortune Business Insights — Tabletop Role-Playing Game Market](https://www.fortunebusinessinsights.com/tabletop-role-playing-game-market-119102): Datos y perspectivas de crecimiento del mercado global de juegos de rol.
+- [Tabletop Simulator — Steam Store](https://store.steampowered.com/app/286160/TabletopSimulator/): Referencia sobre la plataforma VTT 3D y entorno de scripting Lua.

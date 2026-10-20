@@ -12,7 +12,7 @@ A continuación, se presentan los miembros fundadores del equipo y los roles pri
 | **Miguel Ángel Lastra Garcés** | Programador Principal (Lead Developer), Controlador de Versiones, Scrum Master y Release Manager |
 | **Abel Carbonero Mora** | Programador Íntegro (Core Developer) |
 | **Christian Said Jimenez Mahecha** | Programador Íntegro (Core Developer) |
-| **Rafa** | Programador Íntegro (Core Developer) |
+| **Rafa Riego Ruz** | Programador Íntegro (Core Developer) |
 
 ## Documentación y Normativa
 
