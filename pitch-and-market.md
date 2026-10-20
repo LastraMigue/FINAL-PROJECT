@@ -154,9 +154,9 @@ flowchart TD
     BE --> BE1[API RESTful Laravel y gestión de campañas]
     IA --> IA1[Procesamiento de PDFs y LLM con Guardrails]
     IT --> IT1[Conexión Tabletop Simulator y pagos Stripe]
-    ```
+```
 
-## 5. Descripción de departamentos y funciones
+## 4. Descripción de departamentos y funciones
 
 # Descripción de departamentos y funciones de las empresas
 
@@ -291,11 +291,3 @@ En conclusión, todos los departamentos contribuyen al funcionamiento de una emp
 
 > **Nota metodológica:** las fuentes describen las actividades y los productos de las empresas. La clasificación de departamentos es un análisis funcional elaborado para este trabajo y no implica que cada empresa publique un organigrama con todas estas áreas. Algunas funciones pueden estar agrupadas en un mismo equipo o externalizadas.
 
-
-## 6. Necesidades y volumen de negocio.
-=======
-    FE --> FE1[Companion App React y voz Web Speech API]
-    BE --> BE1[API RESTful Laravel y gestión de campañas]
-    IA --> IA1[Procesamiento de PDFs y LLM con Guardrails]
-    IT --> IT1[Conexión Tabletop Simulator y pagos Stripe]
-```
