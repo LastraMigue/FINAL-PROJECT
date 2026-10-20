@@ -113,3 +113,28 @@ flowchart TD
 
 La propuesta de GameMaster AI combina estas referencias sin replicar una sola: toma la organización y consistencia del contenido de juegos de rol, la usabilidad de un VTT y la interacción narrativa de una IA. Su elemento diferenciador será fundamentar las respuestas en los documentos de cada campaña y conectarlas con los eventos de la partida.
 
+### Organigrama de nuestro proyecto
+
+El equipo se organiza por áreas para que cada integrante tenga responsabilidades principales diferenciadas. La distribución es una propuesta de trabajo para GameMaster AI y puede ajustarse según las necesidades de cada sprint.
+
+```mermaid
+flowchart TD
+    GM[Proyecto GameMaster AI]
+    GM --> AB[Abel Carbonero Mora<br/>Lead Developer y revisor de código]
+    GM --> MI[Miguel Ángel Lastra Garcés<br/>Scrum Master y Release Manager]
+    GM --> CH[Christian Said Jimenez Mahecha<br/>Core Developer]
+    GM --> RA[Rafa<br/>Core Developer]
+
+    AB --> AB1[Arquitectura técnica y coordinación del desarrollo]
+    AB --> AB2[Frontend React y revisión de calidad del código]
+
+    MI --> MI1[Organización del backlog y seguimiento de sprints]
+    MI --> MI2[Control de versiones, integración y publicación de entregas]
+
+    CH --> CH1[Backend Laravel y API REST]
+    CH --> CH2[Autenticación, usuarios, campañas y base de datos]
+
+    RA --> RA1[Integración de IA, chat y memoria contextual]
+    RA --> RA2[Procesamiento de PDF y sistema RAG]
+    RA --> RA3[Funciones de voz e integración con Tabletop Simulator]
+```
