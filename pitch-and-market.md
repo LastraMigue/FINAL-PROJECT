@@ -8,7 +8,7 @@
 | :--- | :--- |
 | **Startup Ficticia** | **GameMaster AI Studios S.L.** |
 | **Producto Digital** | **GameMaster AI** — SaaS Companion App Web para narración inteligente por voz con IA acotada para juegos de mesa de rol, integrable con Tabletop Simulator |
-| **Equipo de Desarrollo** | **Abel Carbonero Mora**<br/>**Miguel Ángel Lastra Garcés**<br/>**Christian Said Jimenez Mahecha**<br/>**Rafa** |
+| **Equipo de Desarrollo** | **Abel Carbonero Mora**<br/>**Miguel Ángel Lastra Garcés**<br/>**Christian Said Jimenez Mahecha**<br/>**Rafael Riego Ruz** |
 | **Ciclo Formativo** | 2º DAW (Desarrollo de Aplicaciones Web) — ILERNA (2026/2027)<br/>*Módulos: DWS, DWC, DIW, DA, IPE II, IP, PI* |
 
 ---
