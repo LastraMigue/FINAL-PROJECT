@@ -1,12 +1,3 @@
-A. Web companion con voz e integración con Tabletop Simulator: React + Laravel, voz bilateral, RAG sobre PDFs y webhooks desde un script Lua que informa del estado del tablero.
-B. Web/PWA de narración por voz sin integración con el tablero: misma idea de narrador con PDFs, pero los jugadores cuentan lo que pasa. Sirve para cualquier juego de rol, también en mesa física.
-C. Web de preparación y consulta de campañas (texto primero): consulta de reglas, generación de escenas y PNJ, historial y resúmenes de sesión. La voz es un extra opcional.
-Convención
-
-(× A, B, C): la tarea se hace para cada una de las tres soluciones, con el mismo nivel de detalle y los mismos criterios. Se marca la casilla cuando está hecha para las tres.
-(común): la tarea es igual para todas y se hace una sola vez.
-Plan de 2 días
-
 ## 5. ISSUE:  Propuestas: desarrollo de las soluciones A, B y C ##
 
 **5.1 Solución A: Aplicación web con voz e integración con Tabletop Simulator**
