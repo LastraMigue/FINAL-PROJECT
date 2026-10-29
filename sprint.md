@@ -7,21 +7,7 @@ Convención
 (común): la tarea es igual para todas y se hace una sola vez.
 Plan de 2 días
 
-Rafa	5, 8, 12
-
-Issue 5 · Propuestas: desarrollo de las soluciones A, B y C
-
-EN: Solutions: development of solutions A, B and C · Label: propuestas · Responsable: Rafa
-
-Desarrollar las tres soluciones con el mismo nivel de detalle, partiendo de las descripciones de arriba.
-
- (× A, B, C) Descripción: qué es, a quién va dirigida y qué problema de la issue 2 resuelve (3-4 líneas)
- (× A, B, C) Flujo de uso: cómo la usa un jugador o DM antes, durante y después de la partida, en 4-5 pasos
- (× A, B, C) Funcionalidades y tecnologías clave (solo lista, sin diagramas)
- (× A, B, C) Ventajas e inconvenientes: 3 y 3
- (común) Revisar que las tres tienen la misma extensión y profundidad
-
-Hecho cuando: las tres fichas siguen la plantilla y ninguna queda más floja que las otras. Depende de: issues 2 y 4 (arranca con el borrador del problema acordado en el arranque y se cierra cuando ambas están hechas).
+## 5. ISSUE:  Propuestas: desarrollo de las soluciones A, B y C ##
 
 **5.1 Solución A: Aplicación web con voz e integración con Tabletop Simulator**
 
@@ -160,27 +146,121 @@ Consiste en una aplicación web que usa la IA para ayudar a los directores de ju
     3. Menor automatización de la narración: El director de juego sigue teniendo que dirigir la partida y transmitir la información a los jugadores
 
 
-Issue 8 · Propuestas: comparativa y elección final
+## 8. ISSUE: Propuestas: comparativa y elección final ##
 
-EN: Solutions: comparison and final choice · Label: propuestas · Responsable: Rafa
+Para comparar las tres soluciones propuestas para GameMaster AI, utilizaremos una escala del 1 al 5, donde 1 representa una valoración muy desfavorable y 5 una valoración muy favorable.
 
- (común) Cada miembro del equipo puntúa por separado las 3 soluciones con los criterios de la issue 4 y se calcula la media
- (común) Revisar juntos las puntuaciones con diferencias grandes (más de 2 puntos) y explicar el porqué
- (común) Construir la matriz comparativa ponderada
- (común) Redactar la justificación de la elección final basada en la matriz, no en opinión
- (común) Preparar el contenido de las slides de propuestas: las 3 alternativas con pros y contras, y la matriz con la decisión
- (común) Marcar la solución elegida en las slides de innovación y viabilidad (issues 6 y 7)
+En los criterios de coste y riesgo legal, una puntuación alta indica un coste menor o un riesgo legal más reducido.
 
-Hecho cuando: alguien externo puede entender por qué se descartan las otras dos. Depende de: issues 3, 5, 6 y 7.
 
-Issue 12 · Observación de otras presentaciones
 
-EN: Observing other teams' presentations · Label: gestión · Responsable: Rafa, Migue, Christian y Abel
+| Criterio                           | Descripción                                                                                                      |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Viabilidad técnica y de tiempo     | Valora si podemos desarrollar la solución con los conocimientos, recursos y tiempo disponibles durante el curso. |
+| Coste                              | Estima el coste de desarrollo y mantenimiento de la aplicación.                                                  |
+| Inmersión y experiencia de usuario | Valora cuánto mejora la experiencia de juego y la interacción de los usuarios.                                   |
+| Diferenciación frente al mercado   | Evalúa si la solución ofrece características que la distinguen de otras aplicaciones de rol.                     |
+| Potencial de monetización          | Estima las posibilidades de obtener ingresos mediante suscripciones u otras funciones prémium.                   |
+| Riesgo legal                       | Valora los riesgos relacionados con los derechos de autor de los manuales PDF y su utilización.                      |
 
-Recomendado por la revisión: al menos un miembro del equipo observa las presentaciones y el feedback de los demás equipos.
+## 8.1 Matriz de evaluación inicial
 
- (común) Designar a quién observa
- (común) Apuntar el feedback recibido por otros equipos que también nos pueda aplicar
- (común) Compartir con el equipo un resumen corto (5 líneas) de lo aprendido
+| Criterio | Solución A | Solución B | Solución C |
+|---|---:|---:|---:|
+| Viabilidad técnica y de tiempo | 3 | 4 | 5 |
+| Coste | 3 | 3 | 4 |
+| Inmersión y experiencia de usuario | 5 | 4 | 2 |
+| Diferenciación frente al mercado | 5 | 4 | 3 |
+| Potencial de monetización | 4 | 4 | 3 |
+| Riesgo legal | 3 | 3 | 3 |
+| **Total** | **23/30** | **22/30** | **20/30** |
+| **Media** | **3,83/5** | **3,67/5** | **3,33/5** |
 
-Hecho cuando: el equipo tiene una lista de aprendizajes aplicables a su propio proyecto.
+
+## 8.2. Justificación de las puntuaciones
+
+### Solución A: Aplicación web con voz e integración con Tabletop Simulator
+
+- **Viabilidad técnica y de tiempo — 3/5:** Combina interfaz web, inteligencia artificial, procesamiento de voz e integración con Tabletop Simulator mediante Lua y webhooks. Aunque es más compleja, podemos desarrollar primero una versión básica y añadir progresivamente las funciones avanzadas.
+
+- **Coste — 3/5:** El coste se considera medio, ya que los servicios de IA y voz pueden generar gastos, aunque estos pueden controlarse limitando las funcionalidades y el uso.
+
+- **Inmersión y experiencia de usuario — 5/5:** La narración por voz y la capacidad de reaccionar a los acontecimientos del tablero pueden hacer que las partidas sean más dinámicas e inmersivas.
+
+- **Diferenciación frente al mercado — 5/5:** Combina consulta de manuales, narración por voz e integración con los eventos del tablero en una misma aplicación.
+
+- **Potencial de monetización — 4/5:** Podría ofrecer una suscripción prémium con funciones avanzadas, límites de uso más amplios y herramientas adicionales para directores de juego.
+
+- **Riesgo legal — 3/5:** Existe un riesgo que debe controlarse al utilizar manuales PDF. Para reducirlo, se priorizarán documentos propios, autorizados o con licencias compatibles.
+
+### Solución B: Narración por voz sin integración con Tabletop Simulator
+
+- **Viabilidad técnica y de tiempo — 4/5:** Es más sencilla que la Solución A porque no necesita desarrollar la integración con Tabletop Simulator.
+
+- **Coste — 3/5:** Los servicios de inteligencia artificial y procesamiento de voz pueden generar gastos.
+
+- **Inmersión y experiencia de usuario — 4/5:** Permite narrar por voz, aunque depende de que los jugadores describan manualmente los acontecimientos de la partida.
+
+- **Diferenciación frente al mercado — 4/5:** Combina narración por voz y consulta de manuales, pero no automatiza la recepción de eventos del tablero.
+
+- **Potencial de monetización — 4/5:** Podría comercializarse mediante suscripciones y funciones prémium.
+
+- **Riesgo legal — 3/5:** Presenta riesgos similares a la Solución A por el posible uso de manuales PDF protegidos.
+
+### Solución C: Preparación de campañas y consulta de reglas
+
+- **Viabilidad técnica y de tiempo — 5/5:** Es la propuesta más sencilla si se limita inicialmente a consultas por texto y gestión básica de campañas.
+
+- **Coste — 4/5:** Puede evitar los costes asociados al procesamiento de voz en tiempo real y a la integración con Tabletop Simulator.
+
+- **Inmersión y experiencia de usuario — 2/5:** Ayuda a preparar partidas, pero interviene menos directamente en la experiencia de juego.
+
+- **Diferenciación frente al mercado — 3/5:** Sus funciones son útiles, aunque existen otras herramientas que permiten organizar campañas y preparar aventuras.
+
+- **Potencial de monetización — 3/5:** Podría monetizarse mediante funciones prémium, aunque necesitaría diferenciarse de otras herramientas existentes.
+
+- **Riesgo legal — 3/5:** Depende de cómo se obtengan, procesen y utilicen los manuales.
+
+## 8.3 Matriz de comparación ponderada
+
+Como el objetivo principal de GameMaster AI es ofrecer una experiencia de narración inmersiva, consideramos razonable dar mayor importancia a la inmersión y a la diferenciación frente al mercado.
+
+### Pesos de los criterios
+
+| Criterio | Peso |
+|---|---:|
+| Viabilidad técnica y de tiempo | 20 % |
+| Coste | 10 % |
+| Inmersión y experiencia de usuario | 25 % |
+| Diferenciación frente al mercado | 20 % |
+| Potencial de monetización | 15 % |
+| Riesgo legal | 10 % |
+| **Total** | **100 %** |
+
+### Resultados ponderados
+
+| Criterio | Peso | Solución A | Solución B | Solución C |
+|---|---:|---:|---:|---:|
+| Viabilidad técnica y de tiempo | 20 % | 3 | 4 | 5 |
+| Coste | 10 % | 3 | 3 | 4 |
+| Inmersión y experiencia de usuario | 25 % | 5 | 4 | 2 |
+| Diferenciación frente al mercado | 20 % | 5 | 4 | 3 |
+| Potencial de monetización | 15 % | 4 | 4 | 3 |
+| Riesgo legal | 10 % | 3 | 3 | 3 |
+| **Puntuación ponderada** | **100 %** | **4,00/5** | **3,80/5** | **3,45/5** |
+
+La puntuación ponderada se obtiene multiplicando la valoración de cada criterio por su peso y sumando los resultados.
+
+## 8.4 Justificación de la solución elegida
+
+### Solución seleccionada: A — Aplicación web con voz e integración con Tabletop Simulator
+
+Hemos elegido la Solución A porque es la que mejor representa la idea original de GameMaster. Aunque requiere un mayor esfuerzo técnico, ofrece una experiencia más inmersiva al combinar la narración por voz, la consulta de manuales y la reacción a los acontecimientos de la partida.
+
+Además, su integración con Tabletop Simulator permite diferenciar el proyecto de una herramienta centrada únicamente en responder preguntas o generar contenido.
+
+## 8.5 Conclusión
+
+La Solución A es la opción que mejor se ajusta a los objetivos de GameMaster AI, ya que obtiene la mejor puntuación al priorizar la inmersión y la diferenciación, sin dejar de considerar el coste, la viabilidad técnica y los riesgos legales. Además combina funcionalidades que pueden mejorar la experiencia de las partidas de rol y aportar un elemento diferenciador frente a otras herramientas.
+
+Aunque las soluciones B y C presentan ventajas en cuanto a simplicidad técnica y coste, la Solución A ofrece un mayor potencial para desarrollar la idea principal del proyecto.
