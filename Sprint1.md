@@ -202,3 +202,209 @@ GameMaster AI se plantea tres enfoques distintos para responder a necesidades co
 La principal oportunidad está en combinar estas capacidades de una manera útil y fiable, pero las ventajas identificadas deben considerarse hipótesis hasta que se validen con una investigación más amplia, un prototipo funcional y pruebas con usuarios.
 
 La Issue #3 se considerará completada cuando la tabla comparativa incluya fuentes verificables y precios actualizados, se hayan identificado las oportunidades del mercado y cada propuesta esté posicionada frente a las alternativas existentes.
+
+# Issue #6 · Innovación: aspectos diferenciadores de GameMaster AI (DEPENDE DEL ISSUES #5)
+
+**Responsable:** Christian  
+**Etiqueta:** `innovación`  
+**Dependencias:** Issues #3 y #5
+
+## 1. Objetivo
+
+El objetivo de esta tarea es identificar qué aporta de diferente cada propuesta de GameMaster AI, qué problemas pretende resolver y cómo puede mejorar la experiencia de los jugadores y del director de juego.
+
+No se considera diferenciador el simple hecho de utilizar inteligencia artificial, ya que existen herramientas como AI Dungeon y AI Game Master que ya generan aventuras mediante IA. Del mismo modo, Roll20 ofrece un tablero virtual con herramientas de comunicación, automatización y gestión de partidas. Por eso, la innovación debe centrarse en funciones concretas que aporten una mejora frente a las alternativas existentes. 
+
+A partir del benchmark de la Issue #3, se estudian tres propuestas:
+
+- **GameMaster AI Companion:** narrador conectado con Tabletop Simulator.
+- **GameMaster AI Narrator:** narrador por voz adaptable a distintos juegos de rol.
+- **GameMaster AI Campaign Manager:** herramienta de preparación y gestión de campañas.
+
+## 2. Diferenciadores de GameMaster AI Companion
+
+### Descripción de la propuesta
+
+Companion es una aplicación web desarrollada con React y Laravel que combina comunicación por voz en ambos sentidos, consulta de manuales PDF mediante RAG e integración prevista con Tabletop Simulator a través de un script Lua y webhooks que transmiten información del tablero.
+
+### Diferenciadores
+
+**1. Narración contextualizada con información del tablero**
+
+- **Categoría:** Tecnología.
+- **Problema que resuelve:** el narrador puede carecer de información sobre lo que está sucediendo en el tablero y depender de las descripciones de los jugadores.
+- **Aportación:** utilizar los datos que transmita Tabletop Simulator para adaptar las respuestas al contexto de la partida.
+- **Relación con la Issue #3:** Roll20 ya ofrece herramientas de tablero y automatización, pero no se ha verificado una solución que combine exactamente estas funciones con el narrador propuesto.
+- **Validación necesaria:** demostrar que el script Lua puede enviar los datos relevantes y que la aplicación los interpreta correctamente.
+
+Tabletop Simulator dispone de una API oficial de scripting en Lua que permite personalizar el comportamiento de las partidas, lo que proporciona una base técnica para investigar esta integración. 
+
+**2. Consulta de reglas a partir de PDF propios**
+
+- **Categoría:** Tecnología.
+- **Problema que resuelve:** los directores de juego pueden perder tiempo buscando reglas en manuales durante una sesión.
+- **Aportación:** utilizar RAG para recuperar fragmentos relevantes de los documentos incorporados y generar respuestas basadas en ellos.
+- **Relación con la Issue #3:** D&D Beyond proporciona reglas y contenido oficial, pero eso no equivale necesariamente a consultar cualquier manual PDF del usuario mediante RAG. 
+- **Validación necesaria:** comprobar la precisión de las respuestas y mostrar las referencias a las páginas o fragmentos utilizados.
+
+**3. Integración de voz, reglas y tablero en un único flujo**
+
+- **Categoría:** Experiencia de usuario.
+- **Problema que resuelve:** tener que alternar entre el tablero, los manuales y herramientas externas para consultar información.
+- **Aportación:** reunir la narración, la consulta de reglas y el contexto del tablero en una misma experiencia.
+- **Relación con la Issue #3:** Roll20 se centra en el juego virtual, mientras que AI Dungeon y AI Game Master se orientan a la narración mediante IA. Companion pretende conectar estos enfoques. 
+- **Validación necesaria:** realizar pruebas para comprobar si reduce el tiempo dedicado a buscar información y facilita el desarrollo de la partida.
+
+### Resumen de Companion
+
+Su principal diferenciador potencial es la combinación de voz, consulta de manuales propios e información del tablero de Tabletop Simulator. La integración debe demostrarse mediante un prototipo antes de considerarla una ventaja técnica confirmada.
+
+## 3. Diferenciadores de GameMaster AI Narrator
+
+### Descripción de la propuesta
+
+Narrator es una aplicación web o PWA centrada en la narración por voz. Utiliza IA para desarrollar la aventura a partir de lo que cuentan los jugadores y permite consultar manuales PDF mediante RAG. No necesita conectarse a un tablero virtual, por lo que puede utilizarse con distintos juegos de rol y en partidas presenciales.
+
+### Diferenciadores
+
+**1. Narrador adaptable a distintos juegos y entornos**
+
+- **Categoría:** Experiencia de usuario.
+- **Problema que resuelve:** algunas herramientas están vinculadas a plataformas o ecosistemas concretos.
+- **Aportación:** permitir que el grupo utilice el narrador sin depender de Tabletop Simulator.
+- **Relación con la Issue #3:** Roll20 y D&D Beyond ofrecen entornos de juego virtual, mientras que Narrator busca acompañar tanto partidas digitales como presenciales. [1][5]
+- **Validación necesaria:** probar la aplicación con diferentes sistemas de rol y comprobar qué adaptaciones necesita cada uno.
+
+**2. Consulta de reglas basada en los manuales del grupo**
+
+- **Categoría:** Tecnología.
+- **Problema que resuelve:** las respuestas de un narrador generalista pueden no ajustarse a las reglas concretas utilizadas por el grupo.
+- **Aportación:** recuperar información de los PDF proporcionados y utilizarla como contexto para responder.
+- **Relación con la Issue #3:** AI Dungeon ya ofrece narración por voz, de modo que la voz por sí sola no es un elemento diferencial. La oportunidad está en combinarla con una consulta fundamentada en los documentos del usuario. [2]
+- **Validación necesaria:** comprobar que las respuestas respetan los documentos y que la aplicación reconoce cuándo no dispone de información suficiente.
+
+**3. Menor dependencia técnica del tablero**
+
+- **Categoría:** Proceso.
+- **Problema que resuelve:** las integraciones con herramientas externas pueden aumentar la complejidad de instalación y mantenimiento.
+- **Aportación:** permitir que los jugadores describan lo que sucede, evitando la necesidad de desarrollar una conexión específica con un VTT.
+- **Relación con la Issue #3:** Companion requiere integración con Tabletop Simulator; Narrator renuncia a esa función a cambio de una utilización más flexible.
+- **Validación necesaria:** medir la facilidad de configuración y comprobar si describir manualmente las acciones resulta cómodo durante una partida.
+
+### Resumen de Narrator
+
+Su principal diferenciador potencial es ofrecer narración por voz con consulta de reglas propias sin exigir un tablero digital concreto. Para destacar frente a otras herramientas de narrativa con IA, tendrá que demostrar que las respuestas son útiles, están fundamentadas en los manuales y se adaptan a diferentes juegos.
+
+## 4. Diferenciadores de GameMaster AI Campaign Manager
+
+### Descripción de la propuesta
+
+Campaign Manager es una aplicación web centrada en la preparación y organización de campañas. Incluye consulta de reglas, generación de escenas y personajes no jugadores (PNJ), historial de partidas y resúmenes de sesión. La voz es una función opcional.
+
+### Diferenciadores
+
+**1. Historial organizado y continuidad entre sesiones**
+
+- **Categoría:** Tecnología.
+- **Problema que resuelve:** recuperar acontecimientos, decisiones y detalles de personajes de sesiones anteriores puede requerir revisar notas dispersas.
+- **Aportación:** guardar el historial y generar resúmenes que permitan recuperar información relevante para continuar una campaña.
+- **Relación con la Issue #3:** AI Dungeon ya dispone de funciones de memoria narrativa, por lo que la memoria por sí sola no debe considerarse exclusiva. La oportunidad está en organizarla específicamente para la gestión de campañas de rol. 
+- **Validación necesaria:** comprobar que la aplicación recupera correctamente personajes, decisiones, lugares y acontecimientos de sesiones anteriores.
+
+**2. Preparación centralizada de campañas**
+
+- **Categoría:** Proceso.
+- **Problema que resuelve:** el director de juego puede tener que utilizar herramientas separadas para consultar reglas, crear PNJ, preparar escenas y guardar notas.
+- **Aportación:** reunir estas tareas en una única aplicación para facilitar la preparación de las sesiones.
+- **Relación con la Issue #3:** D&D Beyond ofrece herramientas para gestionar contenido y campañas, mientras que AI Game Master permite generar campañas y aventuras. Campaign Manager tendrá que demostrar que la organización conjunta aporta una mejora real. 
+- **Validación necesaria:** comprobar si los usuarios pueden preparar una sesión con menos pasos y recuperar fácilmente los materiales creados.
+
+**3. Consulta de reglas integrada con el contexto de la campaña**
+
+- **Categoría:** Tecnología.
+- **Problema que resuelve:** consultar una regla de forma aislada no siempre basta para aplicarla a una situación concreta de la aventura.
+- **Aportación:** combinar la información de los manuales PDF con los datos guardados de la campaña para ofrecer respuestas más relevantes.
+- **Relación con la Issue #3:** las plataformas de reglas ofrecen referencias de juego y las herramientas narrativas generan contenido. La oportunidad está en relacionar las reglas consultadas con el contexto persistente de la campaña.
+- **Validación necesaria:** comprobar la exactitud de las respuestas y evitar que los datos guardados se confundan con las reglas oficiales.
+
+**4. Voz como función complementaria**
+
+- **Categoría:** Experiencia de usuario.
+- **Problema que resuelve:** no todos los directores de juego necesitan un narrador hablado; algunos priorizan preparar materiales y consultar información por escrito.
+- **Aportación:** mantener una experiencia centrada en el texto y permitir añadir voz cuando resulte útil.
+- **Relación con la Issue #3:** AI Dungeon ya incorpora narración de respuestas, por lo que Campaign Manager no necesita competir directamente por la voz como función principal. 
+- **Validación necesaria:** comprobar si la voz aporta valor sin complicar la interfaz principal.
+
+### Resumen de Campaign Manager
+
+Su principal diferenciador potencial es centralizar la preparación y la memoria de una campaña, relacionando las reglas con el historial de la aventura. Para demostrar su valor, tendrá que ofrecer una recuperación de información fiable y una organización más útil que la simple generación de texto.
+
+## 5. Clasificación general de los diferenciadores
+
+| Diferenciador | Companion | Narrator | Campaign Manager |
+|---|---|---|---|
+| Contexto automático procedente del tablero | Tecnología | No aplica | No aplica |
+| Consulta RAG de PDF propios | Tecnología | Tecnología | Tecnología, orientada a la preparación |
+| Integración de funciones en un mismo flujo | Experiencia de usuario | Experiencia de usuario | Experiencia de usuario |
+| Uso sin dependencia de un tablero concreto | No es el objetivo principal | Experiencia de usuario | Experiencia de usuario |
+| Reducción de tareas manuales | Proceso | Proceso | Proceso |
+| Historial y continuidad entre sesiones | Complementario | Complementario | Tecnología y proceso |
+| Voz como función principal | Sí | Sí | No, es opcional |
+| Modelo freemium | Por definir | Por definir | Por definir |
+
+**Nota sobre el modelo de negocio:** no se considera el freemium un diferenciador confirmado porque todavía no se han especificado los planes, los límites gratuitos ni las funciones de pago de las tres propuestas. Si la Issue #5 define un modelo freemium, deberá incorporarse aquí y justificarse frente a los modelos de precios de la competencia.
+
+## 6. Tabla comparativa para las diapositivas
+
+| Aspecto | GameMaster AI Companion | GameMaster AI Narrator | GameMaster AI Campaign Manager |
+|---|---|---|---|
+| Necesidad principal | Conectar la narración con el tablero | Narrar partidas con flexibilidad | Preparar y organizar campañas |
+| Diferenciador principal | Contexto del tablero mediante Lua y webhooks | Voz y consulta de PDF propios sin exigir un VTT | Historial, resúmenes y preparación centralizada |
+| Tecnología clave | React, Laravel, RAG y scripting Lua | Aplicación web/PWA y RAG | Aplicación web, gestión de historial y RAG |
+| Tipo de innovación destacado | Tecnología | Experiencia de usuario | Proceso |
+| Problema que pretende reducir | Consultas manuales y falta de contexto del tablero | Dependencia de plataformas y búsqueda de reglas | Información dispersa y pérdida de continuidad |
+| Competencia más relacionada | Roll20 y herramientas de narración con IA | AI Dungeon y AI Game Master | D&D Beyond y herramientas de narrativa con memoria |
+| Principal reto | Hacer fiable la integración con el tablero | Demostrar mejor adaptación a los manuales del usuario | Mantener un historial preciso y fácil de consultar |
+
+## 7. Contenido propuesto para las diapositivas
+
+### Diapositiva 1 — ¿Dónde está la innovación?
+
+**Título:** Tres formas de mejorar la experiencia de rol
+
+- No basta con utilizar IA: la diferencia está en cómo ayuda durante y entre las sesiones.
+- Companion conecta la narración con el tablero.
+- Narrator permite jugar con voz y reglas propias sin depender de un VTT.
+- Campaign Manager facilita preparar, organizar y continuar las campañas.
+
+### Diapositiva 2 — Comparativa de las propuestas
+
+Utilizar la tabla comparativa del apartado 6, destacando el problema que resuelve cada producto y su diferenciador principal.
+
+### Diapositiva 3 — ¿Qué aportamos frente al mercado?
+
+- **Companion:** integración prevista entre el contexto de Tabletop Simulator, la voz y los manuales PDF.
+- **Narrator:** narración flexible con consulta de reglas propias en diferentes entornos.
+- **Campaign Manager:** preparación centralizada y recuperación del historial de campaña.
+
+**Mensaje final:** las tres propuestas parten de necesidades distintas. Su valor diferencial deberá demostrarse con pruebas de funcionamiento y usuarios, comparando los resultados con las herramientas existentes.
+
+## 8. Conclusión
+
+El análisis de la Issue #3 permite orientar la innovación de GameMaster AI hacia tres necesidades concretas: contextualizar la narración mediante los datos del tablero, facilitar la narración por voz con reglas propias y mejorar la preparación y continuidad de las campañas.
+
+Los diferenciadores más sólidos son los que pueden convertirse en funciones demostrables: integración con Tabletop Simulator, consulta de documentos mediante RAG y recuperación organizada del historial. La voz y la IA son componentes de esas propuestas, pero no constituyen por sí solos una ventaja exclusiva.
+
+Para completar la validación, será necesario desarrollar prototipos, probar la calidad de las respuestas y recoger comentarios de usuarios. Además, el modelo de negocio y la posible estrategia freemium deberán alinearse con lo definido en la Issue #5.
+
+### Fuentes consultadas
+
+[1] Roll20, funciones y planes: https://roll20.net/ y https://app.roll20.net/why-subscribe-to-roll20
+
+[2] AI Dungeon, narración y planes: https://aidungeon.com/alchemy y https://help.aidungeon.com/memberships-benefits
+
+[3] AI Game Master, características y precios: https://www.aigamemaster.app/faq y https://aidungeonmaster.ai/pricing/
+
+[4] Tabletop Simulator, API oficial de Lua: https://api.tabletopsimulator.com/ y https://www.tabletopsimulator.com/about
+
+[5] D&D Beyond, suscripciones y Maps: https://www.dndbeyond.com/en/subscribe y https://dndbeyond-support.wizards.com/hc/en-us/articles/46363122030868-What-is-Maps
