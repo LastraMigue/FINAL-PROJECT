@@ -45,9 +45,9 @@ La evolución también se aprecia en la oferta empresarial. Wizards of the Coast
 - Latitude Inc.
 
 
-## 2. Perfil de los jugadores y de los Dungeon Masters
+## 1.5 Perfil de los jugadores y de los Dungeon Masters
 
-### 2.1. Quiénes son
+### 1.5.1 Quiénes son
 
 La evidencia de producto y del propio ecosistema del juego online sugiere que no existe un único perfil de jugador o DM. Lo que sí aparece con claridad es que hay grupos muy heterogéneos: principiantes, veteranos, jugadores casuales, partidas largas, campañas regulares y experiencias híbridas entre mesa física y juego online.
 
@@ -56,13 +56,13 @@ En la práctica, los usuarios más relevantes para este proyecto son principalme
 - Jugadores que participan en partidas con amigos o conocidos, a menudo con una estructura de grupo ya formada.
 - Dungeon Masters o Game Masters, que tienen mayor carga operativa: preparan la historia, gestionan la continuidad, resuelven reglas y mantienen el ritmo de la sesión.
 
-### 2.2. Con qué frecuencia juegan
+### 1.5.2 Con qué frecuencia juegan
 
 No hay una frecuencia pública y homogénea que pueda validarse con una sola fuente oficial para toda la comunidad. Sin embargo, la evidencia disponible permite afirmar que la actividad no es puntual ni aislada: el propio ecosistema de VTT(Virtual Tabletop)  y la presencia de “Looking for Group” (LFG), partidas online, campañas, tutoriales y herramientas de gestión de campaña muestran una práctica repetida y organizada.
 
 La evidencia sugiere un patrón de juego frecuente y estructurado, especialmente en campañas largas o partidas con grupos estables.
 
-### 2.3. Cómo juegan online
+### 1.5.3 Cómo juegan online
 
 La forma más clara de juego online que documentan las plataformas es la siguiente:
 
@@ -73,7 +73,7 @@ La forma más clara de juego online que documentan las plataformas es la siguien
 - Integración entre juego, ambientación y continuidad narrativa.
 
 
-### 2.4. Qué herramientas usan
+### 1.5.4 Qué herramientas usan
 
 Las herramientas más claramente presentes en la evidencia oficial son estas:
 
@@ -85,7 +85,7 @@ Las herramientas más claramente presentes en la evidencia oficial son estas:
 
 La combinación típica no es una sola herramienta, sino un stack de colaboración: una plataforma de juego, un sistema de reglas, una herramienta de comunicación y, a menudo, una estructura de campaña para mantener contexto. Esto refuerza la idea de que el mayor problema no es solo jugar, sino mantener todo el contexto de la partida sin perder ritmo.
 
-## 3. Problemas frecuentes en las partidas
+## 1.6 Problemas frecuentes en las partidas
 
 En foros como RPG Stack Exchange y r/DungeonMasters, y en artículos para directores de juego, se repiten estas dificultades:
 
@@ -95,7 +95,7 @@ En foros como RPG Stack Exchange y r/DungeonMasters, y en artículos para direct
 |---|---|
 | El director debe describir lugares, personajes y situaciones para que la historia avance. A veces los jugadores toman decisiones inesperadas. Responder en el momento puede resultar complicado, especialmente para quienes empiezan. | Las pausas largas y las interrupciones pueden distraer al grupo. Cambiar entre varias herramientas también puede romper el ritmo. Así, a los jugadores les puede costar mantenerse dentro de la historia. |
 
-### 3.1. Testimonios de la comunidad
+### 1.6.1 Testimonios de la comunidad
 
 Estos comentarios reales muestran algunas de las dificultades. Las citas se han traducido del inglés:
 
@@ -105,7 +105,7 @@ Estos comentarios reales muestran algunas de las dificultades. Las citas se han 
 | **Consultar reglas** | Un director plantea: «Al buscar las reglas, no encuentro nada sobre cómo liberar a los compañeros que están inmovilizados». ([Publicación sobre liberar a compañeros atrapados en telarañas](https://rpg.stackexchange.com/questions/169371/freeing-others-from-webs-during-combat)) |
 | **Narrar y mantener la inmersión** | Un DM pregunta: «No se me da bien improvisar. ¿Qué puede hacer alguien a quien le cuesta inventar respuestas interesantes en el momento para darle más vida a la partida sin que suene forzada, repetitiva y poco natural?». ([Publicación sobre improvisación y descripción narrativa](https://rpg.stackexchange.com/questions/133208/how-to-add-descriptive-role-playing-flair-if-im-not-good-at-improvising)) |
 
-## 4. Evidencia para las tres soluciones
+## 1.7 Evidencia para las tres soluciones
 
 Los datos siguientes ayudan a valorar si hay público para cada opción. Son referencias orientativas: las encuestas no representan necesariamente a todos los jugadores de rol y las plataformas digitales no publican siempre el número total de jugadores de TTRPG.
 
@@ -115,4 +115,20 @@ Los datos siguientes ayudan a valorar si hay público para cada opción. Son ref
 | **B. Narrador por voz para mesa física y cualquier juego** | Una encuesta de Sly Flourish a **2.900** jugadores y directores de D&D/RPG, publicada en 2023, obtuvo **46 %** de juego principalmente presencial y **13 %** de juego presencial y online por igual. En la misma página, una encuesta de 2019 mostró un **70 %** que jugaba principalmente en persona. Esto confirma que la mesa física sigue siendo una modalidad importante y respalda una herramienta que no dependa de un tablero virtual.| En 2023, el **41 %** respondió que jugaba principalmente online, por lo que un producto solo centrado en la mesa física dejaría fuera a parte del público. Además, son encuestas voluntarias de una comunidad concreta; sus porcentajes no deben tratarse como la distribución mundial de jugadores. Tampoco prueban por sí solos que todos los grupos quieran interactuar por voz con una aplicación durante una partida física. |
 | **C. Asistente para preparar y consultar campañas** | En una encuesta voluntaria de D&D con **3.663 respuestas**, sobre una sesión de cuatro horas, el **57 %** indicó dedicar dos horas o más a prepararla; un **29 %** señaló tres horas o más. El dato respalda la existencia de una carga de preparación para muchos DMs. | La preparación varía: el **43 %** dijo dedicar una hora o menos. La encuesta es de 2020, se limita a D&D y no es representativa de todos los sistemas. Para resúmenes, una encuesta voluntaria de 2026 con **2.200 respuestas** encontró que el **76 %** prefería que los jugadores resumieran la sesión anterior, frente al **24 %** que prefería que lo hiciera el GM; esto aconseja que el resumen sea editable y no asuma que siempre debe prepararlo el director. |
 
+## 2. Problema actual
 
+En un juego de rol de mesa, el Dungeon Master (DM), también llamado Game Master (GM), prepara la aventura y durante la sesión dirige la historia, resuelve dudas sobre las reglas y responde a las decisiones de los jugadores. Hoy, consultar manuales o cambiar entre herramientas puede interrumpir la partida, mientras que improvisar sin tener la información a mano aumenta su carga. Estas pausas dificultan mantener el ritmo y la inmersión tanto para quien dirige como para el resto del grupo.
+
+## 2.1 Quién experimenta el problema
+
+El problema afecta principalmente al Dungeon Master o Game Master, que asume la preparación, la consulta de reglas y la improvisación durante la sesión. Los jugadores también lo sufren cuando las pausas rompen el ritmo o la inmersión; esto puede notarse especialmente en grupos nuevos, cuyos miembros todavía están aprendiendo las reglas, y en grupos remotos que alternan entre varias herramientas para jugar y comunicarse.
+
+## 2.2 Persona principal
+
+**Perfil: Dungeon Master de D&D que prepara sesiones de unas cuatro horas.** En una encuesta voluntaria de 2020 con 3.663 respuestas, el 57 % dijo dedicar dos horas o más a preparar una sesión de esa duración. Su objetivo es llegar con la aventura y las reglas a mano para dirigir sin perder el ritmo; su principal frustración es tener que buscar información mientras juega y no sentirse preparado ante decisiones inesperadas. Esta necesidad también aparece en testimonios de DMs que describen la dificultad de encontrar la sección adecuada del manual durante la partida.
+
+## 2.3 Historias de usuario por solución
+
+- **A. Companion con Tabletop Simulator — usuario principal: DM de una partida online en Tabletop Simulator.** Como DM, quiero consultar reglas y narrar por voz desde un companion conectado al tablero, para mantener el ritmo de la sesión sin cambiar de herramienta.
+- **B. Narrador por voz sin integración con el tablero — usuario principal: GM de una partida presencial o sin VTT.** Como GM, quiero usar un narrador por voz que consulte los manuales del juego, para enriquecer la narración y resolver dudas sin depender de un tablero virtual.
+- **C. Asistente de campaña — usuario principal: DM que prepara y mantiene una campaña.** Como DM, quiero generar escenas y PNJ, consultar reglas y guardar resúmenes, para reducir el tiempo de preparación y conservar la continuidad entre sesiones.
