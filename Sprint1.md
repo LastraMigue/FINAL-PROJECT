@@ -1,6 +1,6 @@
 # GameMaster AI — Sprint 1: Necesidad, Innovación y Viabilidad Técnica
 
-**Proyecto:** GameMaster AI (narración por voz con IA para rol) | **Sprint 1:** Necesidad, benchmark y viabilidad técnica.  
+**Proyecto:** GameMaster AI (plataforma de narración inteligente por voz para rol) | **Sprint 1:** Necesidad, benchmark, desarrollo y viabilidad técnica.  
 **Soluciones analizadas:**  
 - **A. Web companion con voz e integración con Tabletop Simulator (TTS):** React + Laravel, voz bilateral, RAG sobre PDFs y webhooks Lua con el estado del tablero.  
 - **B. Web/PWA de narración por voz sin integración:** Mismo narrador y RAG sobre PDFs, pero jugadores narran verbalmente; para cualquier juego y mesa física u online.  
@@ -94,6 +94,34 @@ El DM debe coordinar simultáneamente narración, reglas complejas y el estado d
 
 ---
 
+## Issue 5 · Propuestas: Desarrollo de las soluciones A, B y C
+
+### 5.1. Solución A: Web companion con voz e integración con Tabletop Simulator (TTS)
+- **Descripción:** Web companion que actúa como narrador virtual conectado a Tabletop Simulator. Dirigida a DMs en PC para eliminar pausas de reglas y sobrecarga en vivo (Issue 2) mediante voz bilateral y webhooks del tablero.
+- **Flujo de uso:** 1. *Carga:* El DM sube el PDF de reglas. $\to$ 2. *Enlace:* Inicia TTS con el script Lua activo. $\to$ 3. *En vivo:* Los dados y figuras envían eventos vía webhooks. $\to$ 4. *Consulta:* La IA responde por voz según el tablero y los PDFs. $\to$ 5. *Cierre:* Registro automático de tiradas y reglas consultadas.
+- **Tecnologías clave:** React, Laravel API, RAG vectorial, Lua (TTS), Web Speech API y LLM API.
+- **Pros y contras:**
+  - *Ventajas:* Máxima inmersión en vivo · Automatización directa sin dictar dados · Citas exactas de reglas sin alucinaciones.
+  - *Inconvenientes:* Mayor complejidad técnica (Lua + web + IA) · Dependencia de APIs externas · Exclusivo de PC con Tabletop Simulator.
+
+### 5.2. Solución B: Web/PWA de narración por voz sin integración con el tablero
+- **Descripción:** Web/PWA de narración por voz y consulta de reglas mediante IA sin conexión a tableros. Dirigida a mesas presenciales o remotas multijuego, agilizando consultas (Issue 2) mediante diálogo hablado donde los jugadores describen la acción.
+- **Flujo de uso:** 1. *Carga:* El GM sube los PDFs de cualquier reglamento. $\to$ 2. *Inicio:* Se abre la web/PWA en la mesa o llamada. $\to$ 3. *En vivo:* Jugadores hablan al micro describiendo tiradas y acciones. $\to$ 4. *Narración:* La IA responde por voz consultando los PDFs. $\to$ 5. *Cierre:* Historial de reglas consultadas.
+- **Tecnologías clave:** React/PWA, Laravel API, RAG vectorial, Web Speech API y LLM API.
+- **Pros y contras:**
+  - *Ventajas:* Gran versatilidad (mesa física, Discord o cualquier rol) · Sin scripts ni software externo · Acceso web/móvil inmediato.
+  - *Inconvenientes:* Entrada verbal obligatoria de cada tirada · Ruido ambiental y mala captación en salas físicas · Cero automatización del tablero.
+
+### 5.3. Solución C: Web de preparación y consulta de campañas (texto primero)
+- **Descripción:** Web de preparación de campañas, generación de contenido (escenas, PNJ) y consulta textual de reglas. Dirigida a DMs que quieren recortar horas de preparación previa (Issue 2), con la voz como extra secundario.
+- **Flujo de uso:** 1. *Planificación:* El DM crea la campaña y sube manuales PDF. $\to$ 2. *Generación:* La IA asiste creando PNJs y encuentros. $\to$ 3. *En vivo:* Consulta rápida de reglas por texto en el compendio. $\to$ 4. *Resumen:* Registro de sucesos y resumen automático. $\to$ 5. *Continuidad:* Enlace con la siguiente sesión.
+- **Tecnologías clave:** React, Laravel, BD relacional, RAG vectorial, LLM API y Web Speech API opcional.
+- **Pros y contras:**
+  - *Ventajas:* Mínimo riesgo técnico (arquitectura web estándar) · Notas, compendios y PNJs centralizados · Reduce el tiempo previo semanal.
+  - *Inconvenientes:* Cero asistencia activa en vivo durante el combate · Baja diferenciación (compite con Notion/compendios) · Requiere supervisión manual del texto.
+
+---
+
 ## Issue 6 · Innovación: Aspectos diferenciadores de A, B y C
 
 ### 6.1. Diferenciadores por solución y clasificación
@@ -124,8 +152,8 @@ El DM debe coordinar simultáneamente narración, reglas complejas y el estado d
 
 ## Issue 7 · Viabilidad técnica de A, B y C
 
-### 7.1. Competencias actuales del equipo (DAW)
-Bases consolidadas de 2º DAW: frontend interactivo (HTML/CSS/JS, React), backend y APIs RESTful (PHP/Laravel), bases de datos relacionales (MySQL/PostgreSQL) y gestión ágil (Scrumban con Git).
+### 7.1. Competencias técnicas y stack del equipo
+Bases consolidadas del equipo de desarrollo: frontend interactivo (HTML/CSS/JS, React), backend y servicios API RESTful (PHP/Laravel), bases de datos relacionales (MySQL/PostgreSQL) y gestión ágil de producto (Scrumban con Git).
 
 ### 7.2. Recursos, infraestructura y huecos de aprendizaje
 
@@ -150,12 +178,35 @@ Bases consolidadas de 2º DAW: frontend interactivo (HTML/CSS/JS, React), backen
 | **Complejidad** | Media-alta (web + LLM + voz + eventos TTS) | Media (web + LLM + voz) | Baja-media (web + LLM + BD relacional) |
 | **Dependencias** | API LLM + cliente local de TTS | API LLM + API de voz del navegador | API LLM |
 | **Riesgo técnico** | Latencia de cadena de voz y eventos | Mala captación de audio en salas físicas | Quedar como un gestor de texto sin impacto |
-| **Viabilidad MVP** | **Plenamente viable (acotando eventos clave)** | Viable con riesgo acústico en presencial | Altamente viable con stack estándar DAW |
+| **Viabilidad técnica** | **Plenamente viable (acotando eventos clave)** | Viable con riesgo acústico en presencial | Altamente viable con arquitectura estándar |
 
-### 7.5. Validación y elección final fundamentada
-Tras el análisis completo, la **Solución A (Web companion con voz e integración en Tabletop Simulator)** resulta ser la más viable y la que resuelve mejor el problema:
-1. **Resuelve el problema real:** Actúa durante la partida en vivo (el momento crítico de sobrecarga), eliminando parones al sincronizar dados y reglas con la narración sin exigir dictados manuales al DM.
-2. **Aprovecha un motor ya resuelto:** *Tabletop Simulator* aporta las físicas 3D, dados y miniaturas; el equipo no tiene que construir un VTT desde cero.
-3. **Script Lua ultra-ligero:** La API de TTS incluye `WebRequest.post` nativo; emitir tiradas de dados (`onDiceRoll`) a Laravel toma menos de 15 líneas de código Lua.
-4. **Viabilidad acústica garantizada:** En PC con auriculares y micrófono individual (estándar en TTS/Discord), la captura de voz es limpia, evitando el grave problema de ruido y voces solapadas que compromete a la Solución B en salas físicas.
-5. **Arquitectura modular y alcance acotado:** La web en React + Laravel opera de forma autónoma (tolerante a fallos si el webhook cae). Acotar el MVP a tiradas clave y consultas de reglas asegura un desarrollo robusto y entregable dentro del curso.
+---
+
+## Issue 8 · Propuestas: Comparativa y elección final
+
+### 8.1. Criterios de evaluación clave (1 a 5 puntos)
+1. **Inmersión y juego en vivo:** Emoción y dinamismo durante la partida.
+2. **Diferenciación:** Valor único frente a Roll20, D&D Beyond o ChatGPT.
+3. **Viabilidad técnica:** Capacidad del equipo para construirlo de forma ágil y estable.
+4. **Control de costes:** Consumo moderado de APIs y servidores.
+5. **Potencial de monetización:** Disposición del usuario a pagar suscripción.
+
+### 8.2. Evaluación y recuento final de puntos
+
+| Criterio clave (1 a 5 puntos) | Solución A (Companion TTS) | Solución B (Voz sin tablero) | Solución C (Texto / Campañas) |
+|---|:---:|:---:|:---:|
+| Inmersión y juego en vivo | 5 | 4 | 2 |
+| Diferenciación frente a rivales | 5 | 4 | 3 |
+| Viabilidad técnica de desarrollo | 4 | 3 | 5 |
+| Control de costes y consumo | 4 | 3 | 4 |
+| Potencial de monetización | 5 | 4 | 3 |
+| **Recuento total de puntos** | **23 / 25** | **18 / 25** | **17 / 25** |
+
+### 8.3. Decisión final y descarte de alternativas
+
+La **Solución A (23/25)** es la ganadora del análisis:
+- **Resuelve el problema en directo:** Asiste por voz y reacciona a los dados justo cuando el DM se atasca en pleno combate.
+- **Aprovecha TTS:** El tablero 3D y las físicas ya están hechos; solo requiere un script Lua de 10-15 líneas con `WebRequest.post` hacia Laravel.
+- **Audio limpio:** El uso de auriculares en PC garantiza reconocimiento de voz sin interferencias acústicas.
+
+*Descartes:* La **Solución B (18/25)** se descarta por el ruido inasumible en salas físicas y la pesadez de dictar cada tirada a mano; la **Solución C (17/25)** se descarta porque no aporta nada durante la partida en vivo y para notas ya existen Notion o ChatGPT.
