@@ -1,10 +1,26 @@
 # GameMaster AI — Sprint 1: Necesidad, Innovación y Viabilidad Técnica
 
+## Información del Proyecto y Sprint
+
 **Proyecto:** GameMaster AI (plataforma de narración inteligente por voz para rol) | **Sprint 1:** Necesidad, benchmark, desarrollo y viabilidad técnica.  
 **Soluciones analizadas:**  
 - **A. Web companion con voz e integración con Tabletop Simulator (TTS):** React + Laravel, voz bilateral, RAG sobre PDFs y webhooks Lua con el estado del tablero.  
 - **B. Web/PWA de narración por voz sin integración:** Mismo narrador y RAG sobre PDFs, pero jugadores narran verbalmente; para cualquier juego y mesa física u online.  
 - **C. Web de preparación y consulta (texto primero):** Consulta de reglas, generador de escenas/PNJ e historial de campaña; voz opcional.  
+
+---
+
+## Índice
+
+- [Información del Proyecto y Sprint](#información-del-proyecto-y-sprint)
+- [Issue 1 · Necesidad: Investigación del sector y de los jugadores](#issue-1--necesidad-investigación-del-sector-y-de-los-jugadores)
+- [Issue 2 · Necesidad: Problema y usuario afectado](#issue-2--necesidad-problema-y-usuario-afectado)
+- [Issue 3 · Innovación: Benchmark de alternativas existentes](#issue-3--innovación-benchmark-de-alternativas-existentes)
+- [Issue 4 · Propuestas: Criterios de evaluación y plantilla común](#issue-4--propuestas-criterios-de-evaluación-y-plantilla-común)
+- [Issue 5 · Propuestas: Desarrollo de las soluciones A, B y C](#issue-5--propuestas-desarrollo-de-las-soluciones-a-b-y-c)
+- [Issue 6 · Innovación: Aspectos diferenciadores de A, B y C](#issue-6--innovación-aspectos-diferenciadores-de-a-b-y-c)
+- [Issue 7 · Viabilidad técnica de A, B y C](#issue-7--viabilidad-técnica-de-a-b-y-c)
+- [Issue 8 · Propuestas: Comparativa y elección final](#issue-8--propuestas-comparativa-y-elección-final)
 
 ---
 
@@ -91,6 +107,26 @@ El DM debe coordinar simultáneamente narración, reglas complejas y el estado d
 - **A (Companion TTS):** Cubre tablero + voz + RAG de PDFs propios. No existe hoy nada similar que conecte TTS con IA.
 - **B (Voz sin tablero):** Cubre voz y RAG documental con portabilidad para mesa física, compitiendo con AI Dungeon pero con reglas verificables.
 - **C (Asistente texto):** Cubre preparación, generación y memoria de campaña multijuego; compite con Notion y D&D Beyond en modo asíncrono.
+
+---
+
+## Issue 4 · Propuestas: Criterios de evaluación y plantilla común
+
+Para que ninguna solución quede de relleno ni se elija por preferencias subjetivas, el equipo define una plantilla común de desarrollo y los criterios objetivos de evaluación antes de puntuar.
+
+### 4.1. Criterios de evaluación acordados y escala (1 a 5)
+Escala de valoración: **1** = Muy desfavorable o deficiente | **5** = Óptimo o excelente:
+1. **Inmersión y juego en vivo:** Nivel de dinamismo, atmósfera y reacción fluida durante la partida.
+2. **Diferenciación frente a rivales:** Singularidad y distancia real frente a VTTs e IAs generalistas (Roll20, D&D Beyond, ChatGPT).
+3. **Viabilidad técnica de desarrollo:** Factibilidad real de construirlo de forma ágil y estable con el stack del equipo.
+4. **Control de costes y consumo:** Gasto predecible y asumible en APIs de IA, síntesis de voz y servidores.
+5. **Potencial de monetización:** Disposición real de los usuarios a pagar una suscripción mensual por el servicio.
+
+### 4.2. Plantilla común de desarrollo (Issues 5, 6 y 7)
+Las tres soluciones se describen y analizan bajo la misma estructura simétrica para garantizar igual profundidad:
+- **Ficha funcional (Issue 5):** Descripción (qué es, público y problema que resuelve) · Flujo de uso en 5 pasos (antes, durante y después) · Tecnologías clave · 3 ventajas y 3 inconvenientes.
+- **Diferenciadores (Issue 6):** Clasificación por categoría (*Tecnología*, *Proceso*, *Experiencia de usuario*) y mapeo directo a los huecos del benchmark.
+- **Viabilidad técnica (Issue 7):** Requisitos de infraestructura, dependencias, riesgos y mitigaciones en una línea.
 
 ---
 
@@ -184,14 +220,8 @@ Bases consolidadas del equipo de desarrollo: frontend interactivo (HTML/CSS/JS, 
 
 ## Issue 8 · Propuestas: Comparativa y elección final
 
-### 8.1. Criterios de evaluación clave (1 a 5 puntos)
-1. **Inmersión y juego en vivo:** Emoción y dinamismo durante la partida.
-2. **Diferenciación:** Valor único frente a Roll20, D&D Beyond o ChatGPT.
-3. **Viabilidad técnica:** Capacidad del equipo para construirlo de forma ágil y estable.
-4. **Control de costes:** Consumo moderado de APIs y servidores.
-5. **Potencial de monetización:** Disposición del usuario a pagar suscripción.
-
-### 8.2. Evaluación y recuento final de puntos
+### 8.1. Aplicación de los criterios acordados (Issue 4)
+Aplicamos la escala del 1 al 5 y los cinco criterios objetivos acordados en la Issue 4 para valorar las tres soluciones desarrolladas:
 
 | Criterio clave (1 a 5 puntos) | Solución A (Companion TTS) | Solución B (Voz sin tablero) | Solución C (Texto / Campañas) |
 |---|:---:|:---:|:---:|
@@ -202,7 +232,7 @@ Bases consolidadas del equipo de desarrollo: frontend interactivo (HTML/CSS/JS, 
 | Potencial de monetización | 5 | 4 | 3 |
 | **Recuento total de puntos** | **23 / 25** | **18 / 25** | **17 / 25** |
 
-### 8.3. Decisión final y descarte de alternativas
+### 8.2. Decisión final y descarte de alternativas
 
 La **Solución A (23/25)** es la ganadora del análisis:
 - **Resuelve el problema en directo:** Asiste por voz y reacciona a los dados justo cuando el DM se atasca en pleno combate.
