@@ -18,7 +18,8 @@
 - [5. Definición de módulos e integración (Sprint 2)](#5-definición-de-módulos-e-integración-sprint-2)
 - [6. Epics](#6-epics)
 - [7. Recursos humanos, materiales y servicios externos](#7-recursos-humanos-materiales-y-servicios-externos)
-- [8. Bibliografía](#8-bibliografía)
+- [8. Presupuesto económico y costes de lanzamiento](#8-presupuesto-económico-y-costes-de-lanzamiento)
+- [9. Bibliografía](#9-bibliografía)
 
 ---
 
@@ -254,7 +255,33 @@ Para la ejecución, pruebas y validación del proyecto se contempla el siguiente
 
 ---
 
-## 8. Bibliografía
+## 8. Presupuesto económico y costes de lanzamiento
+
+Se define el presupuesto económico real para el desarrollo y puesta en marcha de GameMaster AI. La plataforma no recurre a subcontrataciones externas: el desarrollo técnico, la auditoría de seguridad, la adecuación legal y el lanzamiento son asumidos íntegramente por los cuatro integrantes fundadores.
+
+### 8.1. Estudio de costes reales de IA (LLM, RAG y Voz)
+Para dimensionar el gasto en consumo de inteligencia artificial sobre una base de 100 a 500 usuarios registrados (~600 sesiones de juego mensuales):
+- **Modelo de lenguaje (LLM):** Inferencia mediante modelos eficientes de alta velocidad (ej. OpenAI GPT-4o-mini o Gemini 1.5 Flash a ~0,15 USD / 1M tokens de entrada y ~0,60 USD / 1M de salida; con modelo avanzado para el plan Pro). En una sesión típica de 3-4 horas se realizan ~30 consultas con contexto RAG (~2.600 tokens de entrada y ~200 de salida), lo que supone un coste de **~0,02 € por sesión en plan base** y **~0,25 € en plan Pro**.
+- **Indexación RAG (Embeddings):** Generación de vectores con *text-embedding-3-small* (0,02 USD / 1M tokens). Procesar un manual completo de rol de 200 páginas (~130.000 tokens) cuesta apenas **0,0026 €** por libro.
+- **Interacción por voz:** Reconocimiento y síntesis gestionados primordialmente mediante la **Web Speech API** nativa del navegador (**0,00 €**, sin coste de API externa), reservando un margen para fallbacks de audio.
+- **Gasto total estimado de IA:** Entre 45 € y 60 € mensuales, totalizando **720 € al año** para dar soporte holgado a toda la comunidad inicial.
+
+### 8.2. Presupuesto económico unificado
+
+| Partida | Concepto | Detalle y Cálculo | Coste |
+|---|---|---|---:|
+| **Personal interno** | Equipo de desarrollo (4 fundadores) | 4 integrantes × 40 h de dedicación con sueldo de 1.100 € por persona | 4.400 € |
+| **Licencias de software** | Tabletop Simulator en Steam | 4 licencias (20 €/ud.) para desarrollo y validación del conector Lua | 80 € |
+| **Dominio web** | Registro anual de dominio | Dominio comercial para la plataforma web companion (.com / .app) | 20 € |
+| **Infraestructura Cloud** | Servidor VPS y Base de Datos (Año 1) | Hosting VPS (ej. Hetzner/DigitalOcean) para Laravel y MySQL/PostgreSQL (20 €/mes × 12 meses) | 240 € |
+| **Servicios de IA** | Consumo anual de APIs de IA y RAG | Inferencia LLM, embeddings RAG y cuota de streaming (~60 €/mes × 12 meses) | 720 € |
+| **Subtotal inversión** | Costes directos de lanzamiento y operación | Recursos internos, licencias, infraestructura cloud y APIs de IA | **5.460 €** |
+| **Fondo de contingencias (10 %)** | Margen para imprevistos | Cobertura para picos de tráfico, mayor consumo de tokens o ampliación de servidor | **546 €** |
+| **TOTAL ESTIMADO (Sin IVA)** | **Presupuesto global primer año** | **Inversión total requerida para desarrollar y operar GameMaster AI durante 1 año** | **6.006 €** |
+
+---
+
+## 9. Bibliografía
 
 AI Dungeon. (s. f.). *AI Dungeon: Free-form text-based AI generated adventure game*. Latitude. https://aidungeon.com/
 
