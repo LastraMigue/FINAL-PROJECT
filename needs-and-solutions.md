@@ -1,9 +1,10 @@
-# GameMaster AI — Sprint 1: Necesidad, Innovación y Viabilidad Técnica
+# GameMaster AI — Needs and Solutions
 
 ## Información del Proyecto y Sprint
 
-**Proyecto:** GameMaster AI (plataforma de narración inteligente por voz para rol) | **Sprint 1:** Necesidad, benchmark, propuesta de solución y viabilidad técnica.  
-**Solución principal desarrollada:** Web companion con voz e integración con Tabletop Simulator (TTS), complementada con el análisis comparativo de alternativas de narración y preparación.
+**Proyecto:** GameMaster AI — Plataforma SaaS de Narración Inteligente por Voz para Rol (TTRPG).  
+**Propuesta de Valor:** Companion App web que actúa como Narrador virtual acotado por IA para partidas de rol en PC (Tabletop Simulator). Ofrece voz narrativa en tiempo real a partir de eventos del tablero, ingesta de manuales PDF con RAG, escucha por micrófono y modelo Freemium con Stripe.  
+**Solución seleccionada:** Web companion con voz bilateral e integración con Tabletop Simulator mediante Lua y webhooks.
 
 ---
 
@@ -14,7 +15,9 @@
 - [2. Benchmark y diferenciación frente al mercado](#2-benchmark-y-diferenciación-frente-al-mercado)
 - [3. Propuesta de solución: GameMaster AI Companion](#3-propuesta-de-solución-gamemaster-ai-companion)
 - [4. Viabilidad técnica y comparativa de soluciones](#4-viabilidad-técnica-y-comparativa-de-soluciones)
-- [5. Bibliografía](#5-bibliografía)
+- [5. Definición de módulos e integración (Sprint 2)](#5-definición-de-módulos-e-integración-sprint-2)
+- [6. Epics](#6-epics)
+- [7. Bibliografía](#7-bibliografía)
 
 ---
 
@@ -90,6 +93,7 @@ GameMaster AI Companion es una aplicación web concebida como narrador virtual i
 | **Motor de IA & Reglas** | RAG (Embeddings + BD vectorial) + API LLM | Indexación semántica de PDFs para respuestas normativas exactas con cita de página. |
 | **Interacción por voz** | Web Speech API / Streaming de audio | Reconocimiento de voz (STT) y síntesis hablada (TTS) para diálogo bilateral fluido. |
 | **Integración de tablero** | Scripting Lua en Tabletop Simulator | Envío ligero de eventos (`onDiceRoll`) mediante peticiones HTTP (`WebRequest.post`). |
+| **Pasarela de pago** | Stripe Sandbox | Gestión de suscripciones y cobros seguros (modelo Freemium vs. Pro). |
 
 ### 4.2. Evaluación y recuento final de puntos
 
@@ -115,7 +119,86 @@ La **Solución A (23/25)** resulta la opción ganadora:
 
 ---
 
-## 5. Bibliografía
+## 5. Definición de módulos e integración (Sprint 2)
+
+Tras la elección fundamentada de la Solución A, se define la descomposición modular y la arquitectura de integración para el desarrollo del producto:
+
+### 5.1. Módulos funcionales
+1. **Interfaz y voz:** Permite al DM gestionar la sesión web (React), hablar por micrófono (*Push-to-Talk*) y reproducir la narración en voz alta (TTS).
+2. **Sesiones y backend:** API en Laravel que valida solicitudes, gestiona la autenticación, coordina los módulos y controla el estado de la partida.
+3. **Manuales y búsqueda (RAG):** Procesa y fragmenta los PDFs de reglas, almacenando pasajes con metadato de página para citación exacta.
+4. **Asistente de IA y Guardrails:** Orquesta el prompt combinando consulta, contexto del tablero y fragmentos del PDF, aplicando filtros para no salir del rol ni alucinar.
+5. **Conector Tabletop Simulator:** Script en Lua que detecta eventos en el tablero (tiradas de dados) y los envía por webhooks HTTP a la API.
+6. **Almacenamiento e historial:** Base de datos relacional (MySQL/PostgreSQL) para usuarios, campañas, sesiones y registro de eventos.
+7. **Monetización (Stripe):** Pasarela de pagos para gestionar cuotas de uso y planes Freemium vs. Pro.
+
+### 5.2. Integración entre módulos y flujos de trabajo
+Toda comunicación pasa por la API de Laravel; la interfaz no accede directamente a la base de datos ni a los servicios de IA.
+
+- **Flujo de consulta por voz:** El DM pulsa para hablar $\to$ la voz se transcribe a texto $\to$ la API valida la sesión $\to$ RAG recupera fragmentos de reglas $\to$ la IA genera respuesta acotada con cita de página $\to$ síntesis TTS reproduce el audio $\to$ se registra en el historial.
+- **Flujo de eventos TTS:** El script Lua detecta `onDiceRoll` $\to$ envía HTTP POST con el resultado a la API $\to$ la API valida el token y añade el dato al contexto de la partida.
+- **Control del DM:** Los eventos del tablero no disparan respuestas habladas automáticas imprevistas; el DM mantiene el control de cuándo solicitar asistencia. Si el conector falla, la web continúa operativa manualmente.
+
+### 5.3. Criterio de integración y verificación
+El sistema se considera integrado cuando la interfaz web envía una consulta vinculada a una sesión activa, el backend consulta el RAG y devuelve la respuesta en texto/audio con cita de página, y los eventos de tiradas de dados desde Tabletop Simulator actualizan el contexto sin interrumpir la operatividad manual.
+
+---
+
+## 6. Epics
+
+El backlog ágil se organiza en 6 Epics, cada una desglosada en User Stories concisas con sus criterios de aceptación:
+
+### Epic 1: Core Web y Gestión de Sesiones
+
+| ID | User Story | Criterios de Aceptación | Prioridad |
+|:---:|---|---|:---:|
+| **US-01** | Como DM, quiero registrarme e iniciar sesión con email y contraseña, para gestionar mis campañas de forma segura. | El usuario se registra, inicia sesión y accede a su panel privado. | Alta |
+| **US-02** | Como DM, quiero crear campañas e iniciar sesiones activas, para vincular las notas y eventos a cada partida. | Permite crear campañas y abrir sesiones con un código o token. | Alta |
+| **US-03** | Como DM, quiero una interfaz responsive para pantalla secundaria, para consultar la web sin estorbar el tablero. | La interfaz se adapta y maneja cómodamente en pantalla secundaria. | Media |
+
+### Epic 2: Gestión de PDFs y Búsqueda RAG
+
+| ID | User Story | Criterios de Aceptación | Prioridad |
+|:---:|---|---|:---:|
+| **US-04** | Como DM, quiero subir manuales y módulos en PDF, para que la IA disponga de las reglas de mi juego. | El usuario puede subir archivos PDF válidos a su campaña. | Alta |
+| **US-05** | Como sistema, quiero fragmentar e indexar los PDFs con número de página, para realizar búsquedas semánticas precisas. | El documento queda procesado e indexado con sus páginas. | Alta |
+| **US-06** | Como DM, quiero que las respuestas citen la página exacta del manual, para contrastar reglas oficiales al instante. | La respuesta indica el número de página de la regla consultada. | Alta |
+
+### Epic 3: Motor Narrativo y Guardrails de IA
+
+| ID | User Story | Criterios de Aceptación | Prioridad |
+|:---:|---|---|:---:|
+| **US-07** | Como grupo de rol, queremos que la IA actúe como un Dungeon Master, para recibir narraciones inmersivas. | La IA responde con tono de narrador literario y conciso. | Alta |
+| **US-08** | Como DM, quiero filtros (*Guardrails*) que impidan alucinar o salir de rol, para no romper la partida. | La IA rechaza temas ajenos a la partida y no inventa reglas. | Alta |
+| **US-09** | Como DM, quiero que la IA recuerde las tiradas y eventos recientes, para mantener coherencia narrativa. | La respuesta tiene en cuenta los últimos eventos de la mesa. | Media |
+
+### Epic 4: Interacción por Voz Bilateral (STT & TTS)
+
+| ID | User Story | Criterios de Aceptación | Prioridad |
+|:---:|---|---|:---:|
+| **US-10** | Como DM o jugador, quiero hablar mediante *Push-to-Talk*, para consultar por voz sin recoger ruido ambiental. | Al mantener pulsado el botón se graba y transcribe la voz. | Alta |
+| **US-11** | Como grupo, queremos escuchar la respuesta narrada en voz alta, para una experiencia inmersiva manos libres. | La aplicación reproduce la respuesta en audio de forma clara. | Alta |
+| **US-12** | Como usuario, quiero un chat de texto alternativo, para continuar si falla el micrófono o altavoz. | Se pueden enviar preguntas y recibir respuestas por texto. | Media |
+
+### Epic 5: Integración con Tabletop Simulator (TTS)
+
+| ID | User Story | Criterios de Aceptación | Prioridad |
+|:---:|---|---|:---:|
+| **US-13** | Como DM, quiero vincular Tabletop Simulator con mi sesión web con un token, para enlazar el tablero con la app. | La mesa virtual se enlaza con la sesión web mediante token. | Alta |
+| **US-14** | Como jugador, quiero que mis tiradas de dados en TTS se envíen solas a la web, para no tener que dictarlas. | Cada tirada de dados en el tablero se refleja en la web. | Alta |
+| **US-15** | Como DM, quiero que la web siga activa si TTS se desconecta, para continuar la sesión manualmente. | Si el tablero se desconecta, la web sigue operativa a mano. | Alta |
+
+### Epic 6: Pasarela de Pago y Suscripciones (Stripe)
+
+| ID | User Story | Criterios de Aceptación | Prioridad |
+|:---:|---|---|:---:|
+| **US-16** | Como usuario nuevo, quiero un Plan Gratuito básico, para probar la herramienta sin coste inicial. | Permite usar la herramienta con un límite de prompts por sesión. | Alta |
+| **US-17** | Como DM habitual, quiero suscribirme a un Plan Pro con Stripe, para desbloquear IA avanzada y PDFs grandes. | El pago con tarjeta procesa y activa las ventajas del Plan Pro. | Media |
+| **US-18** | Como suscriptor, quiero gestionar o cancelar mi plan, para tener control sobre mi facturación. | El usuario puede consultar el estado de su plan y cancelarlo. | Media |
+
+---
+
+## 7. Bibliografía
 
 AI Dungeon. (s. f.). *AI Dungeon: Free-form text-based AI generated adventure game*. Latitude. https://aidungeon.com/
 
@@ -124,5 +207,11 @@ AI Game Master. (s. f.). *AI Game Master: Play RPG with AI*. https://www.aigamem
 Berserk Games. (2015). *Tabletop Simulator* [Juego de ordenador]. Berserk Games.
 
 D&D Beyond. (s. f.). *Dungeons & Dragons digital toolset*. Wizards of the Coast. https://www.dndbeyond.com/
+
+Meta (Stack Exchange Network). (2016, 21 de enero). *As a DM, what are some good ways to study in preparation for an adventure module?* Role-Playing Games Stack Exchange. https://rpg.stackexchange.com/questions/73672/as-a-dm-what-are-some-good-ways-to-study-in-preparation-for-an-adventure-module
+
+Meta (Stack Exchange Network). (2018, 17 de septiembre). *How to add descriptive role-playing flair if I'm not good at improvising?* Role-Playing Games Stack Exchange. https://rpg.stackexchange.com/questions/133208/how-to-add-descriptive-role-playing-flair-if-im-not-good-at-improvising
+
+Meta (Stack Exchange Network). (2020, 20 de junio). *Freeing others from webs during combat*. Role-Playing Games Stack Exchange. https://rpg.stackexchange.com/questions/169371/freeing-others-from-webs-during-combat
 
 Roll20. (s. f.). *Roll20: Virtual tabletop for pen and paper RPGs*. The Orr Group. https://roll20.net/
