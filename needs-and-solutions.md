@@ -17,7 +17,8 @@
 - [4. Viabilidad técnica y comparativa de soluciones](#4-viabilidad-técnica-y-comparativa-de-soluciones)
 - [5. Definición de módulos e integración (Sprint 2)](#5-definición-de-módulos-e-integración-sprint-2)
 - [6. Epics](#6-epics)
-- [7. Bibliografía](#7-bibliografía)
+- [7. Recursos humanos, materiales y servicios externos](#7-recursos-humanos-materiales-y-servicios-externos)
+- [8. Bibliografía](#8-bibliografía)
 
 ---
 
@@ -198,7 +199,62 @@ El backlog ágil se organiza en 6 Epics, cada una desglosada en User Stories con
 
 ---
 
-## 7. Bibliografía
+## 7. Recursos humanos, materiales y servicios externos
+
+Para garantizar el desarrollo, validación y despliegue continuo de GameMaster AI bajo la metodología **Scrumban**, se definen los perfiles y responsabilidades del equipo junto con el equipamiento y servicios cloud necesarios.
+
+### 7.1. Asignación de recursos humanos y roles
+
+Todos los integrantes asumen tareas técnicas de desarrollo distribuidas según la arquitectura desacoplada de la plataforma. Miguel Ángel Lastra asume adicionalmente la facilitación ágil como *Scrum Master*, la gestión del repositorio y el rol de *Release Manager*.
+
+#### Estructura del equipo y roles
+
+```mermaid
+flowchart TD
+    subgraph Coordinacion["Gestión Ágil y Coordinación"]
+        SM["Miguel Ángel Lastra Garcés: Scrum Master & Release Manager"]
+    end
+
+    subgraph Desarrollo["Equipo de Desarrollo Técnico (Scrumban)"]
+        Lead["Miguel Ángel Lastra Garcés: Lead Developer & Backend (Laravel / SQL / Stripe)"]
+        IA["Abel Carbonero Mora: Core Developer — IA & RAG (LLMs / Embeddings / Vector DB)"]
+        TTS["Christian Said Jimenez Mahecha: Core Developer — Integración TTS (Lua / Webhooks)"]
+        Front["Rafael Riego Ruz: Core Developer — Frontend & Voz (React / Web Speech API)"]
+    end
+
+    SM --> Lead
+    Lead <--> IA
+    Lead <--> TTS
+    Lead <--> Front
+```
+
+#### Matriz de competencias y responsabilidades
+
+| Miembro / Rol | Competencias Clave | Responsabilidades Principales |
+|---|---|---|
+| **Miguel Ángel Lastra Garcés**<br>*Lead Developer / Backend* | Laravel, PHP, API REST, MySQL/PostgreSQL, Git, Stripe API | Definición de arquitectura; desarrollo de la API RESTful, autenticación, gestión de campañas, sesiones e historial; integración de pasarela de pago (Stripe Sandbox); control de versiones y releases. |
+| **Abel Carbonero Mora**<br>*Core Developer / IA y RAG* | APIs de LLM, procesamiento de PDFs, fragmentación, embeddings, bases de datos vectoriales | Implementación del pipeline RAG: ingesta, fragmentación e indexación de manuales y aventuras en PDF, recuperación semántica con cita de página y ajuste del System Prompt con Guardrails. |
+| **Christian Said Jimenez Mahecha**<br>*Core Developer / Integración TTS* | Lua, Tabletop Simulator, Webhooks HTTP, API REST, JSON | Desarrollo del script Lua en Tabletop Simulator para captura de eventos del tablero (tiradas de dados) y envío asíncrono a la API de Laravel mediante peticiones HTTP (`WebRequest.post`). |
+| **Rafael Riego Ruz**<br>*Core Developer / Frontend y Voz* | React, diseño responsive y accesible, Web Speech API, audio streaming | Desarrollo de la SPA web optimizada como pantalla secundaria; interfaces de campañas, sesiones y planes; integración de captura por voz (STT) y síntesis narrativa hablada (TTS). |
+
+### 7.2. Recursos materiales y servicios externos
+
+Para la ejecución, pruebas y validación del proyecto se contempla el siguiente equipamiento físico y servicios en la nube:
+
+#### Material y equipamiento físico
+- **Estaciones de trabajo de desarrollo:** Equipos personales (PC/Mac) con entornos locales configurados (Node.js con npm para el frontend en React, PHP con Composer para el backend en Laravel) y herramientas de desarrollo (VS Code, Git).
+- **Dispositivos de audio:** Auriculares con micrófono dedicados para pruebas y calibración del reconocimiento de voz (STT) y salida de audio (TTS) sin ruido ambiental.
+- **Licencias de software:** Copias de *Tabletop Simulator* (Steam) para pruebas de desarrollo, ejecución de scripts Lua y verificación de eventos en partidas simuladas.
+
+#### Servicios externos e infraestructura cloud
+- **Servidor web y base de datos:** Hosting VPS / Cloud (ej. DigitalOcean / AWS) para el despliegue del backend Laravel y la base de datos relacional (MySQL/PostgreSQL).
+- **Base de datos vectorial:** Servicio gestionado o motor vectorial (ej. Qdrant / Pinecone o pgvector) para el almacenamiento de embeddings e indexación semántica de los manuales PDF.
+- **APIs de Inteligencia Artificial y Voz:** Modelos LLM (ej. OpenAI / Anthropic) para la orquestación de narraciones y servicios de voz (Web Speech API del navegador y streaming de audio).
+- **Pasarela de pago:** Entorno de pruebas *Stripe Sandbox* para validar el flujo completo de suscripciones Freemium y Pro.
+
+---
+
+## 8. Bibliografía
 
 AI Dungeon. (s. f.). *AI Dungeon: Free-form text-based AI generated adventure game*. Latitude. https://aidungeon.com/
 
