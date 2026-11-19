@@ -282,8 +282,13 @@ Para la ejecución, pruebas y validación del proyecto se contempla el siguiente
 
 La estrategia de marketing plantea captar clientes durante el primer año facilitando el acceso inicial a GameMaster AI y dando a conocer sus funcionalidades. Una vez creada una base de usuarios, a partir del segundo año el servicio pasará a ser de pago, quienes quieran seguir utilizando GameMaster AI deberán contratar una suscripción. Esta transición permite atraer clientes al principio y generar ingresos recurrentes para sostener el proyecto.
 
-[Descargar o visualizar el presupuesto](./presupuesto_economico_unificado-v4.xlsx)
 
+![Presupuesto económico: gastos iniciales y costes mensuales](./img/Budget1.jpeg)
+
+![Presupuesto económico: proyección de ingresos y rentabilidad](./img/Budget2.jpeg)
+
+
+[Descargar o visualizar el presupuesto](./presupuesto_economico_unificado-v4.xlsx)
 
 ---
 
