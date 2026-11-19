@@ -314,7 +314,7 @@ Mientras que los criterios de aceptación validan individualmente cada historia 
 
 La interfaz de GameMaster AI se organiza en cuatro pantallas en modo oscuro de alto contraste, optimizadas para servir como pantalla de apoyo durante partidas en vivo:
 
-![Wireframes de GameMaster AI](img/GameMaster.drawio.png)
+![Wireframes de GameMaster AI](../img/GameMaster.drawio.png)
 
 1. **Página principal (`/`):** Cabecera con logo, enlaces a Características, Precios y acceso; sección central con propuesta de valor y botón "Empezar"; tres columnas con las características clave; bloque de tarifas con botón "Planes"; y pie de página.
 2. **Acceso (`/login` y `/register`):** Tarjeta modal con pestañas de "Inicio" y "Crear Cuenta", campos de correo y contraseña, y botón "Empezar" para acceder a la partida.
@@ -389,12 +389,12 @@ Para la ejecución, pruebas y validación del proyecto se contempla el siguiente
 La estrategia de marketing plantea captar clientes durante el primer año facilitando el acceso inicial a GameMaster AI y dando a conocer sus funcionalidades. Una vez creada una base de usuarios, a partir del segundo año el servicio pasará a ser de pago, quienes quieran seguir utilizando GameMaster AI deberán contratar una suscripción. Esta transición permite atraer clientes al principio y generar ingresos recurrentes para sostener el proyecto.
 
 
-![Presupuesto económico: gastos iniciales y costes mensuales](./img/Budget1.jpeg)
+![Presupuesto económico: gastos iniciales y costes mensuales](../img/Budget1.jpeg)
 
-![Presupuesto económico: proyección de ingresos y rentabilidad](./img/Budget2.jpeg)
+![Presupuesto económico: proyección de ingresos y rentabilidad](../img/Budget2.jpeg)
 
 
-[Descargar o visualizar el presupuesto](./presupuesto_economico_unificado-v4.xlsx)
+[Descargar o visualizar el presupuesto](./budget.xlsx)
 
 ---
 

@@ -17,4 +17,6 @@ A continuación, se presentan los miembros fundadores del equipo y los roles pri
 ## Documentación y Normativa
 
 - **[Contrato de Trabajo y Normativa Interna](./Contrato_Equipo.pdf)**: Documento oficial donde se detalla nuestro marco metodológico, los canales de comunicación, los roles y el compromiso con los Sprints y entregables.
-- **[Pitch Inicial y Análisis de Mercado](./pitch-and-market.md)**: Exploración del sector TTRPG/VTT, propuesta de valor de GameMaster AI, análisis de empresas y organigramas de referencia, estructura funcional del equipo, modelo de negocio SaaS y justificación de viabilidad.
+- **[Pitch Inicial y Análisis de Mercado](./docs/pitch-and-market.md)**: Exploración del sector TTRPG/VTT, propuesta de valor de GameMaster AI, análisis de empresas y organigramas de referencia, estructura funcional del equipo, modelo de negocio SaaS y justificación de viabilidad.
+- **[GameMaster AI — Necesidades y Soluciones](./docs/needs-and-solutions.md)**: Análisis de necesidades, benchmark de mercado, arquitectura modular del sistema, viabilidad técnica, backlog de Epics, Definition of Done, wireframes, recursos y presupuesto.
+- **[Presupuesto Económico Detallado](./docs/budget.xlsx)**: Hoja de cálculo con el desglose de costes, estimación de gastos iniciales, costes mensuales y proyección de rentabilidad.
