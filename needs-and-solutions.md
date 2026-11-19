@@ -17,9 +17,10 @@
 - [4. Viabilidad técnica y comparativa de soluciones](#4-viabilidad-técnica-y-comparativa-de-soluciones)
 - [5. Definición de módulos e integración (Sprint 2)](#5-definición-de-módulos-e-integración-sprint-2)
 - [6. Epics](#6-epics)
-- [7. Recursos humanos, materiales y servicios externos](#7-recursos-humanos-materiales-y-servicios-externos)
-- [8. Presupuesto económico y costes de lanzamiento](#8-presupuesto-económico-y-costes-de-lanzamiento)
-- [9. Bibliografía](#9-bibliografía)
+- [7. Arquitectura de pantallas y wireframes (UI/UX)](#7-arquitectura-de-pantallas-y-wireframes-uiux)
+- [8. Recursos humanos, materiales y servicios externos](#8-recursos-humanos-materiales-y-servicios-externos)
+- [9. Presupuesto económico y costes de lanzamiento](#9-presupuesto-económico-y-costes-de-lanzamiento)
+- [10. Bibliografía](#10-bibliografía)
 
 ---
 
@@ -137,8 +138,63 @@ Tras la elección fundamentada de la Solución A, se define la descomposición m
 | **Almacenamiento e historial** | Guarda usuarios, campañas, sesiones y eventos en una base de datos relacional. | Alta | **Sí, básico**; guardar sesiones y el contexto reciente. Los resúmenes y el historial avanzado pueden esperar. |
 | **Monetización (Stripe)** | Gestiona pagos, suscripciones y planes Freemium/Pro. | Baja | **No**; se puede validar primero el producto con acceso gratuito o gestión manual. |
 
+#### Diagrama de secuencias de integración (Flujo síncrono y asíncrono)
+
+```mermaid
+sequenceDiagram
+autonumber
+actor DM as Director de Juego (DM)
+participant Web as Web Companion (React)
+participant API as Backend API (Laravel)
+participant RAG as Motor RAG (Manuales PDF)
+participant IA as Servicio IA (LLM / Voz)
+participant TTS as Tabletop Simulator (Lua)
+
+%% -------------------------------------------------------------
+%% FLUJO SÍNCRONO: CONSULTA DE REGLAS Y NARRACIÓN POR VOZ
+%% -------------------------------------------------------------
+Note over DM, IA: FLUJO SÍNCRONO (Bloqueante / Petición y Respuesta)
+DM->>Web: Pulsar Push-to-Talk y realizar consulta por voz
+activate Web
+Note right of Web: Captura de voz mediante Web Speech API
+Web->>API: POST /api/v1/sessions/{id}/query (Audio/Texto)
+activate API
+Note right of API: Valida sesión activa y token del usuario
+
+API->>RAG: Búsqueda semántica en base vectorial
+activate RAG
+Note right of RAG: Localiza reglas oficiales con número de página
+RAG-->>API: Fragmentos relevantes encontrados (ej. pág. 195)
+deactivate RAG
+
+API->>IA: Prompt: Contexto de partida + Fragmentos PDF + Consulta
+activate IA
+Note right of IA: Generación acotada con Guardrails (sin alucinaciones)
+IA-->>API: Respuesta narrativa con cita y síntesis de voz (TTS)
+deactivate IA
+
+API-->>Web: Respuesta completa: Texto + Audio + Cita de página
+deactivate API
+Web-->>DM: Reproduce narración en voz alta y actualiza "Recientes"
+deactivate Web
+
+%% -------------------------------------------------------------
+%% FLUJO ASÍNCRONO: CAPTURA DE EVENTOS DESDE TABLETOP SIMULATOR
+%% -------------------------------------------------------------
+Note over Web, TTS: FLUJO ASÍNCRONO (No bloqueante / Segundo Plano)
+TTS->>TTS: Jugador realiza tirada de dados en el tablero (onDiceRoll)
+Note right of TTS: Script Lua captura evento: 1d20 = [18]
+TTS-)+API: Webhook HTTP POST /api/v1/events (Resultado dado + Token)
+activate API
+Note over API: El backend procesa el evento en segundo plano<br/>sin detener la navegación de los jugadores
+API->>API: Actualiza memoria de contexto de la campaña activa
+API-)+Web: Notificación de evento en tiempo real
+Note left of Web: La tirada aparece en el feed de la sesión<br/>sin interrumpir la voz ni congelar la pantalla
+deactivate API
+```
 
 ### 5.2. Integración entre módulos y flujos de trabajo
+
 Toda comunicación pasa por la API de Laravel; la interfaz no accede directamente a la base de datos ni a los servicios de IA. El diagrama resume los dos flujos principales:
 
 ```mermaid
@@ -217,11 +273,24 @@ El backlog ágil se organiza en 6 Epics, cada una desglosada en User Stories con
 
 ---
 
-## 7. Recursos humanos, materiales y servicios externos
+## 7. Arquitectura de pantallas y wireframes (UI/UX)
+
+La interfaz de GameMaster AI se organiza en cuatro pantallas en modo oscuro de alto contraste, optimizadas para servir como pantalla de apoyo durante partidas en vivo:
+
+![Wireframes de GameMaster AI](img/GameMaster.drawio.png)
+
+1. **Página principal (`/`):** Cabecera con logo, enlaces a Características, Precios y acceso; sección central con propuesta de valor y botón "Empezar"; tres columnas con las características clave; bloque de tarifas con botón "Planes"; y pie de página.
+2. **Acceso (`/login` y `/register`):** Tarjeta modal con pestañas de "Inicio" y "Crear Cuenta", campos de correo y contraseña, y botón "Empezar" para acceder a la partida.
+3. **Sala de partida y chat IA (`/app`):** Entorno conversacional con barra lateral organizada en partidas "En Proceso" y "Completado", zona central con el logo de la IA, barra inferior para escribir o adjuntar manuales PDF con "+", y panel de "Recientes" con el historial de eventos del tablero y respuestas con citas de reglas.
+4. **Planes y suscripción (`/pricing`):** Comparativa entre el plan "Gratuito" y el plan "De Pago" con botones "Escoger" enlazados a Stripe, y sección de "Facturas" para consultar recibos e historial de cobros.
+
+---
+
+## 8. Recursos humanos, materiales y servicios externos
 
 Para garantizar el desarrollo, validación y despliegue continuo de GameMaster AI bajo la metodología **Scrumban**, se definen los perfiles y responsabilidades del equipo junto con el equipamiento y servicios cloud necesarios.
 
-### 7.1. Asignación de recursos humanos y roles
+### 8.1. Asignación de recursos humanos y roles
 
 Todos los integrantes asumen tareas técnicas de desarrollo distribuidas según la arquitectura desacoplada de la plataforma. Miguel Ángel Lastra asume adicionalmente la facilitación ágil como *Scrum Master*, la gestión del repositorio y el rol de *Release Manager*.
 
@@ -255,7 +324,7 @@ flowchart TD
 | **Christian Said Jimenez Mahecha**<br>*Core Developer / Integración TTS* | Desarrollo del script Lua en Tabletop Simulator para captura de eventos del tablero (tiradas de dados) y envío asíncrono a la API de Laravel mediante peticiones HTTP (`WebRequest.post`). |
 | **Rafael Riego Ruz**<br>*Core Developer / Frontend y Voz* | Desarrollo de la SPA web optimizada como pantalla secundaria; interfaces de campañas, sesiones y planes; integración de captura por voz (STT) y síntesis narrativa hablada (TTS). |
 
-### 7.2. Recursos materiales y servicios externos
+### 8.2. Recursos materiales y servicios externos
 
 Para la ejecución, pruebas y validación del proyecto se contempla el siguiente equipamiento físico y servicios en la nube:
 
@@ -278,7 +347,7 @@ Para la ejecución, pruebas y validación del proyecto se contempla el siguiente
 
 ---
 
-## 8. Presupuesto económico.
+## 9. Presupuesto económico y costes de lanzamiento
 
 La estrategia de marketing plantea captar clientes durante el primer año facilitando el acceso inicial a GameMaster AI y dando a conocer sus funcionalidades. Una vez creada una base de usuarios, a partir del segundo año el servicio pasará a ser de pago, quienes quieran seguir utilizando GameMaster AI deberán contratar una suscripción. Esta transición permite atraer clientes al principio y generar ingresos recurrentes para sostener el proyecto.
 
@@ -292,7 +361,7 @@ La estrategia de marketing plantea captar clientes durante el primer año facili
 
 ---
 
-## 9. Bibliografía
+## 10. Bibliografía
 
 AI Dungeon. (s. f.). *AI Dungeon: Free-form text-based AI generated adventure game*. Latitude. https://aidungeon.com/
 
