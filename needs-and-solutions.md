@@ -17,9 +17,10 @@
 - [4. Viabilidad técnica y comparativa de soluciones](#4-viabilidad-técnica-y-comparativa-de-soluciones)
 - [5. Definición de módulos e integración (Sprint 2)](#5-definición-de-módulos-e-integración-sprint-2)
 - [6. Epics](#6-epics)
-- [7. Recursos humanos, materiales y servicios externos](#7-recursos-humanos-materiales-y-servicios-externos)
-- [8. Presupuesto económico y costes de lanzamiento](#8-presupuesto-económico-y-costes-de-lanzamiento)
-- [9. Bibliografía](#9-bibliografía)
+- [7. Arquitectura de pantallas y wireframes (UI/UX)](#7-arquitectura-de-pantallas-y-wireframes-uiux)
+- [8. Recursos humanos, materiales y servicios externos](#8-recursos-humanos-materiales-y-servicios-externos)
+- [9. Presupuesto económico y costes de lanzamiento](#9-presupuesto-económico-y-costes-de-lanzamiento)
+- [10. Bibliografía](#10-bibliografía)
 
 ---
 
@@ -200,11 +201,24 @@ El backlog ágil se organiza en 6 Epics, cada una desglosada en User Stories con
 
 ---
 
-## 7. Recursos humanos, materiales y servicios externos
+## 7. Arquitectura de pantallas y wireframes (UI/UX)
+
+La interfaz de GameMaster AI se organiza en cuatro pantallas en modo oscuro de alto contraste, optimizadas para servir como pantalla de apoyo durante partidas en vivo:
+
+![Wireframes de GameMaster AI](img/GameMaster.drawio.png)
+
+1. **Página principal (`/`):** Cabecera con logo, enlaces a Características, Precios y acceso; sección central con propuesta de valor y botón "Empezar"; tres columnas con las características clave; bloque de tarifas con botón "Planes"; y pie de página.
+2. **Acceso (`/login` y `/register`):** Tarjeta modal con pestañas de "Inicio" y "Crear Cuenta", campos de correo y contraseña, y botón "Empezar" para acceder a la partida.
+3. **Sala de partida y chat IA (`/app`):** Entorno conversacional con barra lateral organizada en partidas "En Proceso" y "Completado", zona central con el logo de la IA, barra inferior para escribir o adjuntar manuales PDF con "+", y panel de "Recientes" con el historial de eventos del tablero y respuestas con citas de reglas.
+4. **Planes y suscripción (`/pricing`):** Comparativa entre el plan "Gratuito" y el plan "De Pago" con botones "Escoger" enlazados a Stripe, y sección de "Facturas" para consultar recibos e historial de cobros.
+
+---
+
+## 8. Recursos humanos, materiales y servicios externos
 
 Para garantizar el desarrollo, validación y despliegue continuo de GameMaster AI bajo la metodología **Scrumban**, se definen los perfiles y responsabilidades del equipo junto con el equipamiento y servicios cloud necesarios.
 
-### 7.1. Asignación de recursos humanos y roles
+### 8.1. Asignación de recursos humanos y roles
 
 Todos los integrantes asumen tareas técnicas de desarrollo distribuidas según la arquitectura desacoplada de la plataforma. Miguel Ángel Lastra asume adicionalmente la facilitación ágil como *Scrum Master*, la gestión del repositorio y el rol de *Release Manager*.
 
@@ -238,7 +252,7 @@ flowchart TD
 | **Christian Said Jimenez Mahecha**<br>*Core Developer / Integración TTS* | Lua, Tabletop Simulator, Webhooks HTTP, API REST, JSON | Desarrollo del script Lua en Tabletop Simulator para captura de eventos del tablero (tiradas de dados) y envío asíncrono a la API de Laravel mediante peticiones HTTP (`WebRequest.post`). |
 | **Rafael Riego Ruz**<br>*Core Developer / Frontend y Voz* | React, diseño responsive y accesible, Web Speech API, audio streaming | Desarrollo de la SPA web optimizada como pantalla secundaria; interfaces de campañas, sesiones y planes; integración de captura por voz (STT) y síntesis narrativa hablada (TTS). |
 
-### 7.2. Recursos materiales y servicios externos
+### 8.2. Recursos materiales y servicios externos
 
 Para la ejecución, pruebas y validación del proyecto se contempla el siguiente equipamiento físico y servicios en la nube:
 
@@ -255,18 +269,18 @@ Para la ejecución, pruebas y validación del proyecto se contempla el siguiente
 
 ---
 
-## 8. Presupuesto económico y costes de lanzamiento
+## 9. Presupuesto económico y costes de lanzamiento
 
 Se define el presupuesto económico real para el desarrollo y puesta en marcha de GameMaster AI. La plataforma no recurre a subcontrataciones externas: el desarrollo técnico, la auditoría de seguridad, la adecuación legal y el lanzamiento son asumidos íntegramente por los cuatro integrantes fundadores.
 
-### 8.1. Estudio de costes reales de IA (LLM, RAG y Voz)
+### 9.1. Estudio de costes reales de IA (LLM, RAG y Voz)
 Para dimensionar el gasto en consumo de inteligencia artificial sobre una base de 100 a 500 usuarios registrados (~600 sesiones de juego mensuales):
 - **Modelo de lenguaje (LLM):** Inferencia mediante modelos eficientes de alta velocidad (ej. OpenAI GPT-4o-mini o Gemini 1.5 Flash a ~0,15 USD / 1M tokens de entrada y ~0,60 USD / 1M de salida; con modelo avanzado para el plan Pro). En una sesión típica de 3-4 horas se realizan ~30 consultas con contexto RAG (~2.600 tokens de entrada y ~200 de salida), lo que supone un coste de **~0,02 € por sesión en plan base** y **~0,25 € en plan Pro**.
 - **Indexación RAG (Embeddings):** Generación de vectores con *text-embedding-3-small* (0,02 USD / 1M tokens). Procesar un manual completo de rol de 200 páginas (~130.000 tokens) cuesta apenas **0,0026 €** por libro.
 - **Interacción por voz:** Reconocimiento y síntesis gestionados primordialmente mediante la **Web Speech API** nativa del navegador (**0,00 €**, sin coste de API externa), reservando un margen para fallbacks de audio.
 - **Gasto total estimado de IA:** Entre 45 € y 60 € mensuales, totalizando **720 € al año** para dar soporte holgado a toda la comunidad inicial.
 
-### 8.2. Presupuesto económico unificado
+### 9.2. Presupuesto económico unificado
 
 | Partida | Concepto | Detalle y Cálculo | Coste |
 |---|---|---|---:|
@@ -281,7 +295,7 @@ Para dimensionar el gasto en consumo de inteligencia artificial sobre una base d
 
 ---
 
-## 9. Bibliografía
+## 10. Bibliografía
 
 AI Dungeon. (s. f.). *AI Dungeon: Free-form text-based AI generated adventure game*. Latitude. https://aidungeon.com/
 
