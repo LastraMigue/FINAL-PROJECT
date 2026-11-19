@@ -14,9 +14,9 @@
 - [1. Necesidad e investigación de jugadores](#1-necesidad-e-investigación-de-jugadores)
 - [2. Benchmark y diferenciación frente al mercado](#2-benchmark-y-diferenciación-frente-al-mercado)
 - [3. Propuesta de solución: GameMaster AI Companion](#3-propuesta-de-solución-gamemaster-ai-companion)
-- [4. Viabilidad técnica y comparativa de soluciones](#4-viabilidad-técnica-y-comparativa-de-soluciones)
+- [4. Viabilidad](#4-viabilidad)
 - [5. Definición de módulos e integración (Sprint 2)](#5-definición-de-módulos-e-integración-sprint-2)
-- [6. Epics](#6-epics)
+- [6. Epics and Definitions of Done](#6-epics-and-definitions-of-done)
 - [7. Arquitectura de pantallas y wireframes (UI/UX)](#7-arquitectura-de-pantallas-y-wireframes-uiux)
 - [8. Recursos humanos, materiales y servicios externos](#8-recursos-humanos-materiales-y-servicios-externos)
 - [9. Presupuesto económico y costes de lanzamiento](#9-presupuesto-económico-y-costes-de-lanzamiento)
@@ -85,7 +85,7 @@ GameMaster AI Companion es una aplicación web concebida como narrador virtual i
 
 ---
 
-## 4. Viabilidad técnica y comparativa de soluciones
+## 4. Viabilidad
 
 ### 4.1. Tecnologías de GameMaster AI (Solución A)
 
@@ -109,20 +109,40 @@ GameMaster AI Companion es una aplicación web concebida como narrador virtual i
 | Potencial de monetización | 5 | 4 | 3 |
 | **Recuento total de puntos** | **23 / 25** | **18 / 25** | **17 / 25** |
 
-### 4.3. Decisión final y descarte de alternativas
+### 4.3. Decisión final y ordenación de la Solución A
 
-La **Solución A (23/25)** resulta la opción ganadora:
-- **Resuelve el problema en directo:** Asiste por voz y reacciona a las tiradas justo cuando el DM se atasca en pleno combate o escena clave.
-- **Aprovecha un motor ya consolidado:** Tabletop Simulator ya resuelve las físicas 3D, miniaturas y dados; el equipo solo necesita un script Lua de unas 10-15 líneas con `WebRequest.post` hacia Laravel.
-- **Audio limpio garantizado:** El entorno de PC con auriculares y micrófono individual asegura reconocimiento de voz nítido sin problemas de insonorización.
+La **Solución A (23/25)** resulta la opción ganadora. A continuación se desglosan sus ventajas y desventajas:
 
-*Descarte de alternativas:*
+#### Ventajas de la Solución A
+- **Inmersión y dinamismo en vivo:** Asiste por voz bilateral y reacciona de forma reactiva a las tiradas del tablero justo cuando el DM se atasca en pleno combate o escena clave.
+- **Aprovechamiento de motor consolidado:** Tabletop Simulator ya resuelve el renderizado 3D, físicas de dados y miniaturas; el equipo solo necesita un script ligero en Lua de unas 10-15 líneas con `WebRequest.post` hacia Laravel.
+- **Audio limpio garantizado:** El entorno de PC con auriculares y micrófono individual asegura un reconocimiento de voz nítido (STT) sin problemas de reverberación acústica ni ruidos ambientales.
+- **Respuestas normativas fiables:** El motor RAG acotado cita la página exacta del manual PDF aportado, eliminando alucinaciones y disputas de reglas en la mesa.
+
+#### Desventajas de la Solución A
+- **Dependencia de software de terceros:** Requiere que los jugadores dispongan de *Tabletop Simulator* instalado en Steam para la sincronización automática del tablero.
+- **Exigencia de hardware en PC:** Ejecutar Tabletop Simulator en 3D en paralelo con el navegador web requiere equipos de gama media.
+- **Configuración inicial por sesión:** El director de juego debe copiar el token de sesión en el script Lua para vincular la partida virtual con la aplicación web.
+
+#### Descarte de alternativas
 - **Solución B (18/25):** Se descarta porque el reconocimiento de voz en una habitación física con múltiples personas hablando a la vez sufre graves fallos acústicos, y obligar a los jugadores a dictar verbalmente cada tirada resulta tedioso y corta el ritmo.
 - **Solución C (17/25):** Se descarta porque no aporta ninguna ayuda durante la partida en vivo; se limita a ser una libreta de notas con IA que compite en desventaja frente a herramientas consolidadas como Notion o ChatGPT.
 
+### 4.4. Limitaciones identificadas y su mitigación
+
+Principales limitaciones técnicas de la Solución A y sus medidas de mitigación:
+
+| Limitación identificada | Riesgo técnico | Estrategia de mitigación |
+|---|---|---|
+| **Latencia en voz (TTS)** | Retraso en la respuesta hablada que corta el ritmo. | Streaming de audio, LLMs rápidos (GPT-4o-mini / Gemini Flash) y respuestas breves (< 100 palabras). |
+| **Desconexión de Tabletop Simulator** | Pérdida de enlace con el script Lua ante fallos de red. | Tolerancia a fallos: la web sigue 100 % operativa permitiendo registrar tiradas a mano. |
+| **Alucinaciones o salida de rol** | La IA inventa reglas o responde temas ajenos. | System Prompt con Guardrails y anclaje RAG (si la regla no está en el PDF, avisa en vez de inventar). |
+| **Manuales PDF extensos** | Libros de 300+ páginas que saturan la ventana de contexto. | Fragmentación semántica (*chunking*) e indexación vectorial; envío exclusivo de fragmentos clave. |
+| **Sobrecoste de APIs** | Consumo imprevisto que dispare la factura de IA. | Cuotas de 15 consultas/sesión en Plan Gratuito y techos de gasto mensuales en la consola proveedora. |
+
 ---
 
-## 5. Definición de módulos e integración (Sprint 2)
+## 5. Definición de módulos e integración
 
 Tras la elección fundamentada de la Solución A, se define la descomposición modular y la arquitectura de integración para el desarrollo del producto:
 
@@ -219,7 +239,9 @@ El sistema se considera integrado cuando la interfaz web envía una consulta vin
 
 ---
 
-## 6. Epics
+## 6. Epics and Definitions of Done
+
+### 6.1. Backlog de Epics y User Stories
 
 El backlog ágil se organiza en 6 Epics, cada una desglosada en User Stories concisas con sus criterios de aceptación. La columna **Plan recomendado (3 meses)** distingue las funcionalidades que conviene incluir en un MVP acotado de las que pueden posponerse. “MVP básico” indica que se implementaría solo la versión mínima necesaria.
 
@@ -270,6 +292,21 @@ El backlog ágil se organiza en 6 Epics, cada una desglosada en User Stories con
 | **US-16** | Como usuario nuevo, quiero un Plan Gratuito básico, para probar la herramienta sin coste inicial. | Permite usar la herramienta con un límite de prompts por sesión. | MVP básico: ofrecer acceso gratuito para las pruebas; el límite puede ser manual. |
 | **US-17** | Como DM habitual, quiero suscribirme a un Plan Pro con Stripe, para desbloquear IA avanzada y PDFs grandes. | El pago con tarjeta procesa y activa las ventajas del Plan Pro. | Secundaria: posponer Stripe hasta validar el producto. |
 | **US-18** | Como suscriptor, quiero gestionar o cancelar mi plan, para tener control sobre mi facturación. | El usuario puede consultar el estado de su plan y cancelarlo. | Secundaria: depende de implementar suscripciones de pago. |
+
+### 6.2 Definitions of Done (Criterios globales de finalización)
+
+Mientras que los criterios de aceptación validan individualmente cada historia de usuario, la **Definition of Done (DoD)** establece las condiciones transversales y objetivas que deben cumplirse para dar por finalizada y plenamente operativa cada Epic:
+
+> **Criterio Transversal Global:** Todo desarrollo debe estar integrado en GitHub mediante Pull Request revisado y aprobado por pares, sin errores en consola ni en logs (`laravel.log`), con secretos protegidos en variables de entorno (`.env`) y pruebas manuales superadas.
+
+| Epic | Definition of Done (DoD) de la Epic / Módulo |
+|---|---|
+| **Epic 1: Core Web y Sesiones** | Flujo completo de registro y login operativo con tokens Sanctum, CRUD de campañas persistido en base de datos, y SPA responsive en modo oscuro validada en pantalla secundaria. |
+| **Epic 2: PDFs y Búsqueda RAG** | Carga y validación de manuales en PDF, pipeline de fragmentación e indexación vectorial con metadato exacto de página, y recuperación semántica de reglas verificada sin alucinaciones. |
+| **Epic 3: Motor Narrativo e IA** | System Prompt de narrador de rol configurado, filtros Guardrails bloqueando preguntas ajenas a la partida, citas explícitas de manual/página e inyección de tiradas recientes en el contexto. |
+| **Epic 4: Voz Bilateral (STT/TTS)** | Captura por Push-to-Talk y transcripción limpia con Web Speech API, reproducción de narración en voz alta en tiempo real y fallback automático a modo texto ante fallos de audio. |
+| **Epic 5: Integración TTS** | Script Lua enviando webhooks HTTP (`onDiceRoll`) en menos de 1 s hacia Laravel, contexto actualizado en segundo plano y tolerancia a fallos garantizada si el tablero se desconecta. |
+| **Epic 6: Pasarela Stripe** | Cuotas del plan Free aplicadas, checkout de Stripe Sandbox procesando cobros y activando plan Pro vía webhook (`invoice.paid`), y portal de cliente para gestión de facturas y bajas. |
 
 ---
 
