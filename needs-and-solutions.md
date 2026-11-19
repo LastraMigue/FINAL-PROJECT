@@ -126,20 +126,37 @@ La **Solución A (23/25)** resulta la opción ganadora:
 Tras la elección fundamentada de la Solución A, se define la descomposición modular y la arquitectura de integración para el desarrollo del producto:
 
 ### 5.1. Módulos funcionales
-1. **Interfaz y voz:** Permite al DM gestionar la sesión web (React), hablar por micrófono (*Push-to-Talk*) y reproducir la narración en voz alta (TTS).
-2. **Sesiones y backend:** API en Laravel que valida solicitudes, gestiona la autenticación, coordina los módulos y controla el estado de la partida.
-3. **Manuales y búsqueda (RAG):** Procesa y fragmenta los PDFs de reglas, almacenando pasajes con metadato de página para citación exacta.
-4. **Asistente de IA y Guardrails:** Orquesta el prompt combinando consulta, contexto del tablero y fragmentos del PDF, aplicando filtros para no salir del rol ni alucinar.
-5. **Conector Tabletop Simulator:** Script en Lua que detecta eventos en el tablero (tiradas de dados) y los envía por webhooks HTTP a la API.
-6. **Almacenamiento e historial:** Base de datos relacional (MySQL/PostgreSQL) para usuarios, campañas, sesiones y registro de eventos.
-7. **Monetización (Stripe):** Pasarela de pagos para gestionar cuotas de uso y planes Freemium vs. Pro.
+
+| Módulo | Función | Prioridad | ¿Entra en el MVP? |
+|---|---|:---:|:---:|
+| **Interfaz y voz** | Interfaz web para gestionar la sesión, consultar al asistente con *Push-to-Talk* y escuchar la respuesta con TTS. | Alta | **Sí**, con una interfaz sencilla y el flujo de voz básico. |
+| **Sesiones y backend** | API en Laravel que valida solicitudes, gestiona las sesiones y coordina los módulos. | Muy alta | **Sí**; es la base necesaria para conectar y proteger el resto del sistema. |
+| **Manuales y búsqueda (RAG)** | Procesa PDFs y recupera fragmentos de reglas con el número de página para citarlos. | Muy alta | **Sí**; permite que el asistente responda basándose en los manuales del grupo. |
+| **Asistente de IA y Guardrails** | Combina la consulta con el contexto disponible y genera respuestas acotadas al rol y las reglas. | Muy alta | **Sí**, en una versión básica y fiable. |
+| **Conector Tabletop Simulator** | Script Lua que envía a la API eventos básicos del tablero, como las tiradas de dados. | Alta | **Sí, de forma mínima**; es un diferenciador central, aunque puede desarrollarse después del flujo básico de consulta. |
+| **Almacenamiento e historial** | Guarda usuarios, campañas, sesiones y eventos en una base de datos relacional. | Alta | **Sí, básico**; guardar sesiones y el contexto reciente. Los resúmenes y el historial avanzado pueden esperar. |
+| **Monetización (Stripe)** | Gestiona pagos, suscripciones y planes Freemium/Pro. | Baja | **No**; se puede validar primero el producto con acceso gratuito o gestión manual. |
+
 
 ### 5.2. Integración entre módulos y flujos de trabajo
-Toda comunicación pasa por la API de Laravel; la interfaz no accede directamente a la base de datos ni a los servicios de IA.
+Toda comunicación pasa por la API de Laravel; la interfaz no accede directamente a la base de datos ni a los servicios de IA. El diagrama resume los dos flujos principales:
 
-- **Flujo de consulta por voz:** El DM pulsa para hablar $\to$ la voz se transcribe a texto $\to$ la API valida la sesión $\to$ RAG recupera fragmentos de reglas $\to$ la IA genera respuesta acotada con cita de página $\to$ síntesis TTS reproduce el audio $\to$ se registra en el historial.
-- **Flujo de eventos TTS:** El script Lua detecta `onDiceRoll` $\to$ envía HTTP POST con el resultado a la API $\to$ la API valida el token y añade el dato al contexto de la partida.
-- **Control del DM:** Los eventos del tablero no disparan respuestas habladas automáticas imprevistas; el DM mantiene el control de cuándo solicitar asistencia. Si el conector falla, la web continúa operativa manualmente.
+```mermaid
+flowchart TD
+    DM["DM: pregunta por voz"] --> UI["Interfaz web: transcribe la pregunta"]
+    UI --> API["API Laravel: valida la sesión"]
+    API --> RAG["RAG: busca en los manuales"]
+    RAG --> IA["IA: redacta una respuesta con cita"]
+    IA --> TTS["Interfaz: reproduce la respuesta en voz"]
+    TTS --> DB["Base de datos: registra consulta y respuesta"]
+
+    TTSim["Tabletop Simulator: tirada de dados"] --> Lua["Script Lua: detecta el evento"]
+    Lua --> API2["API Laravel: recibe y valida el evento"]
+    API2 --> DB2["Contexto de la sesión: guarda la tirada"]
+    DB2 -.-> API
+```
+
+El DM decide cuándo solicitar una respuesta: las tiradas del tablero actualizan el contexto, pero no activan narraciones habladas automáticamente. Si el conector falla, la web puede seguir utilizándose manualmente.
 
 ### 5.3. Criterio de integración y verificación
 El sistema se considera integrado cuando la interfaz web envía una consulta vinculada a una sesión activa, el backend consulta el RAG y devuelve la respuesta en texto/audio con cita de página, y los eventos de tiradas de dados desde Tabletop Simulator actualizan el contexto sin interrumpir la operatividad manual.
@@ -148,55 +165,55 @@ El sistema se considera integrado cuando la interfaz web envía una consulta vin
 
 ## 6. Epics
 
-El backlog ágil se organiza en 6 Epics, cada una desglosada en User Stories concisas con sus criterios de aceptación:
+El backlog ágil se organiza en 6 Epics, cada una desglosada en User Stories concisas con sus criterios de aceptación. La columna **Plan recomendado (3 meses)** distingue las funcionalidades que conviene incluir en un MVP acotado de las que pueden posponerse. “MVP básico” indica que se implementaría solo la versión mínima necesaria.
 
 ### Epic 1: Core Web y Gestión de Sesiones
 
-| ID | User Story | Criterios de Aceptación | Prioridad |
-|:---:|---|---|:---:|
-| **US-01** | Como DM, quiero registrarme e iniciar sesión con email y contraseña, para gestionar mis campañas de forma segura. | El usuario se registra, inicia sesión y accede a su panel privado. | Alta |
-| **US-02** | Como DM, quiero crear campañas e iniciar sesiones activas, para vincular las notas y eventos a cada partida. | Permite crear campañas y abrir sesiones con un código o token. | Alta |
-| **US-03** | Como DM, quiero una interfaz responsive para pantalla secundaria, para consultar la web sin estorbar el tablero. | La interfaz se adapta y maneja cómodamente en pantalla secundaria. | Media |
+| ID | User Story | Criterios de Aceptación | Plan recomendado (3 meses) |
+|:---:|---|---|---|
+| **US-01** | Como DM, quiero registrarme e iniciar sesión con email y contraseña, para gestionar mis campañas de forma segura. | El usuario se registra, inicia sesión y accede a su panel privado. | MVP |
+| **US-02** | Como DM, quiero crear campañas e iniciar sesiones activas, para vincular las notas y eventos a cada partida. | Permite crear campañas y abrir sesiones con un código o token. | MVP |
+| **US-03** | Como DM, quiero una interfaz responsive para pantalla secundaria, para consultar la web sin estorbar el tablero. | La interfaz se adapta y maneja cómodamente en pantalla secundaria. | Secundaria: pulir la adaptación a distintos tamaños de pantalla. |
 
 ### Epic 2: Gestión de PDFs y Búsqueda RAG
 
-| ID | User Story | Criterios de Aceptación | Prioridad |
-|:---:|---|---|:---:|
-| **US-04** | Como DM, quiero subir manuales y módulos en PDF, para que la IA disponga de las reglas de mi juego. | El usuario puede subir archivos PDF válidos a su campaña. | Alta |
-| **US-05** | Como sistema, quiero fragmentar e indexar los PDFs con número de página, para realizar búsquedas semánticas precisas. | El documento queda procesado e indexado con sus páginas. | Alta |
-| **US-06** | Como DM, quiero que las respuestas citen la página exacta del manual, para contrastar reglas oficiales al instante. | La respuesta indica el número de página de la regla consultada. | Alta |
+| ID | User Story | Criterios de Aceptación | Plan recomendado (3 meses) |
+|:---:|---|---|---|
+| **US-04** | Como DM, quiero subir manuales y módulos en PDF, para que la IA disponga de las reglas de mi juego. | El usuario puede subir archivos PDF válidos a su campaña. | MVP |
+| **US-05** | Como sistema, quiero fragmentar e indexar los PDFs con número de página, para realizar búsquedas semánticas precisas. | El documento queda procesado e indexado con sus páginas. | MVP |
+| **US-06** | Como DM, quiero que las respuestas citen la página exacta del manual, para contrastar reglas oficiales al instante. | La respuesta indica el número de página de la regla consultada. | MVP |
 
 ### Epic 3: Motor Narrativo y Guardrails de IA
 
-| ID | User Story | Criterios de Aceptación | Prioridad |
-|:---:|---|---|:---:|
-| **US-07** | Como grupo de rol, queremos que la IA actúe como un Dungeon Master, para recibir narraciones inmersivas. | La IA responde con tono de narrador literario y conciso. | Alta |
-| **US-08** | Como DM, quiero filtros (*Guardrails*) que impidan alucinar o salir de rol, para no romper la partida. | La IA rechaza temas ajenos a la partida y no inventa reglas. | Alta |
-| **US-09** | Como DM, quiero que la IA recuerde las tiradas y eventos recientes, para mantener coherencia narrativa. | La respuesta tiene en cuenta los últimos eventos de la mesa. | Media |
+| ID | User Story | Criterios de Aceptación | Plan recomendado (3 meses) |
+|:---:|---|---|---|
+| **US-07** | Como grupo de rol, queremos que la IA actúe como un Dungeon Master, para recibir narraciones inmersivas. | La IA responde con tono de narrador literario y conciso. | MVP |
+| **US-08** | Como DM, quiero filtros (*Guardrails*) que impidan alucinar o salir de rol, para no romper la partida. | La IA rechaza temas ajenos a la partida y no inventa reglas. | MVP básico: limitar respuestas al rol y a la información recuperada. |
+| **US-09** | Como DM, quiero que la IA recuerde las tiradas y eventos recientes, para mantener coherencia narrativa. | La respuesta tiene en cuenta los últimos eventos de la mesa. | Secundaria: ampliar la memoria y coherencia entre eventos. |
 
 ### Epic 4: Interacción por Voz Bilateral (STT & TTS)
 
-| ID | User Story | Criterios de Aceptación | Prioridad |
-|:---:|---|---|:---:|
-| **US-10** | Como DM o jugador, quiero hablar mediante *Push-to-Talk*, para consultar por voz sin recoger ruido ambiental. | Al mantener pulsado el botón se graba y transcribe la voz. | Alta |
-| **US-11** | Como grupo, queremos escuchar la respuesta narrada en voz alta, para una experiencia inmersiva manos libres. | La aplicación reproduce la respuesta en audio de forma clara. | Alta |
-| **US-12** | Como usuario, quiero un chat de texto alternativo, para continuar si falla el micrófono o altavoz. | Se pueden enviar preguntas y recibir respuestas por texto. | Media |
+| ID | User Story | Criterios de Aceptación | Plan recomendado (3 meses) |
+|:---:|---|---|---|
+| **US-10** | Como DM o jugador, quiero hablar mediante *Push-to-Talk*, para consultar por voz sin recoger ruido ambiental. | Al mantener pulsado el botón se graba y transcribe la voz. | MVP básico: probar compatibilidad de reconocimiento de voz en el navegador elegido. |
+| **US-11** | Como grupo, queremos escuchar la respuesta narrada en voz alta, para una experiencia inmersiva manos libres. | La aplicación reproduce la respuesta en audio de forma clara. | MVP básico: reproducir la respuesta con una voz disponible. |
+| **US-12** | Como usuario, quiero un chat de texto alternativo, para continuar si falla el micrófono o altavoz. | Se pueden enviar preguntas y recibir respuestas por texto. | MVP: alternativa sencilla y respaldo para probar el flujo de IA. |
 
 ### Epic 5: Integración con Tabletop Simulator (TTS)
 
-| ID | User Story | Criterios de Aceptación | Prioridad |
-|:---:|---|---|:---:|
-| **US-13** | Como DM, quiero vincular Tabletop Simulator con mi sesión web con un token, para enlazar el tablero con la app. | La mesa virtual se enlaza con la sesión web mediante token. | Alta |
-| **US-14** | Como jugador, quiero que mis tiradas de dados en TTS se envíen solas a la web, para no tener que dictarlas. | Cada tirada de dados en el tablero se refleja en la web. | Alta |
-| **US-15** | Como DM, quiero que la web siga activa si TTS se desconecta, para continuar la sesión manualmente. | Si el tablero se desconecta, la web sigue operativa a mano. | Alta |
+| ID | User Story | Criterios de Aceptación | Plan recomendado (3 meses) |
+|:---:|---|---|---|
+| **US-13** | Como DM, quiero vincular Tabletop Simulator con mi sesión web con un token, para enlazar el tablero con la app. | La mesa virtual se enlaza con la sesión web mediante token. | MVP básico: vincular una mesa y una sesión. |
+| **US-14** | Como jugador, quiero que mis tiradas de dados en TTS se envíen solas a la web, para no tener que dictarlas. | Cada tirada de dados en el tablero se refleja en la web. | MVP básico: enviar y mostrar tiradas; limitarse inicialmente a este evento. |
+| **US-15** | Como DM, quiero que la web siga activa si TTS se desconecta, para continuar la sesión manualmente. | Si el tablero se desconecta, la web sigue operativa a mano. | MVP: conservar el uso manual aunque falle la integración. |
 
 ### Epic 6: Pasarela de Pago y Suscripciones (Stripe)
 
-| ID | User Story | Criterios de Aceptación | Prioridad |
-|:---:|---|---|:---:|
-| **US-16** | Como usuario nuevo, quiero un Plan Gratuito básico, para probar la herramienta sin coste inicial. | Permite usar la herramienta con un límite de prompts por sesión. | Alta |
-| **US-17** | Como DM habitual, quiero suscribirme a un Plan Pro con Stripe, para desbloquear IA avanzada y PDFs grandes. | El pago con tarjeta procesa y activa las ventajas del Plan Pro. | Media |
-| **US-18** | Como suscriptor, quiero gestionar o cancelar mi plan, para tener control sobre mi facturación. | El usuario puede consultar el estado de su plan y cancelarlo. | Media |
+| ID | User Story | Criterios de Aceptación | Plan recomendado (3 meses) |
+|:---:|---|---|---|
+| **US-16** | Como usuario nuevo, quiero un Plan Gratuito básico, para probar la herramienta sin coste inicial. | Permite usar la herramienta con un límite de prompts por sesión. | MVP básico: ofrecer acceso gratuito para las pruebas; el límite puede ser manual. |
+| **US-17** | Como DM habitual, quiero suscribirme a un Plan Pro con Stripe, para desbloquear IA avanzada y PDFs grandes. | El pago con tarjeta procesa y activa las ventajas del Plan Pro. | Secundaria: posponer Stripe hasta validar el producto. |
+| **US-18** | Como suscriptor, quiero gestionar o cancelar mi plan, para tener control sobre mi facturación. | El usuario puede consultar el estado de su plan y cancelarlo. | Secundaria: depende de implementar suscripciones de pago. |
 
 ---
 
@@ -229,55 +246,44 @@ flowchart TD
     Lead <--> Front
 ```
 
-#### Matriz de competencias y responsabilidades
+#### Responsabilidades del equipo
 
-| Miembro / Rol | Competencias Clave | Responsabilidades Principales |
-|---|---|---|
-| **Miguel Ángel Lastra Garcés**<br>*Lead Developer / Backend* | Laravel, PHP, API REST, MySQL/PostgreSQL, Git, Stripe API | Definición de arquitectura; desarrollo de la API RESTful, autenticación, gestión de campañas, sesiones e historial; integración de pasarela de pago (Stripe Sandbox); control de versiones y releases. |
-| **Abel Carbonero Mora**<br>*Core Developer / IA y RAG* | APIs de LLM, procesamiento de PDFs, fragmentación, embeddings, bases de datos vectoriales | Implementación del pipeline RAG: ingesta, fragmentación e indexación de manuales y aventuras en PDF, recuperación semántica con cita de página y ajuste del System Prompt con Guardrails. |
-| **Christian Said Jimenez Mahecha**<br>*Core Developer / Integración TTS* | Lua, Tabletop Simulator, Webhooks HTTP, API REST, JSON | Desarrollo del script Lua en Tabletop Simulator para captura de eventos del tablero (tiradas de dados) y envío asíncrono a la API de Laravel mediante peticiones HTTP (`WebRequest.post`). |
-| **Rafael Riego Ruz**<br>*Core Developer / Frontend y Voz* | React, diseño responsive y accesible, Web Speech API, audio streaming | Desarrollo de la SPA web optimizada como pantalla secundaria; interfaces de campañas, sesiones y planes; integración de captura por voz (STT) y síntesis narrativa hablada (TTS). |
+| Miembro / Rol | Responsabilidades principales |
+|---|---|
+| **Miguel Ángel Lastra Garcés**<br>*Lead Developer / Backend* | Definición de arquitectura; desarrollo de la API RESTful, autenticación, gestión de campañas, sesiones e historial; integración de pasarela de pago (Stripe Sandbox); control de versiones y releases. |
+| **Abel Carbonero Mora**<br>*Core Developer / IA y RAG* | Implementación del pipeline RAG: ingesta, fragmentación e indexación de manuales y aventuras en PDF, recuperación semántica con cita de página y ajuste del System Prompt con Guardrails. |
+| **Christian Said Jimenez Mahecha**<br>*Core Developer / Integración TTS* | Desarrollo del script Lua en Tabletop Simulator para captura de eventos del tablero (tiradas de dados) y envío asíncrono a la API de Laravel mediante peticiones HTTP (`WebRequest.post`). |
+| **Rafael Riego Ruz**<br>*Core Developer / Frontend y Voz* | Desarrollo de la SPA web optimizada como pantalla secundaria; interfaces de campañas, sesiones y planes; integración de captura por voz (STT) y síntesis narrativa hablada (TTS). |
 
 ### 7.2. Recursos materiales y servicios externos
 
 Para la ejecución, pruebas y validación del proyecto se contempla el siguiente equipamiento físico y servicios en la nube:
 
 #### Material y equipamiento físico
-- **Estaciones de trabajo de desarrollo:** Equipos personales (PC/Mac) con entornos locales configurados (Node.js con npm para el frontend en React, PHP con Composer para el backend en Laravel) y herramientas de desarrollo (VS Code, Git).
-- **Dispositivos de audio:** Auriculares con micrófono dedicados para pruebas y calibración del reconocimiento de voz (STT) y salida de audio (TTS) sin ruido ambiental.
-- **Licencias de software:** Copias de *Tabletop Simulator* (Steam) para pruebas de desarrollo, ejecución de scripts Lua y verificación de eventos en partidas simuladas.
+
+| Recurso | Uso previsto |
+|---|---|
+| **Estaciones de trabajo de desarrollo** | Equipos personales (PC/Mac) con entornos locales configurados: Node.js con npm para el frontend en React, PHP con Composer para el backend en Laravel y herramientas como VS Code y Git. |
+| **Dispositivos de audio** | Auriculares con micrófono para probar y calibrar el reconocimiento de voz (STT) y la salida de audio (TTS), reduciendo el ruido ambiental. |
+| **Licencias de software** | Copias de *Tabletop Simulator* (Steam) para desarrollar y probar scripts Lua y verificar eventos en partidas simuladas. |
 
 #### Servicios externos e infraestructura cloud
-- **Servidor web y base de datos:** Hosting VPS / Cloud (ej. DigitalOcean / AWS) para el despliegue del backend Laravel y la base de datos relacional (MySQL/PostgreSQL).
-- **Base de datos vectorial:** Servicio gestionado o motor vectorial (ej. Qdrant / Pinecone o pgvector) para el almacenamiento de embeddings e indexación semántica de los manuales PDF.
-- **APIs de Inteligencia Artificial y Voz:** Modelos LLM (ej. OpenAI / Anthropic) para la orquestación de narraciones y servicios de voz (Web Speech API del navegador y streaming de audio).
-- **Pasarela de pago:** Entorno de pruebas *Stripe Sandbox* para validar el flujo completo de suscripciones Freemium y Pro.
+
+| Servicio | Uso previsto |
+|---|---|
+| **Servidor web y base de datos** | Hosting VPS o cloud (por ejemplo, DigitalOcean o AWS) para desplegar el backend Laravel y la base de datos relacional (MySQL/PostgreSQL). |
+| **Base de datos vectorial** | Servicio gestionado o motor vectorial (por ejemplo, Qdrant, Pinecone o pgvector) para almacenar embeddings e indexar semánticamente los manuales PDF. |
+| **APIs de Inteligencia Artificial y Voz** | Modelos LLM (por ejemplo, OpenAI o Anthropic) para generar narraciones y servicios de voz (Web Speech API del navegador y streaming de audio). |
+| **Pasarela de pago** | Entorno de pruebas *Stripe Sandbox* para validar el flujo de suscripciones Freemium y Pro. |
 
 ---
 
-## 8. Presupuesto económico y costes de lanzamiento
+## 8. Presupuesto económico.
 
-Se define el presupuesto económico real para el desarrollo y puesta en marcha de GameMaster AI. La plataforma no recurre a subcontrataciones externas: el desarrollo técnico, la auditoría de seguridad, la adecuación legal y el lanzamiento son asumidos íntegramente por los cuatro integrantes fundadores.
+La estrategia de marketing plantea captar clientes durante el primer año facilitando el acceso inicial a GameMaster AI y dando a conocer sus funcionalidades. Una vez creada una base de usuarios, a partir del segundo año el servicio pasará a ser de pago, quienes quieran seguir utilizando GameMaster AI deberán contratar una suscripción. Esta transición permite atraer clientes al principio y generar ingresos recurrentes para sostener el proyecto.
 
-### 8.1. Estudio de costes reales de IA (LLM, RAG y Voz)
-Para dimensionar el gasto en consumo de inteligencia artificial sobre una base de 100 a 500 usuarios registrados (~600 sesiones de juego mensuales):
-- **Modelo de lenguaje (LLM):** Inferencia mediante modelos eficientes de alta velocidad (ej. OpenAI GPT-4o-mini o Gemini 1.5 Flash a ~0,15 USD / 1M tokens de entrada y ~0,60 USD / 1M de salida; con modelo avanzado para el plan Pro). En una sesión típica de 3-4 horas se realizan ~30 consultas con contexto RAG (~2.600 tokens de entrada y ~200 de salida), lo que supone un coste de **~0,02 € por sesión en plan base** y **~0,25 € en plan Pro**.
-- **Indexación RAG (Embeddings):** Generación de vectores con *text-embedding-3-small* (0,02 USD / 1M tokens). Procesar un manual completo de rol de 200 páginas (~130.000 tokens) cuesta apenas **0,0026 €** por libro.
-- **Interacción por voz:** Reconocimiento y síntesis gestionados primordialmente mediante la **Web Speech API** nativa del navegador (**0,00 €**, sin coste de API externa), reservando un margen para fallbacks de audio.
-- **Gasto total estimado de IA:** Entre 45 € y 60 € mensuales, totalizando **720 € al año** para dar soporte holgado a toda la comunidad inicial.
+[Descargar o visualizar el presupuesto](./presupuesto_economico_unificado-v4.xlsx)
 
-### 8.2. Presupuesto económico unificado
-
-| Partida | Concepto | Detalle y Cálculo | Coste |
-|---|---|---|---:|
-| **Personal interno** | Equipo de desarrollo (4 fundadores) | 4 integrantes × 40 h de dedicación con sueldo de 1.100 € por persona | 4.400 € |
-| **Licencias de software** | Tabletop Simulator en Steam | 4 licencias (20 €/ud.) para desarrollo y validación del conector Lua | 80 € |
-| **Dominio web** | Registro anual de dominio | Dominio comercial para la plataforma web companion (.com / .app) | 20 € |
-| **Infraestructura Cloud** | Servidor VPS y Base de Datos (Año 1) | Hosting VPS (ej. Hetzner/DigitalOcean) para Laravel y MySQL/PostgreSQL (20 €/mes × 12 meses) | 240 € |
-| **Servicios de IA** | Consumo anual de APIs de IA y RAG | Inferencia LLM, embeddings RAG y cuota de streaming (~60 €/mes × 12 meses) | 720 € |
-| **Subtotal inversión** | Costes directos de lanzamiento y operación | Recursos internos, licencias, infraestructura cloud y APIs de IA | **5.460 €** |
-| **Fondo de contingencias (10 %)** | Margen para imprevistos | Cobertura para picos de tráfico, mayor consumo de tokens o ampliación de servidor | **546 €** |
-| **TOTAL ESTIMADO (Sin IVA)** | **Presupuesto global primer año** | **Inversión total requerida para desarrollar y operar GameMaster AI durante 1 año** | **6.006 €** |
 
 ---
 
