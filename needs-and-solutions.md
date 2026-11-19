@@ -135,11 +135,66 @@ Tras la elección fundamentada de la Solución A, se define la descomposición m
 7. **Monetización (Stripe):** Pasarela de pagos para gestionar cuotas de uso y planes Freemium vs. Pro.
 
 ### 5.2. Integración entre módulos y flujos de trabajo
-Toda comunicación pasa por la API de Laravel; la interfaz no accede directamente a la base de datos ni a los servicios de IA.
+Toda comunicación pasa por la API de Laravel; la interfaz no accede directamente a la base de datos ni a los servicios de IA. El sistema combina un **flujo síncrono** (petición/respuesta inmediata para las consultas del DM) con un **flujo asíncrono** (captura en segundo plano de eventos del tablero 3D sin bloquear la interfaz):
 
 - **Flujo de consulta por voz:** El DM pulsa para hablar $\to$ la voz se transcribe a texto $\to$ la API valida la sesión $\to$ RAG recupera fragmentos de reglas $\to$ la IA genera respuesta acotada con cita de página $\to$ síntesis TTS reproduce el audio $\to$ se registra en el historial.
 - **Flujo de eventos TTS:** El script Lua detecta `onDiceRoll` $\to$ envía HTTP POST con el resultado a la API $\to$ la API valida el token y añade el dato al contexto de la partida.
 - **Control del DM:** Los eventos del tablero no disparan respuestas habladas automáticas imprevistas; el DM mantiene el control de cuándo solicitar asistencia. Si el conector falla, la web continúa operativa manualmente.
+
+#### Diagrama de secuencias de integración (Flujo síncrono y asíncrono)
+
+```mermaid
+sequenceDiagram
+autonumber
+actor DM as Director de Juego (DM)
+participant Web as Web Companion (React)
+participant API as Backend API (Laravel)
+participant RAG as Motor RAG (Manuales PDF)
+participant IA as Servicio IA (LLM / Voz)
+participant TTS as Tabletop Simulator (Lua)
+
+%% -------------------------------------------------------------
+%% FLUJO SÍNCRONO: CONSULTA DE REGLAS Y NARRACIÓN POR VOZ
+%% -------------------------------------------------------------
+Note over DM, IA: FLUJO SÍNCRONO (Bloqueante / Petición y Respuesta)
+DM->>Web: Pulsar Push-to-Talk y realizar consulta por voz
+activate Web
+Note right of Web: Captura de voz mediante Web Speech API
+Web->>API: POST /api/v1/sessions/{id}/query (Audio/Texto)
+activate API
+Note right of API: Valida sesión activa y token del usuario
+
+API->>RAG: Búsqueda semántica en base vectorial
+activate RAG
+Note right of RAG: Localiza reglas oficiales con número de página
+RAG-->>API: Fragmentos relevantes encontrados (ej. pág. 195)
+deactivate RAG
+
+API->>IA: Prompt: Contexto de partida + Fragmentos PDF + Consulta
+activate IA
+Note right of IA: Generación acotada con Guardrails (sin alucinaciones)
+IA-->>API: Respuesta narrativa con cita y síntesis de voz (TTS)
+deactivate IA
+
+API-->>Web: Respuesta completa: Texto + Audio + Cita de página
+deactivate API
+Web-->>DM: Reproduce narración en voz alta y actualiza "Recientes"
+deactivate Web
+
+%% -------------------------------------------------------------
+%% FLUJO ASÍNCRONO: CAPTURA DE EVENTOS DESDE TABLETOP SIMULATOR
+%% -------------------------------------------------------------
+Note over Web, TTS: FLUJO ASÍNCRONO (No bloqueante / Segundo Plano)
+TTS->>TTS: Jugador realiza tirada de dados en el tablero (onDiceRoll)
+Note right of TTS: Script Lua captura evento: 1d20 = [18]
+TTS-)+API: Webhook HTTP POST /api/v1/events (Resultado dado + Token)
+activate API
+Note over API: El backend procesa el evento en segundo plano<br/>sin detener la navegación de los jugadores
+API->>API: Actualiza memoria de contexto de la campaña activa
+API-)+Web: Notificación de evento en tiempo real
+Note left of Web: La tirada aparece en el feed de la sesión<br/>sin interrumpir la voz ni congelar la pantalla
+deactivate API
+```
 
 ### 5.3. Criterio de integración y verificación
 El sistema se considera integrado cuando la interfaz web envía una consulta vinculada a una sesión activa, el backend consulta el RAG y devuelve la respuesta en texto/audio con cita de página, y los eventos de tiradas de dados desde Tabletop Simulator actualizan el contexto sin interrumpir la operatividad manual.
